@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Migrations\\20240325212310_CreateTestTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Konar.az\\Migrations\\20240325212310_CreateTestTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\migrations\\20240325212310_createtesttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\migrations\\20240325212310_createtesttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,16 +27,12 @@
       "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\models\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Migrations\\20240325211833_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Konar.az\\Migrations\\20240325211833_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\migrations\\20240325211833_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\migrations\\20240325211833_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +42,37 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Konar.az\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Konar.az\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAADcCAAAAAAAAAAAuwEsCAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-25T21:28:44.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Konar.az\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Konar.az\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADABAAAAAAAAAAAuwEwBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-25T21:28:05.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "20240325212310_CreateTestTable.cs",
               "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Migrations\\20240325212310_CreateTestTable.cs",
               "RelativeDocumentMoniker": "Konar.az\\Migrations\\20240325212310_CreateTestTable.cs",
@@ -51,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Test.cs",
               "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Models\\Test.cs",
               "RelativeDocumentMoniker": "Konar.az\\Models\\Test.cs",
@@ -59,12 +93,24 @@
               "RelativeToolTip": "Konar.az\\Models\\Test.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T21:19:54.495Z",
+              "WhenOpened": "2024-03-25T21:19:54.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Program.cs",
+              "RelativeDocumentMoniker": "Konar.az\\Program.cs",
+              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Program.cs",
+              "RelativeToolTip": "Konar.az\\Program.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAApwBUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T21:16:02.474Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "20240325211833_Init.cs",
               "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Migrations\\20240325211833_Init.cs",
               "RelativeDocumentMoniker": "Konar.az\\Migrations\\20240325211833_Init.cs",
@@ -72,25 +118,11 @@
               "RelativeToolTip": "Konar.az\\Migrations\\20240325211833_Init.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T21:18:33.551Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-25T21:18:33.551Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Program.cs",
-              "RelativeDocumentMoniker": "Konar.az\\Program.cs",
-              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Program.cs",
-              "RelativeToolTip": "Konar.az\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAYAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T21:16:02.474Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\appsettings.json",
               "RelativeDocumentMoniker": "Konar.az\\appsettings.json",
@@ -98,12 +130,11 @@
               "RelativeToolTip": "Konar.az\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-25T21:14:50.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-25T21:14:50.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\DAL\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Konar.az\\DAL\\AppDbContext.cs",
@@ -111,8 +142,7 @@
               "RelativeToolTip": "Konar.az\\DAL\\AppDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T21:12:36.213Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-25T21:12:36.213Z"
             }
           ]
         }
