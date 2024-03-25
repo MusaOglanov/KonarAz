@@ -21,6 +21,28 @@ namespace Konar.az.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Konar.az.Models.Faq", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Answer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeactive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Question")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Faqs");
+                });
+
             modelBuilder.Entity("Konar.az.Models.Test", b =>
                 {
                     b.Property<int>("id")

@@ -10,6 +10,7 @@ namespace Konar.az.DAL
                 
         }
 		public DbSet<Test> Test { get; set; }
+		public DbSet<Faq> Faqs { get; set; }
 	}
 	
 }

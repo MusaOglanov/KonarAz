@@ -1,0 +1,118 @@
+﻿@model List<Faq>
+<main class="main">
+	<!-- promo primary start-->
+	<section class="promo-primary">
+		<div class="overlay"></div>
+		<picture>
+			<source srcset="~/img/contacts.jpg" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/contacts.jpg" alt="img" />
+		</picture>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="align-container">
+						<div class="align-item">
+							<span>KONAR UNİFORM</span>
+							<h1 class="title">Ən Çox Verilən Suallar</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- promo primary end-->
+	<!-- faq start-->
+	<section class="section faq">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="heading primary-heading">
+						<h3 class="title">FAQ</h3>
+						<h5 class="subtitle"><span>Questions that</span> <span>Interest You</span></h5>
+						<p>R-energy accreditation standards. Members are proactive in both undertaking and applying animal welfare scientific research, contributing to EAZA being a</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					@foreach (Faq faq in Model)
+					{
+						<!-- accordion item start-->
+						<div class="accordion-item accordion-item--with-shadow">
+							<div class="title-block">
+								<h4 class="title">@faq.Question</h4>
+								<svg class="icon">
+									<use xlink:href="#close"></use>
+								</svg>
+							</div>
+							<div class="content-block">
+								<p>@faq.Answer</p>
+							</div>
+						</div>
+						<!-- accordion item end-->
+					}
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- faq end-->
+	<!-- banner start-->
+	<section class="section banner">
+		<picture>
+			<source srcset="~/img/banner-bg.jpg" media="(min-width: 576px)" /><img class="img-bg" src="~/img/banner-mobile.jpg" alt="banner" />
+		</picture>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-7 col-lg-8 col-md-9">
+					<h1 class="title">New Technology by R-energy</h1>
+					<p>Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin: herring, Moses sole sea snail grouper discus. European</p><a class="button button--transparent" href="#" data-hover="Discover"><span>Discover</span></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- banner end-->
+	<!-- map section start-->
+	<section class="section map-section">
+		<!-- contact form start-->
+		<form class="form js-contact-form contact--form" autocomplete="off" action="#">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="title-block">
+							<h3 class="title">Sorğu <span>Göndər</span></h3><span class="trigger">Xəritələrdə bax</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<label class="input-label">
+							<input class="form-field input input-name" type="text" name="name" required="required" /><span>Ad</span>
+						</label>
+						<label class="input-label">
+							<input class="form-field input input-mail" type="email" name="email" required="required" /><span>Email</span>
+						</label>
+					</div>
+					<div class="col-md-6">
+						<label class="textarea-label">
+							<textarea class="form-field textarea" name="message"></textarea><span>Mesaj</span>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="button-holder">
+							<button class="button button--transparent" type="submit" data-hover="Göndər"><span>Göndər</span></button>
+							<div class="trigger-holder d-sm-none"><span class="trigger mobile-trigger">Xəritələrdə bax</span></div>
+							<div class="form__note"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!-- contact form end-->
+		<div class="map" id="map" data-api-key="AIzaSyD5ES8GFHrarPhIVpDhFDea6fPtga0Wy4Y" data-longitude="-9.141827" data-latitude="38.737749" data-marker="~/img/placeholder.png"></div>
+	</section>
+	<!-- map section end-->
+</main>
