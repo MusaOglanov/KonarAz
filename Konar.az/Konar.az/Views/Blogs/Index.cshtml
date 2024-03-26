@@ -1,0 +1,163 @@
+﻿@model BlogVM
+<main class="main">
+    <!-- promo primary start-->
+    <section class="promo-primary">
+        <div class="overlay"></div>
+        <picture>
+            <source srcset="~/img/elements.jpg" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/elements.jpg" alt="img" />
+        </picture>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="align-container">
+                        <div class="align-item">
+                            <span>KONAR UNİFORM</span>
+                            <h1 class="title">Bloq və Yeniliklər</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- promo primary end-->
+    <section class="section articles">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-8 col-xl-8">
+                    <div class="row">
+                        @foreach (Blog blog in Model.Blogs)
+                        {
+
+                            <div class="col-12">
+                                <div class="article-item">
+                                    <div class="article-item__img"><img class="img-bg" src="~/img/@blog.Image" alt="img" /></div>
+                                    <div class="article-item__details">
+                                        <span class="article-item__category">@blog.BlogCategory.Name</span>
+                                        <h3 class="article-item__title"> <a class="article-item__link" href="#">@blog.Title</a></h3>
+                                        <div class="article-item__date">
+                                            <svg class="icon">
+                                                <use xlink:href="#scalendar"></use>
+                                            </svg> @blog.CreateTime.ToString("d")
+                                        </div>
+                                        <p class="article-item__text">@blog.SubTitle</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="col-12 text-center">
+                            <!-- pagination start-->
+                            <ul class="pagination pagination--primary">
+                                <li class="back"><a href="#">Əvvələ</a></li>
+                                <li class="number current"><a href="#">1</a></li>
+                                <li class="number"><a href="#">2</a></li>
+                                <li class="number"><a href="#">3</a></li>
+                                <li class="number"><a href="#">4</a></li>
+                                <li class="number"><a href="#">5</a></li>
+                                <li class="next"><a href="#">İrəli</a></li>
+                            </ul>
+                            <!-- pagination end-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8 offset-sm-2 col-md-5 offset-md-0 col-lg-4 col-xl-3">
+                    <div class="articles__inner">
+                        <form class="article-search" action="javasctipt:void(0);">
+                            <input class="article-search__field" type="search" name="article-search" placeholder="Search" />
+                            <button class="article-search__submit" type="submit">
+                                <svg class="icon">
+                                    <use xlink:href="#search"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="articles__inner">
+                        <h4 class="articles__title">Kateqoriyalar</h4>
+                        <ul class="category-list">
+                            @foreach (BlogCategory blogCat in Model.BlogCategories)
+                            {
+                                <li class="category-list__item"><span>@blogCat.Name</span></li>
+
+                            }
+                        </ul>
+                    </div>
+                    <!-- <div class="articles__inner">
+                        <h4 class="articles__title">Son postlar</h4>
+                        <div class="recent-item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="recent-item__img"><img class="img-bg" src="~/img/recent-1.jpg" alt="img"/></div>
+                                </div>
+                                <div class="col-8">
+                                    <h6 class="recent-item__title"><a class="recent-item__link" href="#">Wind Farms Now More Affordable</a></h6><span class="recent-item__date">31/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="recent-item__img"><img class="img-bg" src="~/img/recent-2.jpg" alt="img"/></div>
+                                </div>
+                                <div class="col-8">
+                                    <h6 class="recent-item__title"><a class="recent-item__link" href="#">Wind Farms Now More Affordable</a></h6><span class="recent-item__date">31/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="recent-item__img"><img class="img-bg" src="~/img/recent-3.jpg" alt="img"/></div>
+                                </div>
+                                <div class="col-8">
+                                    <h6 class="recent-item__title"><a class="recent-item__link" href="#">Wind Farms Now More Affordable</a></h6><span class="recent-item__date">31/12</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articles__inner">
+                        <h4 class="articles__title">Arxiv</h4>
+                        <ul class="category-list">
+                            <li class="category-list__item"><span>December</span><span class="text-right">2</span></li>
+                            <li class="category-list__item"><span>January</span><span class="text-right">3</span></li>
+                            <li class="category-list__item"><span>October</span><span class="text-right">1</span></li>
+                            <li class="category-list__item"><span>November</span><span class="text-right">6 </span></li>
+                            <li class="category-list__item"><span>September</span><span class="text-right">12</span></li>
+                        </ul>
+                    </div>
+                    <div class="articles__inner">
+                        <h4 class="articles__title">Ən son rəylər</h4>
+                        <div class="recent-comment"><span><a href="#">ViralsTime</a> Onsite Solar To Power</span></div>
+                        <div class="recent-comment"><span><a href="#">John Greybrown</a> On Onsite Solar</span></div>
+                        <div class="recent-comment"><span><a href="#">John Greybrown</a> On DUOMAX PLUS</span></div>
+                        <div class="recent-comment"><span><a href="#">John Greybrown</a> On Onsite Solar</span></div>
+                        <div class="recent-comment"><span><a href="#">ViralsTime</a> Onsite Solar To Power</span></div>
+                    </div> -->
+                    <div class="articles__inner">
+                        <h4 class="articles__title">Taqlar</h4>
+                        <div class="tags-block">
+                            @foreach (Tag tag in Model.Tags)
+                            {
+                                <span class="tag">
+                                    @tag.Name<span class="close">
+                                        <svg class="icon">
+                                            <use xlink:href="#close"></use>
+                                        </svg>
+                                    </span>
+                                </span>
+                            }
+                           
+                        </div>
+                    </div>
+                    <!-- <div class="articles__inner">
+                        <h4 class="articles__title">Ən son proyekt</h4>
+                        <div class="cases-item"><a class="img-holder" href="cases-details.html">
+                            <div class="overlay"></div><img class="img-bg" src="~/img/gallery-1.jpg" alt="img"/></a>
+                            <div class="description">
+                                <h5 class="title">Solar Factory in NY</h5><a class="with--line" href="cases-details.html">Daha çox</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
