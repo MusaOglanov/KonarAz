@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "orupPobsvG4yDGKCsZehhLIqbjm6HuiePvM/uNrynDw=",
+  "Hash": "Yj3cf1uAymDQ5ghI9O9zmuHkqhRAd4MqNgH3APLgHqg=",
   "Source": "Konar.az",
   "BasePath": "_content/Konar.az",
   "Mode": "Default",
@@ -6779,6 +6779,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\team-bg-6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\Test.mp4",
+      "SourceId": "Konar.az",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\",
+      "BasePath": "_content/Konar.az",
+      "RelativePath": "img/Test.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Test.mp4"
     },
     {
       "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\typography.jpg",

@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\img\\LogoKonar.webp"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\Test.mp4",
+      "PackagePath": "staticwebassets\\img\\Test.mp4"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\about-bg.jpg",
       "PackagePath": "staticwebassets\\img\\about-bg.jpg"
     },
