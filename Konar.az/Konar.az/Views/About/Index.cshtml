@@ -1,10 +1,10 @@
-﻿@model About
+﻿@model AboutVM
 <main class="main">
 	<!-- promo primary start-->
 	<section class="promo-primary">
 		<div class="overlay"></div>
 		<picture>
-			<source srcset="~/img/@Model.Image" media="(min-width: 992px)" /><img class="img-bg" src="~/img/aboutkonar.jpg" alt="img" />
+			<source srcset="~/img/@Model.About.Image" media="(min-width: 992px)" /><img class="img-bg" src="~/img/aboutkonar.jpg" alt="img" />
 		</picture>
 		<div class="container">
 			<div class="row">
@@ -27,14 +27,14 @@
 				<div class="col-xl-4 col-lg-5">
 					<div class="title-block">
 						<span>About</span>
-						<h2 class="title">@Model.WelcomeText</h2>
+						<h2 class="title">@Model.About.WelcomeText</h2>
 
 					</div>
 				</div>
 				<div class="col-xl-7 offset-xl-1 col-lg-6 offset-lg-1">
 					<div class="description">
-						<h3 class="title"> @Model.Title</h3>
-						<p>@Model.SubTitle</p>
+						<h3 class="title"> @Model.About.Title</h3>
+						<p>@Model.About.SubTitle</p>
 						
 					</div>
 				</div>
@@ -127,17 +127,17 @@
 				<div class="row no-gutters counter-holder offset-margin">
 					<div class="col-sm-4">
 						<!-- statistics item start-->
-						<div class="statistics-item"><span class="counter">50</span><span class="description">ŞİRKƏT</span></div>
+						<div class="statistics-item"><span class="counter">@Model.Statistics.Company</span><span class="description">ŞİRKƏT</span></div>
 						<!-- statistics item end-->
 					</div>
 					<div class="col-sm-4">
 						<!-- statistics item start-->
-						<div class="statistics-item"><span class="counter">700</span><span class="description">İŞÇİ</span></div>
+						<div class="statistics-item"><span class="counter">@Model.Statistics.Employee</span><span class="description">İŞÇİ</span></div>
 						<!-- statistics item end-->
 					</div>
 					<div class="col-sm-4">
 						<!-- statistics item start-->
-						<div class="statistics-item"><span class="counter">200</span><span class="description">SAHİBKAR</span></div>
+						<div class="statistics-item"><span class="counter">@Model.Statistics.Entrepreneur</span><span class="description">SAHİBKAR</span></div>
 						<!-- statistics item end-->
 					</div>
 				</div>

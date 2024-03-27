@@ -16,6 +16,7 @@ namespace Konar.az.DAL
 		public DbSet<Tag> Tags { get; set; }
 		public DbSet<BlogTag> BlogTags { get; set; }
 		public DbSet<About> Abouts { get; set; }
+		public DbSet<Statistics> Statistics { get; set; }
 	}
 	
 }
