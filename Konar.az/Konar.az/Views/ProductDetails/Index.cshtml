@@ -1,5 +1,7 @@
 ﻿@model List<Product>
 	<main class="main">
+		@foreach (Product item in Model)
+             	{
 				<section class="promo-primary promo-primary--shop">
 					<div class="overlay"></div>
 					<picture>
@@ -10,15 +12,14 @@
 							<div class="col-12">
 								<div class="align-container">
 									<div class="align-item">
-										<h1 class="title">Duomax-Peg5GT.2</h1>
+										<h1 class="title">@item.Name</h1>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-				@foreach (Product item in Model)
-             	{
+				
 		<!-- shop product start-->
 		<section class="section shop-product no-padding-bottom">
 			<div class="container">
