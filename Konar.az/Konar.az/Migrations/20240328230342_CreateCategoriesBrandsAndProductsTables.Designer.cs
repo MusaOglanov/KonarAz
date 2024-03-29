@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Konar.az.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240328195712_CreateCategoriesBrandsAndProductsTables")]
+    [Migration("20240328230342_CreateCategoriesBrandsAndProductsTables")]
     partial class CreateCategoriesBrandsAndProductsTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -258,22 +258,10 @@ namespace Konar.az.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FeautersName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FeautersValue")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("HasStock")
                         .HasColumnType("bit");
 
                     b.Property<string>("Material")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -286,6 +274,32 @@ namespace Konar.az.Migrations
                         .IsUnique();
 
                     b.ToTable("ProductDetails");
+                });
+
+            modelBuilder.Entity("Konar.az.Models.ProductFeature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductFeatures");
                 });
 
             modelBuilder.Entity("Konar.az.Models.ProductImage", b =>
@@ -463,6 +477,17 @@ namespace Konar.az.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Konar.az.Models.ProductFeature", b =>
+                {
+                    b.HasOne("Konar.az.Models.Product", "Product")
+                        .WithMany("ProductFeatures")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Konar.az.Models.ProductImage", b =>
                 {
                     b.HasOne("Konar.az.Models.Product", "Product")
@@ -519,6 +544,8 @@ namespace Konar.az.Migrations
 
                     b.Navigation("ProductDetail")
                         .IsRequired();
+
+                    b.Navigation("ProductFeatures");
 
                     b.Navigation("ProductImages");
 

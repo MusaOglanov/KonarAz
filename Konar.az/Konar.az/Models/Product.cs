@@ -10,6 +10,7 @@ namespace Konar.az.Models
         public List<ProductCategory> ProductCategories { get; set; }
         public List<ProductTag> ProductTags { get; set; }
         public List<ProductImage> ProductImages { get; set; }
+        public List<ProductFeature>? ProductFeatures { get; set; }
         public ProductDetail ProductDetail { get; set; }
         public Brand Brand { get; set; }
         public int BrandId { get; set; }

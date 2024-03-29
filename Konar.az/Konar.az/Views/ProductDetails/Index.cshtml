@@ -1,0 +1,534 @@
+﻿@model List<Product>
+	<main class="main">
+				<section class="promo-primary promo-primary--shop">
+					<div class="overlay"></div>
+					<picture>
+						<source srcset="~/img/catalog-bg.jpg" media="(min-width: 992px)"/><img class="img-bg" src="~/img/catalog-bg.jpg" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="align-container">
+									<div class="align-item">
+										<h1 class="title">Duomax-Peg5GT.2</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				@foreach (Product item in Model)
+             	{
+		<!-- shop product start-->
+		<section class="section shop-product no-padding-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-md-8 offset-md-2 offset-lg-0">
+						<div class="sliders-holder">
+							<!-- product slider start-->
+							<div class="product-slider">
+								@foreach (ProductImage prodImage in item.ProductImages)
+								{
+									<div class="slider-item">
+										<img src="img/@prodImage.Image" alt="img" />
+										<svg class="icon">
+											<use xlink:href="#search"></use>
+										</svg>
+									</div>
+								}
+							</div>
+							<!-- product slider end-->
+							<!-- nav slider start-->
+							<div class="nav-slider">
+								@foreach (ProductImage prodImage in item.ProductImages)
+								{
+									<div class="slider-item"><img src="img/@prodImage.Image" alt="img" /></div>
+								}
+							</div>
+							<!-- nav slider end-->
+						</div>
+					</div>
+
+					<div class="col-lg-5 col-md-10 offset-md-1 offset-lg-0">
+						<!-- product about start-->
+						<div class="product-about">
+							<!-- status block start-->
+							<div class="status-block">
+								@if (item.ProductDetail.HasStock)
+								{
+									<p>Status: <span class="current-status">Stokda</span></p>
+
+								}
+								else
+								{
+									<p>Status: <span class="text-danger">Stokda yoxdur</span></p>
+								}
+							</div>
+							<!-- status block end-->
+							<!-- details start-->
+							<div class="details">
+								<h4 class="name">@item.Name</h4>
+								<span class="price">$ @item.Price</span>
+								<div class="details-inner">
+									<p>Matreal: <span class="value">@item.ProductDetail.Material</span></p>
+									<p>Brend: <span class="value">@item.Brand.Name</span></p>
+								</div>
+							</div>
+							<!-- details end-->
+							<!-- tags block start-->
+							<div class="tags-block">
+								<span class="name">Tags:</span>
+								@foreach (ProductTag prodTag in item.ProductTags)
+								{
+									<span class="tag">
+										@prodTag.Tag.Name
+										<span class="close">
+											<svg class="icon">
+												<use xlink:href="#close"></use>
+											</svg>
+										</span>
+									</span>
+								}
+							</div>
+							<!-- tags block end-->
+							<!-- rating block start-->
+							<!-- <div class="rating-block"><span class="name">Rating:</span> -->
+							<!-- rating stars start-->
+							<!-- <div class="stars">
+								<div class="rating-group">
+									<input class="rating__input rating__input--none" id="rating1-0" checked="" name="rating1" value="0" type="radio"/>
+									<label class="rating__label" aria-label="0 stars" for="rating1-0">&nbsp;</label>
+									<label class="rating__label rating__label--half" aria-label="0.5 stars" for="rating1-05"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+									<input class="rating__input" id="rating1-05" name="rating1" value="0.5" type="radio"/>
+									<label class="rating__label" aria-label="1 star" for="rating1-10"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" id="rating1-10" name="rating1" value="1" type="radio"/>
+									<label class="rating__label rating__label--half" aria-label="1.5 stars" for="rating1-15"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+									<input class="rating__input" id="rating1-15" name="rating1" value="1.5" type="radio"/>
+									<label class="rating__label" aria-label="2 stars" for="rating1-20"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" id="rating1-20" name="rating1" value="2" type="radio"/>
+									<label class="rating__label rating__label--half" aria-label="2.5 stars" for="rating1-25"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+									<input class="rating__input" id="rating1-25" name="rating1" value="2.5" type="radio"/>
+									<label class="rating__label" aria-label="3 stars" for="rating1-30"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" id="rating1-30" name="rating1" value="3" type="radio"/>
+									<label class="rating__label rating__label--half" aria-label="3.5 stars" for="rating1-35"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+									<input class="rating__input" id="rating1-35" name="rating1" value="3.5" type="radio" checked=""/>
+									<label class="rating__label" aria-label="4 stars" for="rating1-40"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" id="rating1-40" name="rating1" value="4" type="radio"/>
+									<label class="rating__label rating__label--half" aria-label="4.5 stars" for="rating1-45"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+									<input class="rating__input" id="rating1-45" name="rating1" value="4.5" type="radio"/>
+									<label class="rating__label" aria-label="5 stars" for="rating1-50"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" id="rating1-50" name="rating1" value="5" type="radio"/>
+								</div>
+							</div> -->
+							<!-- rating stars end<span class="reviews-count">[ 4 Reviews ]</span>
+							</div>-->
+							<!-- rating block end-->
+							<!-- add block start-->
+							<!-- <div class="add-block">
+								<div class="count-block"><span class="minus">—</span>
+									<input class="items-count" type="number" value="3"/><span class="plus">+</span>
+								</div><a class="button button--filled" href="#" data-hover="Qiymət Təklifi Al"><span>Qiymət Təklifi Al</span></a>
+							</div> -->
+							<!-- add block end-->
+						</div>
+						<!-- product about end-->
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-md-10 offset-md-1 offset-lg-0">
+						<!-- product info tabs start-->
+						<div class="product-info-tabs">
+							<div class="tabs-holder">
+								<!-- tabs header start-->
+								<div class="tabs-header"><span class="tabs-header__title">Açıqlama</span><span class="tabs-header__title">Özəlliklər</span></div>
+								<!-- tabs header end-->
+								<!-- tabs content start-->
+								<div class="tabs-content">
+									<!-- tabs content item start-->
+									<div class="tabs-content__item">
+										<p>@item.ProductDetail.Description</p>
+									</div>
+									<!-- tabs content item end-->
+									<!-- tabs content item start-->
+									<div class="tabs-content__item">
+										<!-- table start-->
+										<div class="primary-table specifications-table">
+											<div class="thead">
+												<div class="table-row">
+													<div class="table-cell">
+														<h5 class="title">Özəllik</h5>
+													</div>
+													<div class="table-cell">
+														<h5 class="title">Dəyəri</h5>
+													</div>
+												</div>
+											</div>
+											<div class="tbody">
+												@foreach (ProductFeature feature in item.ProductFeatures)
+												{
+													<div class="table-row">
+														<div class="table-cell">@feature.Name</div>
+														<div class="table-cell">@feature.Value</div>
+													</div>
+												}
+												
+											</div>
+										</div>
+										<!-- table end-->
+										<!-- table start-->
+										<!-- table end-->
+									</div>
+									<!-- tabs content item end
+									tabs content item start-->
+									<div class="tabs-content__item">
+										<!-- comments block start
+										<div class="comments-block">
+											<!-- content start
+											<div class="content">
+												<p class="comments-total">3 reviews <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+												<!-- comment item start
+												<div class="comment-item">
+													<div class="img-holder"><img class="img-bg" src="~/img/author-2.jpg" alt="author"/></div>
+													<div class="text-holder">
+														<div class="comment-heading">
+															<div class="wrapper"><span class="name">Kristina Landie</span><span class="date">12.04.2018</span></div>
+															<svg class="icon">
+																<use xlink:href="#previous"></use>
+															</svg>
+														</div>
+														<div class="comment-content">
+															<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out.</p>
+														</div>
+														<div class="comment-rating">
+															<!-- rating stars start
+															<div class="stars">
+																<div class="rating-group">
+																	<input class="rating__input rating__input--none" id="rating3-0" name="rating3" value="0" type="radio"/>
+																	<label class="rating__label" aria-label="0 stars" for="rating3-0"></label>
+																	<label class="rating__label rating__label--half" aria-label="0.5 stars" for="rating3-05"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating3-05" name="rating3" value="0.5" type="radio"/>
+																	<label class="rating__label" aria-label="1 star" for="rating3-10"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating3-10" name="rating3" value="1" type="radio"/>
+																	<label class="rating__label rating__label--half" aria-label="1.5 stars" for="rating3-15"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating3-15" name="rating3" value="1.5" type="radio"/>
+																	<label class="rating__label" aria-label="2 stars" for="rating3-20"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating3-20" name="rating3" value="2" type="radio"/>
+																	<label class="rating__label rating__label--half" aria-label="2.5 stars" for="rating3-25"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating3-25" name="rating3" value="2.5" type="radio"/>
+																	<label class="rating__label" aria-label="3 stars" for="rating3-30"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating3-30" name="rating3" value="3" type="radio"/>
+																	<label class="rating__label rating__label--half" aria-label="3.5 stars" for="rating3-35"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating3-35" name="rating3" value="3.5" type="radio" checked="checked"/>
+																	<label class="rating__label" aria-label="4 stars" for="rating3-40"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating3-40" name="rating3" value="4" type="radio"/>
+																	<label class="rating__label rating__label--half" aria-label="4.5 stars" for="rating3-45"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating3-45" name="rating3" value="4.5" type="radio"/>
+																	<label class="rating__label" aria-label="5 stars" for="rating3-50"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating3-50" name="rating3" value="5" type="radio"/>
+																</div>
+															</div>
+															<!-- rating stars end
+														</div>
+													</div>
+												</div>
+												<!-- comment item end
+												<!-- comment item start
+												<div class="comment-item">
+													<div class="img-holder"><img class="img-bg" src="~/img/author-3.jpg" alt="author"/></div>
+													<div class="text-holder">
+														<div class="comment-heading">
+															<div class="wrapper"><span class="name">Mike Lambert</span><span class="date">12.04.2018</span></div>
+															<svg class="icon">
+																<use xlink:href="#previous"></use>
+															</svg>
+														</div>
+														<div class="comment-content">
+															<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out.</p>
+														</div>
+														<div class="comment-rating">
+															<!-- rating stars start
+															<div class="stars">
+																<div class="rating-group">
+																	<input class="rating__input rating__input--none" id="rating4-0" checked="" name="rating4" value="0" type="radio"/>
+																	<label class="rating__label" aria-label="0 stars" for="rating4-0">&nbsp;</label>
+																	<label class="rating__label rating__label--half" aria-label="0.5 stars" for="rating4-05"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating4-05" name="rating4" value="0.5" type="radio"/>
+																	<label class="rating__label" aria-label="1 star" for="rating4-10"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating4-10" name="rating4" value="1" type="radio"/>
+																	<label class="rating__label rating__label--half" aria-label="1.5 stars" for="rating4-15"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating4-15" name="rating4" value="1.5" type="radio"/>
+																	<label class="rating__label" aria-label="2 stars" for="rating4-20"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating4-20" name="rating4" value="2" type="radio"/>
+																	<label class="rating__label rating__label--half" aria-label="2.5 stars" for="rating4-25"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating4-25" name="rating4" value="2.5" type="radio"/>
+																	<label class="rating__label" aria-label="3 stars" for="rating4-30"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating4-30" name="rating4" value="3" type="radio"/>
+																	<label class="rating__label rating__label--half" aria-label="3.5 stars" for="rating4-35"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating4-35" name="rating4" value="3.5" type="radio" checked="checked"/>
+																	<label class="rating__label" aria-label="4 stars" for="rating4-40"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating4-40" name="rating4" value="4" type="radio"/>
+																	<label class="rating__label rating__label--half" aria-label="4.5 stars" for="rating4-45"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																	<input class="rating__input" id="rating4-45" name="rating4" value="4.5" type="radio"/>
+																	<label class="rating__label" aria-label="5 stars" for="rating4-50"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																	<input class="rating__input" id="rating4-50" name="rating4" value="5" type="radio"/>
+																</div>
+															</div>
+															<!-- rating stars end
+														</div>
+													</div>
+													<div class="comment-item sub-comment">
+														<div class="img-holder"><img class="img-bg" src="~/img/author-4.jpg" alt="author"/></div>
+														<div class="text-holder">
+															<div class="comment-heading">
+																<div class="wrapper"><span class="name">Taylor Vien</span><span class="date">12.04.2018</span></div>
+																<svg class="icon">
+																	<use xlink:href="#previous"></use>
+																</svg>
+															</div>
+															<div class="comment-content">
+																<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought</p>
+															</div>
+															<div class="comment-rating">
+																<!-- rating stars start
+																<div class="stars">
+																	<div class="rating-group">
+																		<input class="rating__input rating__input--none" id="rating5-0" checked="" name="rating5" value="0" type="radio"/>
+																		<label class="rating__label" aria-label="0 stars" for="rating5-0">&nbsp;</label>
+																		<label class="rating__label rating__label--half" aria-label="0.5 stars" for="rating5-05"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating5-05" name="rating5" value="0.5" type="radio"/>
+																		<label class="rating__label" aria-label="1 star"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating5-10" name="rating5" value="1" type="radio"/>
+																		<label class="rating__label rating__label--half" aria-label="1.5 stars"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating5-15" name="rating5" value="1.5" type="radio"/>
+																		<label class="rating__label" aria-label="2 stars"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating5-20" name="rating5" value="2" type="radio"/>
+																		<label class="rating__label rating__label--half" aria-label="2.5 stars"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating5-25" name="rating5" value="2.5" type="radio" checked="checked"/>
+																		<label class="rating__label" aria-label="3 stars"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating5-30" name="rating5" value="3" type="radio"/>
+																		<label class="rating__label rating__label--half" aria-label="3.5 stars"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating5-35" name="rating5" value="3.5" type="radio"/>
+																		<label class="rating__label" aria-label="4 stars"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating5-40" name="rating5" value="4" type="radio"/>
+																		<label class="rating__label rating__label--half" aria-label="4.5 stars"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating5-45" name="rating5" value="4.5" type="radio"/>
+																		<label class="rating__label" aria-label="5 stars"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating5-50" name="rating5" value="5" type="radio"/>
+																	</div>
+																</div>
+																<!-- rating stars end
+															</div>
+														</div>
+													</div>
+												</div>
+												 comment item end
+											</div>-->
+									</div>
+									<!-- <div class="form-block">
+										<h4 class="title">Live <span>Comment</span></h4>
+										<!-- comment form start
+										<form class="form contact--form comment-form comment-form--with-rating" action="javascript:void(0);">
+											<div class="container">
+												<div class="row">
+													<div class="col-xl-6">
+														<label class="input-label">
+															<input class="form-field input input-name" id="input-name" type="text" name="name" required="required"/><span>Name</span>
+														</label>
+													</div>
+													<div class="col-xl-6">
+														<label class="input-label">
+															<input class="form-field input input-mail" id="input-mail" type="email" name="email" required="required"/><span>Email</span>
+														</label>
+													</div>
+													<div class="col-12">
+														<label class="textarea-label">
+															<textarea class="form-field textarea" id="textarea" name="comment"></textarea><span>Comment</span>
+														</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-12">
+														<div class="button-holder">
+															<button class="button button--transparent" type="submit" data-hover="Send"><span>Send</span></button>
+															<div class="rating-block">
+																<p>Your Rating:</p>
+																<!-- rating stars start
+																<div class="stars">
+																	<div class="rating-group">
+																		<input class="rating__input rating__input--none" id="rating6-0" name="rating6" value="0" type="radio"/>
+																		<label class="rating__label" aria-label="0 stars" for="rating6-0">&nbsp;</label>
+																		<label class="rating__label rating__label--half" aria-label="0.5 stars" for="rating6-05"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating6-05" name="rating6" value="0.5" type="radio"/>
+																		<label class="rating__label" aria-label="1 star" for="rating6-10"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating6-10" name="rating6" value="1" type="radio"/>
+																		<label class="rating__label rating__label--half" aria-label="1.5 stars" for="rating6-15"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating6-15" name="rating6" value="1.5" type="radio"/>
+																		<label class="rating__label" aria-label="2 stars" for="rating6-20"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating6-20" name="rating6" value="2" type="radio"/>
+																		<label class="rating__label rating__label--half" aria-label="2.5 stars" for="rating6-25"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating6-25" name="rating6" value="2.5" type="radio" checked=""/>
+																		<label class="rating__label" aria-label="3 stars" for="rating6-30"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating6-30" name="rating6" value="3" type="radio"/>
+																		<label class="rating__label rating__label--half" aria-label="3.5 stars" for="rating6-35"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating6-35" name="rating6" value="3.5" type="radio"/>
+																		<label class="rating__label" aria-label="4 stars" for="rating6-40"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating6-40" name="rating6" value="4" type="radio"/>
+																		<label class="rating__label rating__label--half" aria-label="4.5 stars" for="rating6-45"><i class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+																		<input class="rating__input" id="rating6-45" name="rating6" value="4.5" type="radio"/>
+																		<label class="rating__label" aria-label="5 stars" for="rating6-50"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+																		<input class="rating__input" id="rating6-50" name="rating6" value="5" type="radio"/>
+																	</div>
+																</div>
+																<!-- rating stars end--
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										<!-- comment form end--
+											comments block end
+									</div> -->
+
+								</div>
+								<!-- tabs content item end
+								</div>
+								<!-- tabs content end-->
+							</div>
+						</div>
+						<!-- product info tabs end-->
+					</div>
+					<div class="col-lg-5 col-md-10 offset-md-1 offset-lg-0">
+						<!-- downloads block start-->
+						<div class="downloads-block">
+							<a href="#" download="download">
+								<span class="icon-holder">
+									<svg class="icon">
+										<use xlink:href="#cloud"></use>
+									</svg>
+								</span><span>Duomax twin -Deg5C.07 Advanced User Manual. pdf</span>
+							</a><a href="#" download="download">
+								<span class="icon-holder">
+									<svg class="icon">
+										<use xlink:href="#cloud"></use>
+									</svg>
+								</span><span>Installation Guide. pdf</span>
+							</a><a href="#" download="download">
+								<span class="icon-holder">
+									<svg class="icon">
+										<use xlink:href="#cloud"></use>
+									</svg>
+								</span><span>DUOMAX Quick Guide. pdf</span>
+							</a>
+						</div>
+						<!-- downloads block end-->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- shop product end-->
+		<!-- products-style-3 start-->
+		<section class="section products--style-3">
+			<div class="container">
+				<div class="row align-items-center margin-bottom">
+					<div class="col-xl-6 col-lg-7">
+						<div class="heading primary-heading heading-with-button">
+							<div class="text-block">
+								<h3 class="title">Məhsullar</h3>
+								<h5 class="subtitle"><span>Təhlükəsiz</span> <span>əmək üçün</span></h5>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-5">
+						<div class="button-block">
+							<div class="products-slider-dots"></div><a class="button button--transparent d-none d-lg-inline-block" href="#" data-hover="Daha çox"><span>Daha çox</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slider-holder offset-top-10">
+				<div class="slider-wrapper">
+					<!-- products slider start-->
+					<div class="products-slider">
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-1.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 1250.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX twin-DEG5C.07(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-2.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 900.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX-PEG5.07</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-3.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 950.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX-PEG40.07</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-4.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 1150.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-2.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 1150.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-7.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 1150.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+					</div>
+					<!-- products slider end-->
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-12 text-center d-block d-lg-none margin-top"><a class="button button--transparent" href="#" data-hover="Discover"><span>Discover</span></a></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- products-style-3 end-->
+	}
+				
+			</main>

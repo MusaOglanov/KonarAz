@@ -24,6 +24,7 @@ namespace Konar.az.DAL
 		public DbSet<ProductTag> ProductTags { get; set; }
 		public DbSet<ProductCategory> ProductCategories { get; set; }
 		public DbSet<Category> Categories { get; set; }
+		public DbSet<ProductFeature> ProductFeatures { get; set; }
 	}
 	
 }
