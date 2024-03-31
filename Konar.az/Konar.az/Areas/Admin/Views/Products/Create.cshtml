@@ -1,0 +1,120 @@
+﻿@model Product
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Məhsul Yarat</h4>
+        <p class="card-description">
+            Basic form elements
+        </p>
+        <form class="forms-sample">
+            <div class="form-group">
+                <label asp-for="Photos">Şəkil</label>
+                <input accept="image/*" asp-for="Photos" class="form-control" />
+                <span class=" text-danger" asp-validation-for="Photos"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Məhsulun Adı</label>
+                <input asp-for="Name" type="text" class="form-control" />
+                <span class=" text-danger" asp-validation-for="Name"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDetail.Material">Məhsulun Materialı</label>
+                <input asp-for="ProductDetail.Material" type="text" class="form-control" />
+                <span class=" text-danger" asp-validation-for="ProductDetail.Material"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Price">Məhsulun Qiyməti</label>
+                <input asp-for="Price" class="form-control" />
+                <span class=" text-danger" asp-validation-for="Price"></span>
+
+            </div>
+            <div class="form-group" id="MainBox">
+                <label> Məhsulun aid olduğu kategoriya</label>
+                <select multiple class="form-control">
+                    @foreach (Category cat in ViewBag.Categories)
+                    {
+                        <option selected value="@cat.Id">@cat.Name</option>
+
+                    }
+
+                </select>
+            </div>
+
+
+
+            <div class="form-group">
+                <label> Məhsulun Brendi</label>
+                <select class="form-control" name="brandId">
+                    @foreach (Tag tag in ViewBag.Tags)
+                    {
+                        <option value="@tag.Id">@tag.Name</option>
+
+                    }
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label> Teqlər</label>
+                <select multiple class="form-control" name="tagsId">
+                    @foreach (Brand brand in ViewBag.Brands)
+                    {
+                        <option value="@brand.Id">@brand.Name</option>
+
+                    }
+
+                </select>
+            </div>
+            <div style="text-align:center">Məhsulun xüsusiyyətləri</div>
+            @for (int i = 0; i < 1; i++)
+            {
+                <div class="form-group row">
+
+                    <div class="col">
+                        <label asp-for="ProductFeatures[i].Name" class="control-label">Məhsulun xüsusiyyətinin adı</label>
+                        <input asp-for="ProductFeatures[i].Name" class="form-control" />
+                        <span asp-validation-for="ProductFeatures[i].Name" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="ProductFeatures[i].Value" class="control-label">Məhsulun xüsusiyyətinin dəyəri</label>
+                        <input asp-for="ProductFeatures[i].Value" class="form-control" />
+                        <span asp-validation-for="ProductFeatures[i].Value" class="text-danger"></span>
+                    </div>
+                </div>
+            }
+
+           @*  <div class="form-group row">
+                <div class="col">
+                    <label>Basic</label>
+                    <div id="the-basics">
+                        <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box padding-box rgb(255, 255, 255);"><input class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Nunito, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div class="tt-dataset tt-dataset-states"></div></div></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Bloodhound</label>
+                    <div id="bloodhound">
+                        <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box padding-box rgb(255, 255, 255);"><input class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Nunito, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div class="tt-dataset tt-dataset-states"></div></div></span>
+                    </div>
+                </div>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="ProductDetail.Description">Məhsul haqqında məlumat</label>
+                <textarea asp-for="ProductDetail.Description" class="form-control"></textarea>
+                <span class=" text-danger" asp-validation-for="ProductDetail.Description"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDetail.HasStock">Məhsul stokda var yoxsa yox?</label>
+                <input asp-for="ProductDetail.HasStock" />
+                <span class=" text-danger" asp-validation-for="ProductDetail.HasStock"></span>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+        </form>
+    </div>
+</div>
