@@ -6129,8 +6129,24 @@
       "PackagePath": "staticwebassets\\fonts\\font-awesome\\fontawesome-webfont.woff2"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\04d2d70b-0e7c-43ec-a8b3-56b38618646dbanner-10.jpg",
+      "PackagePath": "staticwebassets\\img\\04d2d70b-0e7c-43ec-a8b3-56b38618646dbanner-10.jpg"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\404-bg.jpg",
       "PackagePath": "staticwebassets\\img\\404-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\57abb25e-6d07-4466-83c1-ffae7150fa38banner-9.jpg",
+      "PackagePath": "staticwebassets\\img\\57abb25e-6d07-4466-83c1-ffae7150fa38banner-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\7703cef0-ca67-4034-ac6e-22c9400d1ff3banner-4.jpg",
+      "PackagePath": "staticwebassets\\img\\7703cef0-ca67-4034-ac6e-22c9400d1ff3banner-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\9563a7ac-0430-4f36-ac46-6ce6f355f494banner-10.jpg",
+      "PackagePath": "staticwebassets\\img\\9563a7ac-0430-4f36-ac46-6ce6f355f494banner-10.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\LogoKonar.webp",
@@ -6139,6 +6155,10 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\Test.mp4",
       "PackagePath": "staticwebassets\\img\\Test.mp4"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\a5c2cadf-8051-4d4a-b230-7f709489de38banner-10.jpg",
+      "PackagePath": "staticwebassets\\img\\a5c2cadf-8051-4d4a-b230-7f709489de38banner-10.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\about-bg.jpg",
@@ -6387,6 +6407,10 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\device-bg.png",
       "PackagePath": "staticwebassets\\img\\device-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\ed516dc1-27f3-4927-95bf-83bfabbd08babanner-9.jpg",
+      "PackagePath": "staticwebassets\\img\\ed516dc1-27f3-4927-95bf-83bfabbd08babanner-9.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\elements.jpg",

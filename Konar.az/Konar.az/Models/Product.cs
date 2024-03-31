@@ -15,7 +15,7 @@ namespace Konar.az.Models
         public Brand Brand { get; set; }
         public int BrandId { get; set; }
         [NotMapped]
-        public IFormFile Photos { get; set; }
+        public List<IFormFile> Photos { get; set; }
         public bool IsDeActive { get; set; }
 
 

@@ -17,6 +17,7 @@
                                 <th>Qiymət</th>
                                 <th>Kategoriya</th>
                                 <th>Brend</th>
+                                <th>Stok</th>
 
                                 <th>Status</th>
                                 <th style="text-align:right">Actions</th>
@@ -43,6 +44,18 @@
                                     </td>
                                     <td>
                                         @item.Brand.Name
+                                    </td>
+                                    <td>
+                                        @if (item.ProductDetail.HasStock)
+                                        {
+                                            <span class="text-success">Stokda var</span>
+
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger">Stokda yoxdur</span>
+
+                                        }
                                     </td>
                                     <td>
                                         @if (item.IsDeActive)

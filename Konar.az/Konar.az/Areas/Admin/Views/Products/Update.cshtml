@@ -1,0 +1,107 @@
+﻿@model Product
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Məhsul Yarat</h4>
+        <p class="card-description">
+            Basic form elements
+        </p>
+        <form method="post" class="forms-sample" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Photos">Şəkil</label>
+                <input accept="image/*" asp-for="Photos" class="form-control" />
+                <span class=" text-danger" asp-validation-for="Photos"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Məhsulun Adı</label>
+                <input asp-for="Name" type="text" class="form-control" />
+                <span class=" text-danger" asp-validation-for="Name"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDetail.Material">Məhsulun Materialı</label>
+                <input asp-for="ProductDetail.Material" type="text" class="form-control" />
+                <span class=" text-danger" asp-validation-for="ProductDetail.Material"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Price">Məhsulun Qiyməti</label>
+                <input asp-for="Price" class="form-control" />
+                <span class=" text-danger" asp-validation-for="Price"></span>
+
+            </div>
+            <div class="form-group" id="MainBox">
+                <label> Məhsulun aid olduğu kategoriya</label>
+                <select multiple class="form-control" name="catId">
+                    @foreach (Category cat in ViewBag.Categories)
+                    {
+                        <option selected value="@cat.Id">@cat.Name</option>
+
+                    }
+
+                </select>
+            </div>
+
+
+
+            <div class="form-group">
+                <label>Məhsulun Brendi</label>
+                <select class="form-control" name="brandId">
+                    @foreach (Brand brand in ViewBag.Brands)
+                    {
+                        <option value="@brand.Id">@brand.Name</option>
+
+                    }
+
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label> Məhsulun Teqləri</label>
+                <select multiple class="form-control" name="tagsId">
+                    @foreach (Tag tag in ViewBag.Tags)
+                    {
+                        <option value="@tag.Id">@tag.Name</option>
+
+                    }
+
+                </select>
+            </div>
+            <div style="text-align:center">Məhsulun xüsusiyyətləri</div>
+            @for (int i = 0; i < 1; i++)
+            {
+                <div class="form-group row">
+
+                    <div class="col">
+                        <label asp-for="ProductFeatures[i].Name" class="control-label">Məhsulun xüsusiyyətinin adı</label>
+                        <input asp-for="ProductFeatures[i].Name" class="form-control" />
+                        <span asp-validation-for="ProductFeatures[i].Name" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="ProductFeatures[i].Value" class="control-label">Məhsulun xüsusiyyətinin dəyəri</label>
+                        <input asp-for="ProductFeatures[i].Value" class="form-control" />
+                        <span asp-validation-for="ProductFeatures[i].Value" class="text-danger"></span>
+                    </div>
+                </div>
+            }
+        
+            <div class="form-group">
+                <label asp-for="ProductDetail.Description">Məhsul haqqında məlumat</label>
+                <textarea asp-for="ProductDetail.Description" class="form-control"></textarea>
+                <span class=" text-danger" asp-validation-for="ProductDetail.Description"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDetail.HasStock">Məhsul stokda var yoxsa yox?</label>
+                <input asp-for="ProductDetail.HasStock" />
+                <span class=" text-danger" asp-validation-for="ProductDetail.HasStock"></span>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+        </form>
+    </div>
+</div>
