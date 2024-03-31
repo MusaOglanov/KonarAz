@@ -3,6 +3,7 @@ using Konar.az.Helpers;
 using Konar.az.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing;
 
 namespace Konar.az.Areas.Admin.Controllers
 {
@@ -50,7 +51,7 @@ namespace Konar.az.Areas.Admin.Controllers
         #region Post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(int? id,int[] tagsId,int brandId,int[] catId,Product product)
+        public async Task<IActionResult> Create(int? id, int[] tagsId, int brandId, int[] catId, Product product)
         {
             ViewBag.Brands = await _db.Brands.ToListAsync();
             ViewBag.Tags = await _db.Tags.ToListAsync();
@@ -136,17 +137,16 @@ namespace Konar.az.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Product? dbProduct=await _db.Products
+            Product? dbProduct = await _db.Products
                  .Include(x => x.ProductDetail)
                  .Include(x => x.ProductFeatures)
                  .Include(x => x.ProductImages)
-                 .Include(x => x.Brand)
                  .Include(x => x.ProductCategories)
                  .ThenInclude(x => x.Category)
                  .Include(x => x.ProductTags)
                  .ThenInclude(x => x.Tag)
-                .FirstOrDefaultAsync();
-            if(dbProduct == null)
+                .FirstOrDefaultAsync(x => x.Id == id);
+            if (dbProduct == null)
             {
                 return BadRequest();
             }
@@ -156,8 +156,127 @@ namespace Konar.az.Areas.Admin.Controllers
             return View(dbProduct);
         }
         #endregion
+
+        #region Post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id, int[] tagsId, int brandId, int[] catId, Product product)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Product? dbProduct = await _db.Products
+                 .Include(x => x.ProductDetail)
+                 .Include(x => x.Brand)
+                 .Include(x => x.ProductFeatures)
+                 .Include(x => x.ProductImages)
+                 .Include(x => x.ProductCategories)
+                 .ThenInclude(x => x.Category)
+                 .Include(x => x.ProductTags)
+                 .ThenInclude(x => x.Tag)
+                .FirstOrDefaultAsync(x => x.Id == id);
+            if (dbProduct == null)
+            {
+                return BadRequest();
+            }
+            ViewBag.Brands = await _db.Brands.ToListAsync();
+            ViewBag.Tags = await _db.Tags.ToListAsync();
+            ViewBag.Categories = await _db.Categories.ToListAsync();
+
+            #region İmages Download
+            List<ProductImage> productImages = new List<ProductImage>();
+
+            if (product != null)
+            {
+                if (product.Photos != null && product.Photos.Count > 0)
+                {
+                    foreach (IFormFile photo in product.Photos)
+                    {
+                        if (!photo.IsImage())
+                        {
+                            ModelState.AddModelError("Photo", "Zəhmət olmasa şəkil faylı seçin");
+                            return View();
+                        }
+                        if (photo.IsOlder2MB())
+                        {
+                            ModelState.AddModelError("Photo", "Maksimum 2MB ölçüsündə fayl seçin");
+                            return View();
+                        }
+                        string folder = Path.Combine(_env.WebRootPath, "img");
+
+                        ProductImage productImage = new ProductImage
+                        {
+                            Image = await photo.SaveImageAsync(folder),
+                        };
+                        productImages.Add(productImage);
+                    }
+
+                    dbProduct.ProductImages.AddRange(productImages);
+                }
+            }
+
+            #endregion
+
+            dbProduct.BrandId = brandId;
+
+
+            #region Category
+            List<ProductCategory> productCategories = new List<ProductCategory>();
+
+            foreach (int categoryId in catId)
+            {
+                ProductCategory productCategory = new ProductCategory
+                {
+                    CategoryId = categoryId,
+
+                };
+                productCategories.Add(productCategory);
+            }
+            dbProduct.ProductCategories = productCategories;
+
+            #endregion
+
+            #region Tags
+            List<ProductTag> productTags = new List<ProductTag>();
+
+            foreach (int tagId in tagsId)
+            {
+                ProductTag productTag = new ProductTag
+                {
+                    TagId = tagId,
+
+                };
+                productTags.Add(productTag);
+            }
+            dbProduct.ProductTags = productTags;
+            #endregion
+            dbProduct.Name = product.Name;
+            dbProduct.Price = product.Price;
+            dbProduct.ProductDetail.Description = product.ProductDetail.Description;
+            dbProduct.ProductDetail.Material = product.ProductDetail.Material;
+            dbProduct.ProductDetail.HasStock = product.ProductDetail.HasStock;
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+
+        }
+
+
         #endregion
 
+        #endregion
+
+        public async Task<IActionResult> DeleteImage(int proImageId)
+        {
+            ProductImage? productImage = await _db.ProductImages
+                .FirstOrDefaultAsync(x => x.Id == proImageId);
+            string folder = Path.Combine(_env.WebRootPath, "img");
+            Extensions.DeleteFile(folder, productImage.Image);
+            _db.ProductImages.Remove(productImage);
+            _db.SaveChanges();
+            return Ok();
+        }
 
     }
 }

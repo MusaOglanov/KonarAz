@@ -6,12 +6,38 @@
         <p class="card-description">
             Basic form elements
         </p>
+        <div class="d-flex flex-wrap">
+            @if (Model.ProductImages.Count != 1)
+            {
+                @foreach (ProductImage productImage in Model.ProductImages)
+                {
+                    <div class="d-flex flex-column m-2" id="myPhotos">
+                        <img style="width:100px;height:100px;" src="~/img/@productImage.Image" />
+                        <a class="btn btn-danger del-images">Delete</a>
+                        <input type="hidden" value="@productImage.Id" />
+                    </div>
+
+                }
+
+            }
+            else
+            {
+                @foreach (ProductImage productImage in Model.ProductImages)
+                {
+                    <div class="d-flex flex-column m-2" id="myPhotos">
+                        <img style="width:100px;height:100px;" src="~/img/@productImage.Image" />
+
+                    </div>
+
+                }
+            }
+
+        </div>
         <form method="post" class="forms-sample" enctype="multipart/form-data">
             <div class="form-group">
-                <label asp-for="Photos">Şəkil</label>
-                <input accept="image/*" asp-for="Photos" class="form-control" />
-                <span class=" text-danger" asp-validation-for="Photos"></span>
-
+                <label class="form-label" asp-for="Photos"></label>
+                <input asp-for="Photos" class="form-control">
+                <span class="text-danger" asp-validation-for="Photos"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Name">Məhsulun Adı</label>
@@ -36,7 +62,16 @@
                 <select multiple class="form-control" name="catId">
                     @foreach (Category cat in ViewBag.Categories)
                     {
-                        <option selected value="@cat.Id">@cat.Name</option>
+                        if (Model.ProductCategories.Any(x => x.CategoryId == cat.Id))
+                        {
+                            <option selected value="@cat.Id">@cat.Name</option>
+
+                        }
+                        else
+                        {
+                            <option value="@cat.Id">@cat.Name</option>
+
+                        }
 
                     }
 
@@ -50,8 +85,16 @@
                 <select class="form-control" name="brandId">
                     @foreach (Brand brand in ViewBag.Brands)
                     {
-                        <option value="@brand.Id">@brand.Name</option>
+                        if (Model.BrandId == brand.Id)
+                        {
+                            <option selected value="@brand.Id">@brand.Name</option>
 
+                        }
+                        else
+                        {
+                            <option value="@brand.Id">@brand.Name</option>
+
+                        }
                     }
 
                 </select>
@@ -60,13 +103,20 @@
 
             <div class="form-group">
                 <label> Məhsulun Teqləri</label>
-                <select multiple class="form-control" name="tagsId">
+                <select multiple class="form-control" name="tagsId[]">
                     @foreach (Tag tag in ViewBag.Tags)
                     {
-                        <option value="@tag.Id">@tag.Name</option>
+                        if (Model.ProductTags.Any(x => x.TagId == tag.Id))
+                        {
+                            <option selected value="@tag.Id">@tag.Name</option>
 
+                        }
+                        else
+                        {
+                            <option value="@tag.Id">@tag.Name</option>
+
+                        }
                     }
-
                 </select>
             </div>
             <div style="text-align:center">Məhsulun xüsusiyyətləri</div>
@@ -105,3 +155,25 @@
         </form>
     </div>
 </div>
+@section Scripts{
+    <script>
+        $(document).on("click", ".del-images", function () {
+            let clickedBtn = $(this);
+            $.ajax({
+                url: "/Admin/Products/DeleteImage/",
+                type: "get",
+                data: {
+                    "proImageId": clickedBtn.next().val()
+                },
+                success: function (res) {
+                    clickedBtn.parent().remove();
+
+                    if ($(".del-images").length == 1) {
+                        $(".del-images").remove();
+                    }
+                }
+            });
+
+        });
+    </script>
+}
