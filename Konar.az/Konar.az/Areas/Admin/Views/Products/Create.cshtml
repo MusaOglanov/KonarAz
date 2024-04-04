@@ -60,10 +60,10 @@
 
             <div class="form-group">
                 <label> Məhsulun Teqləri</label>
-                <select multiple class="form-control" name="tagsId">
+                <select multiple class="form-control" name="tagsId[]">
                     @foreach (Tag tag in ViewBag.Tags)
                     {
-                        <option value="@tag.Id">@tag.Name</option>
+                        <option selected value="@tag.Id">@tag.Name</option>
 
                     }
 

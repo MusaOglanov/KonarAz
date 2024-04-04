@@ -14,7 +14,7 @@ namespace Konar.az.Models
         public bool IsDeActive { get; set; }
         public BlogCategory BlogCategory { get; set; }
         public int BlogCategoryId { get; set; }
-        public List<BlogTag>? BlogTags { get; set; }
+        public List<BlogTag> BlogTags { get; set; }
 
     }
 }

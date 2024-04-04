@@ -1,0 +1,71 @@
+﻿@model Blog
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">MəHaqqımzda Yarat</h4>
+        @*   <p class="card-description">
+        Basic form elements
+        </p> *@
+        <form method="post" class="forms-sample" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="form-label" asp-for="Photo">Şəkil</label>
+                <input accept="image/*" asp-for="Photo" class="form-control" />
+                <span class="text-danger" asp-validation-for="Photo"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Title">Başlıq</label>
+                <input asp-for="Title" type="text" class="form-control" />
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group" id="MainBox">
+                <label> Blogun aid olduğu kategoriya</label>
+                <select class="form-control" name="catId">
+                    @foreach (BlogCategory cat in ViewBag.BlogCategories)
+                    {
+                        if (Model.BlogCategoryId == cat.Id)
+                        {
+                            <option selected value="@cat.Id">@cat.Name</option>
+
+                        }
+                        else
+                        {
+                            <option value="@cat.Id">@cat.Name</option>
+
+                        }
+
+                    }
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label> Məhsulun Teqləri</label>
+                <select multiple class="form-control" name="tagsId[]">
+
+                    @foreach (Tag tag in ViewBag.Tags)
+                    {
+                        if (Model.BlogTags.Any(x => x.TagId == tag.Id))
+                        {
+                            <option selected value="@tag.Id">@tag.Name</option>
+
+                        }
+                        else
+                        {
+                            <option value="@tag.Id">@tag.Name</option>
+
+                        }
+                    }
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubTitle">Mətn</label>
+                <textarea asp-for="SubTitle" class="form-control"></textarea>
+                <span class="text-danger" asp-validation-for="SubTitle"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+        </form>
+    </div>
+</div>
