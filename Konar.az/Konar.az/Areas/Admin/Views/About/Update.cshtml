@@ -1,0 +1,52 @@
+﻿@model About
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Məhsul Yarat</h4>
+        <p class="card-description">
+            Basic form elements
+        </p>
+        <div class="d-flex">
+            <div class="image-preview mr-3">
+                <img id="image-preview" src="~/img/@Model.Image" width="150" height="100" alt="Preview">
+            </div>
+            <div class="video-preview">
+                <video width="100" height="100" controls>
+                    <source src="~/img/@Model.Video" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <form method="post" class="forms-sample" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="form-label" asp-for="Photo">Şəkil</label>
+                <input accept="image/*" asp-for="Photo" class="form-control" />
+                <span class="text-danger" asp-validation-for="Photo"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mp4">Video</label>
+                <input accept="video/*" asp-for="Mp4" class="form-control" style="max-width: 320px;" />
+                <span class="text-danger" asp-validation-for="Mp4"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title">Başlıq</label>
+                <input asp-for="Title" type="text" class="form-control" />
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WelcomeText">Qarşılama mətni</label>
+                <input asp-for="WelcomeText" type="text" class="form-control" />
+                <span class="text-danger" asp-validation-for="WelcomeText"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubTitle">Mətn</label>
+                <textarea asp-for="SubTitle" class="form-control"></textarea>
+                <span class="text-danger" asp-validation-for="SubTitle"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+        </form>
+    </div>
+</div>

@@ -10,7 +10,11 @@ namespace Konar.az.Helpers
         public static bool IsImage(this IFormFile file)
         {
             return file.ContentType.Contains("image/");
-        } 
+        }
+        public static bool IsVideo(this IFormFile file)
+        {
+            return file.ContentType.Contains("video/");
+        }
         public static bool IsOlder2MB(this IFormFile file)
         {
             return file.Length / 1024>2048;
@@ -20,6 +24,17 @@ namespace Konar.az.Helpers
             string filename = Guid.NewGuid().ToString()+file.FileName;
             string path=Path.Combine(folder,filename);
             using (FileStream fileStream= new FileStream(path,FileMode.Create))
+            {
+                await file.CopyToAsync(fileStream);
+            }
+
+            return filename;
+        }
+        public static async Task<string> SaveVideoAsync(this IFormFile file, string folder)
+        {
+            string filename = Guid.NewGuid().ToString() + file.FileName;
+            string path = Path.Combine(folder, filename);
+            using (FileStream fileStream = new FileStream(path, FileMode.Create))
             {
                 await file.CopyToAsync(fileStream);
             }

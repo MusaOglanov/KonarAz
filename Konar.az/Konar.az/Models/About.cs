@@ -11,7 +11,9 @@ namespace Konar.az.Models
         public string Video { get; set; }
         public string Image { get; set; }
         [NotMapped]
-        public IFormFile Media { get; set; }
+        public IFormFile? Photo { get; set; }
+        [NotMapped]
+        public IFormFile? Mp4 { get; set; }
         public bool IsDeActive { get; set; }
     }
 }
