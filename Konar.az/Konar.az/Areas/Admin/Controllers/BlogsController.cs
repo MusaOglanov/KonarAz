@@ -2,6 +2,7 @@
 using Konar.az.Helpers;
 using Konar.az.Models;
 using Konar.az.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ using static NuGet.Packaging.PackagingConstants;
 namespace Konar.az.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+	[Authorize(Roles = "Admin")]
+
 	public class BlogsController : Controller
     {
         private readonly AppDbContext _db;

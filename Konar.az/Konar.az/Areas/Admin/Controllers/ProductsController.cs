@@ -1,6 +1,7 @@
 ﻿using Konar.az.DAL;
 using Konar.az.Helpers;
 using Konar.az.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing;
@@ -8,7 +9,9 @@ using System.Drawing;
 namespace Konar.az.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ProductsController : Controller
+	[Authorize(Roles = "Admin")]
+
+	public class ProductsController : Controller
     {
         private readonly AppDbContext _db;
         private readonly IWebHostEnvironment _env;

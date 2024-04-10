@@ -54,7 +54,8 @@
 							<li class="menu-item"><a asp-controller="Products" asp-action="Index"><span>MAĞAZA</span> </a></li>
 						
 							<li class="menu-item"><a asp-controller="Blogs" asp-action="Index"><span>FAQ</span></a></li>
-							<li class="menu-item"><a href="account.html"><span>AKKAUNT</span></a></li>
+							<li class="menu-item"><a asp-controller="Account" asp-action="Login"><span>AKKAUNT</span></a></li>
+
 							<li class="menu-item"><a href="contacts.html"><span>ƏLAQƏ</span></a></li>
 							<!-- sub-menu end-->
 							<!-- main menu end-->
@@ -123,7 +124,7 @@
 										<li class="menu-item"><a asp-controller="Blogs" asp-action="Index"><span>BLOQ</span></a></li>
 										<li class="menu-item"><a asp-controller="Products" asp-action="Index"><span>MAĞAZA</span> </a></li>
 										<li class="menu-item"><a asp-controller="Faqs" asp-action="Index"><span>FAQ</span></a></li>
-										<li class="menu-item"><a href="account.html"><span>AKKAUNT</span></a></li>
+											<li class="menu-item"><a asp-controller="Account" asp-action="Login"><span>AKKAUNT</span></a></li>
 										<li class="menu-item"><a href="contacts.html"><span>ƏLAQƏ</span></a></li>
 									</ul>
 								</nav>
@@ -145,16 +146,48 @@
 								</div>
 								<!-- lang block end-->
 								<!-- user block start-->
+								@if (!User.Identity.IsAuthenticated)
+								{
+									
 								<div class="cart-trigger">
-									<a href="shopping-cart.html">
+									<a asp-controller="Account" asp-action="Register">
 										<div class="cart-block">
 											<svg class="icon">
 												<use xlink:href="#user"></use>
 											</svg>
 										</div>
 									</a>
-
 								</div>
+								}
+								else
+								{
+									@if (User.IsInRole("Admin"))
+									{
+								 <div class="cart-trigger">
+									<a  asp-area="Admin" asp-controller="Dashboard" asp-action="index" >
+										<div class="cart-block">
+											<svg class="icon">
+												<use xlink:href="#user"></use>
+											</svg>
+										</div>
+									</a>
+								</div>
+								    }
+
+									else
+									{
+									<div class="cart-trigger">
+										<div class="cart-block">
+											<svg class="icon">
+												<use xlink:href="#user"></use>
+											</svg>
+										</div>
+									</div>
+									}
+
+
+								}
+						
 								<!-- user block end-->
 								<!-- menu-trigger start-->
 								<div class="hamburger">

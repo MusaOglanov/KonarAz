@@ -1,0 +1,113 @@
+﻿@model RegisterVM
+<main class="main">
+	<section class="promo-primary promo-primary--shop">
+		<div class="overlay"></div>
+		<picture>
+			<source srcset="img/catalog-bg.jpg" media="(min-width: 992px)" /><img class="img-bg" src="img/catalog-bg.jpg" alt="img" />
+		</picture>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="align-container">
+						<div class="align-item">
+							<h1 class="title">Akkaunt</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section account-elements">
+		<div class="container">
+			<div class="row offset-margin">
+				
+				<div class="col-xl-4 col-lg-6 col-md-8 offset-md-2 offset-lg-0">
+					<!-- sign-in start-->
+					<form class="form--primary account--form" method="post">
+						<div class="row">
+							<div class="col-12">
+								<h4 class="form-title">Qeydiyyatdan Keç</h4>
+								<div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+							</div>
+							<div class="col-12">
+								<label class="input-label">
+									<input  class="form-field input input-name" asp-for="Name" /><span>Ad</span>
+								</label>
+								<span style ="margin-bottom:10px" asp-validation-for="Name"></span>
+							</div>
+							<div class="col-12">
+								<label class="input-label">
+									<input class="form-field input input-name" asp-for="Surname" /><span>Soyad</span>
+								</label>
+								<span asp-validation-for="Surname"></span>
+							</div>
+							<div class="col-12">
+								<label class="input-label">
+									<input class="form-field input input-email" asp-for="Email" /><span>Email</span>
+								</label>
+								<span asp-validation-for="Email"></span>
+							</div>
+							<div class="col-12">
+								<label class="input-label">
+									<input class="form-field input input-name" asp-for="Username" /><span>İstifadəçi adı</span>
+								</label>
+								<span asp-validation-for="Username"></span>
+							</div>
+							<div class="col-12">
+								<label class="input-label">
+									<input class="form-field input input-password" asp-for="Password" /><span>Şifrə</span>
+									<div class="password-trigger" toggle="#password-field_2">
+										<svg class="icon">
+											<use xlink:href="#eye"></use>
+										</svg>
+									</div>
+								</label>
+								<span asp-validation-for="Password"></span>
+
+							</div>
+							<div class="col-12">
+								<label class="input-label">
+									<input class="form-field input input-password" asp-for="CheckPassword" /><span>Şifrəni təstiqlə</span>
+									<div class="password-trigger" toggle="#password-field_3">
+										<svg class="icon">
+											<use xlink:href="#eye"></use>
+										</svg>
+									</div>
+								</label>
+								<span asp-validation-for="CheckPassword"></span>
+
+							</div>
+							<div class="col-12 d-flex justify-content-between">
+								<label>
+									<input asp-for="IsRemember" />
+									<label for="remember">Məni xatırla</label>
+								</label>
+							</div>
+							<div class="col-12 d-flex justify-content-between">
+								<label>
+									<input asp-for="Agreement" />
+									<label for="agreement">İstifadəçi razılaşmasını qəbul edirəm</label>
+								</label>
+							</div>
+							
+							<div class="col-12">
+								<div class="button-holder">
+									<button class="button button--transparent" type="submit" data-hover="Qeydiyyatdan keç"><span>Qeydiyyatdan keç</span></button>
+								</div>
+							</div>
+							<div class="col-12 text-center"><span> Akkauntun varsa<a asp-controller="Account" asp-action="Login">DAXİL OL</a></span></div>
+						</div>
+					</form>
+					<!-- sign-in end-->
+				</div>
+			
+			</div>
+		</div>
+	</section>
+
+</main>
+
+@section Scripts{
+	<partial name="_ValidationScriptsPartial" />
+}

@@ -1,9 +1,10 @@
 ﻿using Konar.az.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Konar.az.DAL
 {
-	public class AppDbContext: DbContext
+	public class AppDbContext: IdentityDbContext<AppUser>
 	{
         public AppDbContext(DbContextOptions<AppDbContext> option):base(option)
         {
