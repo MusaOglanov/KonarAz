@@ -247,6 +247,35 @@ namespace Konar.az.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Konar.az.Models.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeactive")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PositionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PositionId");
+
+                    b.ToTable("Employee");
+                });
+
             modelBuilder.Entity("Konar.az.Models.Faq", b =>
                 {
                     b.Property<int>("Id")
@@ -267,6 +296,23 @@ namespace Konar.az.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Faqs");
+                });
+
+            modelBuilder.Entity("Konar.az.Models.Position", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Positions");
                 });
 
             modelBuilder.Entity("Konar.az.Models.Product", b =>
@@ -644,6 +690,17 @@ namespace Konar.az.Migrations
                     b.Navigation("Tag");
                 });
 
+            modelBuilder.Entity("Konar.az.Models.Employee", b =>
+                {
+                    b.HasOne("Konar.az.Models.Position", "Position")
+                        .WithMany("Employee")
+                        .HasForeignKey("PositionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Position");
+                });
+
             modelBuilder.Entity("Konar.az.Models.Product", b =>
                 {
                     b.HasOne("Konar.az.Models.Brand", "Brand")
@@ -795,6 +852,11 @@ namespace Konar.az.Migrations
             modelBuilder.Entity("Konar.az.Models.Category", b =>
                 {
                     b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("Konar.az.Models.Position", b =>
+                {
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("Konar.az.Models.Product", b =>

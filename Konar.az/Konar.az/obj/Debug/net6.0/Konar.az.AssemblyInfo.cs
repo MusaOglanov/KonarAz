@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Konar.az")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c437634bfcc082f40c50afe88756f1152872ffa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+567db18ac4fd1294663650c67eb5369f7b6c006f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Konar.az")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Konar.az")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,39 @@
+﻿@model Employee
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">İşçi Yarat</h4>
+        @*   <p class="card-description">
+        Basic form elements
+        </p> *@
+        <form method="post" class="forms-sample" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="form-label" asp-for="Photo">Şəkil</label>
+                <input accept="image/*" asp-for="Photo" class="form-control" />
+                <span class="text-danger" asp-validation-for="Photo"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FullName">Başlıq</label>
+                <input asp-for="FullName" type="text" class="form-control" />
+                <span class="text-danger" asp-validation-for="FullName"></span>
+            </div>
+            <div class="form-group">
+                <label> Select Position</label>
+                <select class="form-control" name="posId">
+                    @foreach (Position pos in ViewBag.Positions)
+                    {
+                        <option value="@pos.Id">@pos.Name</option>
+
+                    }
+
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

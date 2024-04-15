@@ -6129,6 +6129,10 @@
       "PackagePath": "staticwebassets\\fonts\\font-awesome\\fontawesome-webfont.woff2"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\0109c693-75d0-44bd-b721-4ba61fe35f2eAirlineTicket.jpg",
+      "PackagePath": "staticwebassets\\img\\0109c693-75d0-44bd-b721-4ba61fe35f2eAirlineTicket.jpg"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\04d2d70b-0e7c-43ec-a8b3-56b38618646dbanner-10.jpg",
       "PackagePath": "staticwebassets\\img\\04d2d70b-0e7c-43ec-a8b3-56b38618646dbanner-10.jpg"
     },
@@ -6149,10 +6153,6 @@
       "PackagePath": "staticwebassets\\img\\244d073c-74de-4496-8b2c-efb622cc8bafbmw..jpg"
     },
     {
-      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\24b2e19a-bc3c-45a0-a7f1-e3af25380093binary.png",
-      "PackagePath": "staticwebassets\\img\\24b2e19a-bc3c-45a0-a7f1-e3af25380093binary.png"
-    },
-    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\2656a0fb-edb8-4fea-8a8b-2e0d7de0bceeproduct-3.jpg",
       "PackagePath": "staticwebassets\\img\\2656a0fb-edb8-4fea-8a8b-2e0d7de0bceeproduct-3.jpg"
     },
@@ -6167,6 +6167,10 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\3c9da6b2-639f-4a37-be6b-5c513486721dproduct-11.jpg",
       "PackagePath": "staticwebassets\\img\\3c9da6b2-639f-4a37-be6b-5c513486721dproduct-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\3dfe6b61-1ef5-446e-839c-662c6299f081AirlineTicket.jpg",
+      "PackagePath": "staticwebassets\\img\\3dfe6b61-1ef5-446e-839c-662c6299f081AirlineTicket.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\3e0b7491-bb22-4844-b5f2-90b565e8a355Internal Server Error - Google Chrome 1_14_2023 10_59_57 AM.png",
@@ -6479,6 +6483,14 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\contacts.jpg",
       "PackagePath": "staticwebassets\\img\\contacts.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\d15ca662-1d7c-41ea-aa36-21050e8bd734aa.jpg",
+      "PackagePath": "staticwebassets\\img\\d15ca662-1d7c-41ea-aa36-21050e8bd734aa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\d8e240b2-c82a-4eec-bbc6-96dd7fca7e52alien - Copy.jpg",
+      "PackagePath": "staticwebassets\\img\\d8e240b2-c82a-4eec-bbc6-96dd7fca7e52alien - Copy.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\dark-team-1.jpg",
