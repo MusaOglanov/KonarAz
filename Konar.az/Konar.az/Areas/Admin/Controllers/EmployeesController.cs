@@ -72,9 +72,60 @@ namespace Konar.az.Areas.Admin.Controllers
         }
 
 
-        public IActionResult Update()
+        public async Task<IActionResult> Update(int? id)
         {
-            return View();
+            ViewBag.Positions = await _db.Positions.ToListAsync();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Employee? dbEmployee=await _db.Employee
+                .Include(x=>x.Position)
+                .FirstOrDefaultAsync(x => x.Id == id);
+            if (dbEmployee == null)
+            {
+                return BadRequest();
+            }
+            return View(dbEmployee);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(Employee employee,int posId, int? id)
+        {
+            ViewBag.Positions = await _db.Positions.ToListAsync();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Employee? dbEmployee=await _db.Employee
+                .Include(x=>x.Position)
+                .FirstOrDefaultAsync(x => x.Id == id);
+            if (dbEmployee == null)
+            {
+                return BadRequest();
+            }
+            if (employee.Photo != null)
+            {
+                if (!employee.Photo.IsImage())
+                {
+                    ModelState.AddModelError("Photo", "Zəhmət olmasa yalnız Şəkil faylı seçin");
+                    return View(dbEmployee);
+                }
+                if (employee.Photo.IsOlder2MB())
+                {
+                    ModelState.AddModelError("Photo", "Maksimum 2mb");
+                    return View(dbEmployee);
+                }
+                string folder = Path.Combine(_env.WebRootPath, "img");
+                Extensions.DeleteFile(folder, dbEmployee.Image);
+                dbEmployee.Image = await employee.Photo.SaveImageAsync(folder);
+            }
+
+            dbEmployee.PositionId = posId;
+            dbEmployee.FullName = employee.FullName;
+
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 	}
 }
