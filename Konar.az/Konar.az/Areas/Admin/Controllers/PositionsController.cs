@@ -32,7 +32,11 @@ namespace Konar.az.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Position position)
         {
-
+            if (position.Name == null)
+            {
+                ModelState.AddModelError("Name", "Boş ola bilməz");
+                return View();
+            }
             bool isExist=await _db.Positions.AnyAsync(x=>x.Name==position.Name);
             if (isExist)
             {
@@ -40,6 +44,48 @@ namespace Konar.az.Areas.Admin.Controllers
                 return View();
             }
             await _db.Positions.AddAsync(position);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            Position? dbPosition=await _db.Positions.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbPosition == null)
+            {
+                return BadRequest();
+            }
+            return View(dbPosition);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(Position position,int? id)
+        {
+            if (position.Name == null)
+            {
+                ModelState.AddModelError("Name", "Boş ola bilməz");
+                return View();
+            }
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Position? dbPosition = await _db.Positions.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbPosition == null)
+            {
+                return BadRequest();
+            }
+            bool isExist = await _db.Positions.AnyAsync(x => x.Name == position.Name);
+            if (isExist)
+            {
+                ModelState.AddModelError("Name", "Bu adda Vəzifə daha əvvəl istifadə olunub");
+                return View();
+            }
+            dbPosition.Name = position.Name;
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

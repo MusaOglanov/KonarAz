@@ -58,12 +58,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVzXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Faqs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmFxc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Faqs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmFxc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Faqs/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmFxc1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Positions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zaXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Positions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zaXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Positions/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zaXRpb25zXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Products/Create.cshtml]
