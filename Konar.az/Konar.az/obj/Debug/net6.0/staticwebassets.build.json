@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6L1W3y5DNZNsjLa/kWMADavUmS+xuNKAm+wscksnWas=",
+  "Hash": "DJbU5M9gcQYH7aPnCUMghFEzZmkYHefLAn33CR8Tukc=",
   "Source": "Konar.az",
   "BasePath": "_content/Konar.az",
   "Mode": "Default",
@@ -29294,6 +29294,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\277a4397-d447-4511-94d7-6e8efd42bc94product-16.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\2a40dac6-b864-480e-b4b4-aaa1b08eb679promo-3.jpg",
+      "SourceId": "Konar.az",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\",
+      "BasePath": "_content/Konar.az",
+      "RelativePath": "img/2a40dac6-b864-480e-b4b4-aaa1b08eb679promo-3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\2a40dac6-b864-480e-b4b4-aaa1b08eb679promo-3.jpg"
     },
     {
       "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\2c66e0fb-494f-4bbb-b6dc-6ac347c37b10AirlineTicket.jpg",
