@@ -1,0 +1,283 @@
+﻿@* @model Product
+<main class="main">
+	
+	
+		<section class="promo-primary promo-primary--shop">
+			<div class="overlay"></div>
+			<picture>
+				<source srcset="~/img/catalog-bg.jpg" media="(min-width: 992px)" /><img class="img-bg" src="~/img/catalog-bg.jpg" alt="img" />
+			</picture>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="align-container">
+							<div class="align-item">
+								<h1 class="title">@Model.Name</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- shop product start-->
+		<section class="section shop-product no-padding-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-md-8 offset-md-2 offset-lg-0">
+						<div class="sliders-holder">
+							<!-- product slider start-->
+							<div class="product-slider">
+							@foreach (ProductImage prodImage in Model.ProductImages)
+								{
+									<div class="slider-item">
+										<img src="~/img/@prodImage.Image" alt="img" />
+										<svg class="icon">
+											<use xlink:href="#search"></use>
+										</svg>
+									</div>
+								}
+							</div>
+							<!-- product slider end-->
+							<!-- nav slider start-->
+							<div class="nav-slider">
+							@foreach (ProductImage prodImage in Model.ProductImages)
+								{
+									<div class="slider-item"><img src="~/img/@prodImage.Image" alt="img" /></div>
+								}
+							</div>
+							<!-- nav slider end-->
+						</div>
+					</div>
+
+					<div class="col-lg-5 col-md-10 offset-md-1 offset-lg-0">
+						<!-- product about start-->
+						<div class="product-about">
+							<!-- status block start-->
+							<div class="status-block">
+							@if (Model.ProductDetail.HasStock)
+								{
+									<p>Status: <span class="current-status">Stokda</span></p>
+
+								}
+								else
+								{
+									<p>Status: <span class="text-danger">Stokda yoxdur</span></p>
+								}
+							</div>
+							<!-- status block end-->
+							<!-- details start-->
+							<div class="details">
+							<h4 class="name">@Model.Name</h4>
+							<span class="price">$ @Model.Price</span>
+								<div class="details-inner">
+								<p>Matreal: <span class="value">@Model.ProductDetail.Material</span></p>
+								<p>Brend: <span class="value">@Model.Brand.Name</span></p>
+								</div>
+							</div>
+							<!-- details end-->
+							<!-- tags block start-->
+							<div class="tags-block">
+								<span class="name">Tags:</span>
+							@foreach (ProductTag prodTag in Model.ProductTags)
+								{
+									<span class="tag">
+										@prodTag.Tag.Name
+										<span class="close">
+											<svg class="icon">
+												<use xlink:href="#close"></use>
+											</svg>
+										</span>
+									</span>
+								}
+							</div>
+						</div>
+						<!-- product about end-->
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-md-10 offset-md-1 offset-lg-0">
+						<!-- product info tabs start-->
+						<div class="product-info-tabs">
+							<div class="tabs-holder">
+								<!-- tabs header start-->
+								<div class="tabs-header"><span class="tabs-header__title">Açıqlama</span><span class="tabs-header__title">Özəlliklər</span></div>
+								<!-- tabs header end-->
+								<!-- tabs content start-->
+								<div class="tabs-content">
+									<!-- tabs content item start-->
+									<div class="tabs-content__item">
+									<p>@Model.ProductDetail.Description</p>
+									</div>
+									<!-- tabs content item end-->
+									<!-- tabs content item start-->
+									<div class="tabs-content__item">
+										<!-- table start-->
+										<div class="primary-table specifications-table">
+											<div class="thead">
+												<div class="table-row">
+													<div class="table-cell">
+														<h5 class="title">Özəllik</h5>
+													</div>
+													<div class="table-cell">
+														<h5 class="title">Dəyəri</h5>
+													</div>
+												</div>
+											</div>
+											<div class="tbody">
+											@foreach (ProductFeature feature in Model.ProductFeatures)
+												{
+													<div class="table-row">
+														<div class="table-cell">@feature.Name</div>
+														<div class="table-cell">@feature.Value</div>
+													</div>
+												}
+
+											</div>
+										</div>
+										<!-- table end-->
+										<!-- table start-->
+										<!-- table end-->
+									</div>
+								</div>
+								<!-- tabs content item end
+								</div>
+								<!-- tabs content end-->
+							</div>
+						</div>
+						<!-- product info tabs end-->
+					</div>
+					<div class="col-lg-5 col-md-10 offset-md-1 offset-lg-0">
+						<!-- downloads block start-->
+						<div class="downloads-block">
+							<a href="#" download="download">
+								<span class="icon-holder">
+									<svg class="icon">
+										<use xlink:href="#cloud"></use>
+									</svg>
+								</span><span>Duomax twin -Deg5C.07 Advanced User Manual. pdf</span>
+							</a><a href="#" download="download">
+								<span class="icon-holder">
+									<svg class="icon">
+										<use xlink:href="#cloud"></use>
+									</svg>
+								</span><span>Installation Guide. pdf</span>
+							</a><a href="#" download="download">
+								<span class="icon-holder">
+									<svg class="icon">
+										<use xlink:href="#cloud"></use>
+									</svg>
+								</span><span>DUOMAX Quick Guide. pdf</span>
+							</a>
+						</div>
+						<!-- downloads block end-->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- shop product end-->
+		<!-- products-style-3 start-->
+		<section class="section products--style-3">
+			<div class="container">
+				<div class="row align-items-center margin-bottom">
+					<div class="col-xl-6 col-lg-7">
+						<div class="heading primary-heading heading-with-button">
+							<div class="text-block">
+								<h3 class="title">Məhsullar</h3>
+								<h5 class="subtitle"><span>Təhlükəsiz</span> <span>əmək üçün</span></h5>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-5">
+						<div class="button-block">
+							<div class="products-slider-dots"></div><a class="button button--transparent d-none d-lg-inline-block" href="#" data-hover="Daha çox"><span>Daha çox</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slider-holder offset-top-10">
+				<div class="slider-wrapper">
+					<!-- products slider start-->
+					<div class="products-slider">
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-1.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 1250.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX twin-DEG5C.07(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-2.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 900.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX-PEG5.07</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-3.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 950.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX-PEG40.07</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-4.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 1150.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-2.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 1150.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+						<!-- item start-->
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" href="shop-product.html"><img src="~/img/product-7.png" alt="product" /></a>
+								<figcaption>
+									<span class="description price">$ 1150.00</span>
+									<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
+								</figcaption>
+							</figure>
+						</div>
+						<!-- item end-->
+					</div>
+					<!-- products slider end-->
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-12 text-center d-block d-lg-none margin-top"><a class="button button--transparent" href="#" data-hover="Discover"><span>Discover</span></a></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- products-style-3 end-->
+	}
+
+</main> *@

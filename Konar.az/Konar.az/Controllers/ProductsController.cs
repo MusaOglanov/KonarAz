@@ -14,17 +14,41 @@ namespace Konar.az.Controllers
         }
         public async Task<IActionResult> Index()
 		{
-			List<Product> product = await _db.Products
-				.Include(x=>x.ProductDetail)
-				.Include(x=>x.ProductImages)
-				.Include(x=>x.Brand)
+			List<Product> products = await _db.Products
+				.Include(x => x.ProductDetail)
+				.Include(x => x.ProductImages)
+				.Include(x => x.Brand)
 				.Include(x => x.ProductCategories)
 				.ThenInclude(x => x.Category)
-				.Include(x=>x.ProductTags)
-				.ThenInclude(x=>x.Tag)
-				.Include(x=>x.ProductDetail)
+				.Include(x => x.ProductTags)
+				.ThenInclude(x => x.Tag)
+				.Include(x => x.ProductDetail)
 				.ToListAsync();
+			return View(products);
+		}
+
+		public async Task<IActionResult> Detail(int? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+			Product? product = await _db.Products
+				.Include(x => x.ProductDetail)
+				.Include(x => x.ProductFeatures)
+				.Include(x => x.ProductImages)
+				.Include(x => x.Brand)
+				.Include(x => x.ProductCategories)
+				.ThenInclude(x => x.Category)
+				.Include(x => x.ProductTags)
+				.ThenInclude(x => x.Tag)
+				.FirstOrDefaultAsync(t => t.Id == id);
+			if (product == null)
+			{
+				return BadRequest();
+			}
 			return View(product);
 		}
+
 	}
 }

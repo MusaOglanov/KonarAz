@@ -43,7 +43,166 @@
 	
 		<!-- mobile-menu end-->
 		<!-- header start-->
-	@await Component.InvokeAsync("Header");
+<div class="page-wrapper">
+	<!-- mobile-menu start-->
+	<div class="mobile-nav">
+		<div class="nav-inner">
+			<div class="nav-item">
+				<!-- main menu start-->
+				<nav class="menu-holder">
+					<ul class="mobile-menu">
+						<li class="menu-item"><a asp-controller ="Home" asp-action="Index"><span>ANA SƏHİFƏ</span></a></li>
+						<li class="menu-item"><a asp-controller="About" asp-action="Index"><span>HAQQIMIZDA</span></a></li>
+						<li class="menu-item"><a asp-controller="Faqs" asp-action="Index"><span>BLOQ</span></a></li>
+						<li class="menu-item"><a asp-controller="Products" asp-action="Index"><span>MAĞAZA</span> </a></li>
+
+						<li class="menu-item"><a asp-controller="Blogs" asp-action="Index"><span>FAQ</span></a></li>
+						<li class="menu-item"><a asp-controller="Account" asp-action="Login"><span>AKKAUNT</span></a></li>
+
+						<li class="menu-item"><a href="contacts.html"><span>ƏLAQƏ</span></a></li>
+						<!-- sub-menu end-->
+						<!-- main menu end-->
+						<div class="button-holder">
+							<a class="button button--filled" href="#" data-hover="İndi Əlaqə Saxla"><span>İndi Əlaqə Saxla</span></a>
+						</div>
+					@* 	<div class="menu-contacts">
+							<p class="address">@Model?.Adress</p>
+							<p class="phone-number">Telefon: <a href="tel:+994517005010">@Model?.Number</a></p>
+							<p class="e-main">Email: <a href="mailto:sales@konar.az">@Model?.Email</a></p>
+						</div> *@
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+<header class="shop-header" id="header">
+	<div class="container-fluid">
+		<div class="row no-gutters">
+			<div class="col-12">
+				<!-- top line start-->
+				<div class="top-line">
+					<div class="contacts-block">
+				@* 		<div class="address-block">
+								<p>@Model?.Adress</p>
+						</div>
+							<div class="phones-block"><a href="tel:+994517005010">@Model?.Number</a><a href="tel:+31853255813">@Model?.Number</a></div>
+							<div class="mail-block"><a href="mailto:sales@konar.az">@Model?.Email</a></div> *@
+					</div>
+					<div class="socials-block">
+						<!-- socials start-->
+						<nav class="socials-holder">
+						@* 	<ul class="socials-primary">
+									<li><a href="@Model?.FacebookLink"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="@Model?.LinkedinLink"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									<li><a href="@Model?.WhatsappLink"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+									<li><a href="@Model?.InstagramLink"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul> *@
+						</nav>
+						<!-- socials end -->
+					</div>
+				</div>
+				<!-- top line end-->
+			</div>
+		</div>
+		<div class="row no-gutters">
+			<div class="col-12">
+				<div class="lower">
+					<!-- logo block start-->
+					@* <div class="logo-block">
+						<a class="logo" href="index.html">
+								<img src="~/img/svg/ @Model?.HeaderLogo" alt="">
+						</a>
+					</div> *@
+					<!-- logo block end-->
+					<!-- menu block start-->
+					<div class="menu-block">
+						<!-- main menu start-->
+						<nav class="menu-holder">
+							<ul class="main-menu">
+									<li class="menu-item"><a asp-controller="Home" asp-action="Index"><span>ANA SƏHİFƏ</span></a></li>
+								<li class="menu-item"><a asp-controller="About" asp-action="Index"><span>HAQQIMIZDA</span></a></li>
+								<li class="menu-item"><a asp-controller="Blogs" asp-action="Index"><span>BLOQ</span></a></li>
+								<li class="menu-item"><a asp-controller="Products" asp-action="Index"><span>MAĞAZA</span> </a></li>
+								<li class="menu-item"><a asp-controller="Faqs" asp-action="Index"><span>FAQ</span></a></li>
+								<li class="menu-item"><a asp-controller="Account" asp-action="Login"><span>AKKAUNT</span></a></li>
+								<li class="menu-item"><a href="contacts.html"><span>ƏLAQƏ</span></a></li>
+							</ul>
+						</nav>
+						<!-- main menu end-->
+					</div>
+					<!-- menu block end-->
+					<div class="block-right">
+						<!-- lang block start-->
+						<div class="lang-block">
+							<ul class="lang-select">
+								<li class="lang-item active">
+									<span>AZ</span>
+									<ul class="sub-list">
+										<li class="lang-item"><a href="#">English</a></li>
+										<li class="lang-item"><a href="#">Russian</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- lang block end-->
+						<!-- user block start-->
+						@if (!User.Identity.IsAuthenticated)
+						{
+
+							<div class="cart-trigger">
+								<a asp-controller="Account" asp-action="Register">
+									<div class="cart-block">
+										<svg class="icon">
+											<use xlink:href="#user"></use>
+										</svg>
+									</div>
+								</a>
+							</div>
+						}
+						else
+						{
+							@if (User.IsInRole("Admin"))
+							{
+								<div class="cart-trigger">
+									<a asp-area="Admin" asp-controller="Dashboard" asp-action="index">
+										<div class="cart-block">
+											<svg class="icon">
+												<use xlink:href="#user"></use>
+											</svg>
+										</div>
+									</a>
+								</div>
+							}
+
+							else
+							{
+								<div class="cart-trigger">
+									<div class="cart-block">
+										<svg class="icon">
+											<use xlink:href="#user"></use>
+										</svg>
+									</div>
+								</div>
+							}
+
+
+						}
+
+						<!-- user block end-->
+						<!-- menu-trigger start-->
+						<div class="hamburger">
+							<div class="hamburger-box">
+								<div class="hamburger-inner"></div>
+							</div>
+						</div>
+						<!-- menu-trigger end-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
 	<!-- header start-->
             @RenderBody()
       	<!-- footer start-->

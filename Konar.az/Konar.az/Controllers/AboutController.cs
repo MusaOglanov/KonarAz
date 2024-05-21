@@ -20,7 +20,7 @@ namespace Konar.az.Controllers
 
 			AboutVM aboutVM = new AboutVM
 			{
-				About = await _db.Abouts.FirstOrDefaultAsync(),
+				Abouts = await _db.Abouts.FirstOrDefaultAsync(),
 				Statistics = await _db.Statistics.FirstOrDefaultAsync(),
 
 			};

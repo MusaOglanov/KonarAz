@@ -1,21 +1,29 @@
-﻿using Konar.az.Models;
+﻿using Konar.az.DAL;
+using Konar.az.Models;
+using Konar.az.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Konar.az.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ILogger<HomeController> _logger;
+		private readonly AppDbContext _db;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(AppDbContext db)
 		{
-			_logger = logger;
+			_db = db;
 		}
-
-		public IActionResult Index()
+		public async Task<IActionResult> Index()
 		{
-			return View();
+			HomeVM homeVM = new HomeVM
+			{
+				Sliders = await _db.Sliders.ToListAsync(),
+				Blogs = await _db.Blogs.Include(x => x.BlogCategory).ToListAsync(),
+				Products = await _db.Products.ToListAsync(),
+			};
+			return View(homeVM);
 		}
 
 		public IActionResult Privacy()

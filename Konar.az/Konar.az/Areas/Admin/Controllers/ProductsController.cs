@@ -9,9 +9,9 @@ using System.Drawing;
 namespace Konar.az.Areas.Admin.Controllers
 {
     [Area("Admin")]
-	[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 
-	public class ProductsController : Controller
+    public class ProductsController : Controller
     {
         private readonly AppDbContext _db;
         private readonly IWebHostEnvironment _env;

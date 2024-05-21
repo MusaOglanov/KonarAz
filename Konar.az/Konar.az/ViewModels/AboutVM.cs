@@ -4,7 +4,7 @@ namespace Konar.az.ViewModels
 {
 	public class AboutVM
 	{
-        public About About { get; set; }
-        public Statistics Statistics { get; set; }
+        public About Abouts { get; set; }
+		public Statistics Statistics { get; set; }
 	}
 }

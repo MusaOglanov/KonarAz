@@ -59,15 +59,15 @@
 													<span >
 														<span class="item">@item.Brand.Name</span>
 													</span>
-												</div>
+												</div> 
 									
-											@* <div class="brand-item">
+											 <div class="brand-item">
 												<label>
 													<input class="checkbox checkbox--rounded" type="checkbox" name="brand" value="Solarius" /><span class="checkbox--rounded-mask"></span><span class="name">Solarius</span>
 												</label><span class="count">25</span>
-											</div> *@
+											</div> 
 											<!-- item end-->
-										</div>
+										 </div>
 									</fieldset>
 									<!-- brands end-->
 
@@ -111,21 +111,9 @@
 						<!-- tabs content start-->
 						<div class="tabs-content">
 							<!-- tabs content item start-->
-							<div class="tabs-content__item">
-								<div class="row offset-margin">
-									<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-										<!-- item start-->
-										<figure class="product-item product-item--primary">
-												<a class="img-holder" asp-controller="ProductDetails" asp-action="Index"><img src="~/img/product-1.png" alt="product" /></a>
-											<figcaption>
-												<span class="description price">$ 1250.00</span>
-												<h4 class="title"><a href="">DUOMAX twin-DEG5C.07(II)</a></h4>
-											</figcaption>
-										</figure>
-										<!-- item end-->
-									</div>
-								</div>
-								<div class="row">
+							<div class="tabs-content__item"> 
+								
+								 <div class="row">
 									<div class="col-12">
 										<div class="pagination-holder">
 											<!-- pagination start-->
@@ -141,8 +129,8 @@
 											<!-- pagination end-->
 										</div>
 									</div>
-								</div>
-							</div>
+								</div> 
+						 	</div>
 							<!-- tabs content item end-->
 							<!-- tabs content item start-->
 							<div class="tabs-content__item">
@@ -151,11 +139,11 @@
 									<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
 										<!-- item start-->
 										<figure class="product-item product-item--primary">
-												<a class="img-holder" asp-controller="ProductDetails" asp-action="Index">
+												<a class="img-holder" asp-action="Detail" asp-route-id="@item.Id">
 												<img src="~/img/@item.ProductImages.FirstOrDefault().Image" alt="product" /></a>
 											<figcaption>
 												<span class="price">$ @item.Price</span>
-												<h4 class="title"><a asp-controller="ProductDetails" asp-action="Index">@item.Name</a></h4>
+													<h4 class="title"><a asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h4>
 											</figcaption>
 										</figure>
 										<!-- item end-->

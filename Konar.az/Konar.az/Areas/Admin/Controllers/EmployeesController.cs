@@ -11,7 +11,7 @@ namespace Konar.az.Areas.Admin.Controllers
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
     public class EmployeesController : Controller
-	{
+    {
         private readonly AppDbContext _db;
         private readonly IWebHostEnvironment _env;
         public EmployeesController(AppDbContext db, IWebHostEnvironment env)
@@ -21,26 +21,26 @@ namespace Konar.az.Areas.Admin.Controllers
 
         }
         public async Task<IActionResult> Index()
-		{
+        {
             List<Employee> employees = await _db.Employee
-                .Include(x=>x.Position)
+                .Include(x => x.Position)
                 .ToListAsync();
-			return View(employees);
-		}
+            return View(employees);
+        }
 
         public async Task<IActionResult> Create()
         {
-            ViewBag.Positions =await _db.Positions.ToListAsync();
+            ViewBag.Positions = await _db.Positions.ToListAsync();
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Employee employee, int posId)
         {
-            ViewBag.Positions =await _db.Positions.ToListAsync();
+            ViewBag.Positions = await _db.Positions.ToListAsync();
 
             bool isExist = await _db.Employee.AnyAsync(x => x.FullName == employee.FullName);
-            
+
             if (isExist)
             {
                 ModelState.AddModelError("FullName", "Bu adda İşçi daha əvvəl qeyd olunub");
@@ -79,8 +79,8 @@ namespace Konar.az.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Employee? dbEmployee=await _db.Employee
-                .Include(x=>x.Position)
+            Employee? dbEmployee = await _db.Employee
+                .Include(x => x.Position)
                 .FirstOrDefaultAsync(x => x.Id == id);
             if (dbEmployee == null)
             {
@@ -90,15 +90,15 @@ namespace Konar.az.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(Employee employee,int posId, int? id)
+        public async Task<IActionResult> Update(Employee employee, int posId, int? id)
         {
             ViewBag.Positions = await _db.Positions.ToListAsync();
             if (id == null)
             {
                 return NotFound();
             }
-            Employee? dbEmployee=await _db.Employee
-                .Include(x=>x.Position)
+            Employee? dbEmployee = await _db.Employee
+                .Include(x => x.Position)
                 .FirstOrDefaultAsync(x => x.Id == id);
             if (dbEmployee == null)
             {
@@ -127,5 +127,5 @@ namespace Konar.az.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-	}
+    }
 }

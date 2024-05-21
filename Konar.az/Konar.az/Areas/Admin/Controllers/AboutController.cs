@@ -11,9 +11,9 @@ using System.Globalization;
 namespace Konar.az.Areas.Admin.Controllers
 {
     [Area("Admin")]
-	[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 
-	public class AboutController : Controller
+    public class AboutController : Controller
     {
         private readonly AppDbContext _db;
         private readonly IWebHostEnvironment _env;
@@ -63,7 +63,7 @@ namespace Konar.az.Areas.Admin.Controllers
             string imgFolder = Path.Combine(_env.WebRootPath, "img");
             about.Image = await about.Photo.SaveImageAsync(imgFolder);
 
-             if (about.Mp4 == null)
+            if (about.Mp4 == null)
             {
                 ModelState.AddModelError("Mp4", "Zəhmət olmasa şəkil seçin");
                 return View();
@@ -74,7 +74,7 @@ namespace Konar.az.Areas.Admin.Controllers
 
                 return View(about);
             }
-         
+
             string mpd4Folder = Path.Combine(_env.WebRootPath, "img");
             about.Video = await about.Mp4.SaveVideoAsync(mpd4Folder);
 

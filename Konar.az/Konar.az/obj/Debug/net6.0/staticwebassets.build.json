@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DJbU5M9gcQYH7aPnCUMghFEzZmkYHefLAn33CR8Tukc=",
+  "Hash": "O54/SfjeLZ4eDwpyomk3lTO8Man8OP5cFzXz1/cVBto=",
   "Source": "Konar.az",
   "BasePath": "_content/Konar.az",
   "Mode": "Default",
@@ -29201,6 +29201,25 @@
       "OriginalItemSpec": "wwwroot\\img\\091c6834-cbc6-4359-93ff-6a36059df4c2product-5.jpg"
     },
     {
+      "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\0f46aeb2-44d6-4ec4-b5a1-5e4b3d4b1defAirlineTicket.jpg",
+      "SourceId": "Konar.az",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\",
+      "BasePath": "_content/Konar.az",
+      "RelativePath": "img/0f46aeb2-44d6-4ec4-b5a1-5e4b3d4b1defAirlineTicket.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\0f46aeb2-44d6-4ec4-b5a1-5e4b3d4b1defAirlineTicket.jpg"
+    },
+    {
       "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\14d060c7-b27f-4be3-94e6-7dc70c78b8e7atombomb.png",
       "SourceId": "Konar.az",
       "SourceType": "Discovered",
@@ -29693,6 +29712,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\8109ea98-acd1-4c72-abac-5a91f72d075aTest.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\8696814d-13fb-4ca5-87b4-da02837ebf56attom bombb.jpg",
+      "SourceId": "Konar.az",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\",
+      "BasePath": "_content/Konar.az",
+      "RelativePath": "img/8696814d-13fb-4ca5-87b4-da02837ebf56attom bombb.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\8696814d-13fb-4ca5-87b4-da02837ebf56attom bombb.jpg"
     },
     {
       "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\913f282e-4854-49b9-abf9-c9659a38b9daAirlineTicket.jpg",
@@ -30738,6 +30776,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\brand-5.png"
+    },
+    {
+      "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\c3e96b8b-924a-4cdf-a183-f5c240c09d6cak-47-guns.jpg",
+      "SourceId": "Konar.az",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\",
+      "BasePath": "_content/Konar.az",
+      "RelativePath": "img/c3e96b8b-924a-4cdf-a183-f5c240c09d6cak-47-guns.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\c3e96b8b-924a-4cdf-a183-f5c240c09d6cak-47-guns.jpg"
     },
     {
       "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\c5853646-05f3-4f12-95fb-ee619b98e69eproduct-12.jpg",

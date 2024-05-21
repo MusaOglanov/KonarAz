@@ -1,9 +1,16 @@
-﻿<main class="main">
+﻿@model HomeVM
+@{
+	var lastBlog = Model.Blogs.LastOrDefault();
+	var lastThreeBlogsExceptLast = Model.Blogs.TakeLast(3).Reverse().Skip(1).ToList();
+}
+	
+
+<main class="main">
 	<!-- promo-style-3 start-->
 	<section class="promo--style-3">
 		<!-- promo-style-3-slider start-->
-		<div class="promo-slider promo--style-3-slider">
-			<!-- item start-->
+		<div class="promo-slider promo--style-3-slider"> 
+			 <!-- item start-->
 			<div class="slider-item item--style-3">
 				<div class="overlay"></div>
 				<div class="bg-holder jarallax">
@@ -24,10 +31,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> 
 			<!-- item end-->
 			<!-- item start-->
-			<div class="slider-item item--style-2">
+			 <div class="slider-item item--style-2">
 				<div class="overlay"></div>
 				<div class="bg-holder jarallax">
 					<picture>
@@ -53,38 +60,42 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> 
 			<!-- item end-->
 			<!-- item start-->
-			<div class="slider-item item--style-1">
-				<div class="overlay"></div>
-				<div class="bg-holder jarallax">
-					<picture>
-						<source srcset="~/img/promo-1.jpg" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/protectivesuit.webp" alt="img" />
-					</picture>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-6 col-lg-7 col-md-9">
-							<div class="align-container">
-								<div class="align-item">
-									<div class="promo-slider__wrapper-1">
-										<h2 class="title">Kimyəvi təsirlərdən  <span>qorunmaq istəyənlər üçün</span></h2>
-									</div>
-									<div class="promo-slider__wrapper-2">
-										<p class="subtitle">İş mühitində mövcud olan kimyəvi maddə və təsirlərdən, həmçinin mühitin toz və havasından qorunmaq istəyənlər üçün </p>
-									</div>
-									<div class="promo-slider__wrapper-3">
-										<a class="button button--filled" href="#" data-hover="Kolleksiyaya Bax"><span>Kolleksiyaya Bax</span></a>
+		@foreach (Slider slider in Model.Sliders)
+			{
+				<div class="slider-item item--style-1">
+					<div class="overlay"></div>
+					<div class="bg-holder jarallax">
+						<picture>
+							<source srcset="~/img/@slider.Image" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/@slider.Image" alt="img" />
+						</picture>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 col-md-9">
+								<div class="align-container">
+									<div class="align-item">
+										<div class="promo-slider__wrapper-1">
+											<h2 class="title">@slider.Title</h2>
+										</div>
+										<div class="promo-slider__wrapper-2">
+											<p class="subtitle">@slider.SubTitle </p>
+										</div>
+										<div class="promo-slider__wrapper-3">
+											<a class="button button--filled" href="#" data-hover="Kolleksiyaya Bax"><span>Kolleksiyaya Bax</span></a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			}
+
 			<!-- item end-->
-		</div>
+		 </div>
 		<!-- promo-slider end-->
 		<!-- slider nav start-->
 		<div class="slider-nav">
@@ -443,10 +454,10 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> 
 	<!-- testimonials-primary end-->
 	<!-- news-style-3 start-->
-	<section class="section news--style-3">
+ 	<section class="section news--style-3">
 		<div class="container">
 			<div class="row offset-margin">
 				<div class="col-md-6">
@@ -457,43 +468,49 @@
 								<h5 class="subtitle"><span>Bloq &amp;</span> <span>Xəbərlər</span></h5>
 								<p>Əmək təhlükəsizliyi və iş sferası ilə bağlı ən son xəbərlər, bloqlar və məlumatlandırıcı məqalələr burada.</p><a class="button button--transparent" href="#" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
 							</div>
-							<!-- item start-->
-							<div class="blog-item">
-								<a class="img-holder" href="blog-detail.html">
-									<div class="overlay"></div><img class="img-bg" src="~/img/blog-bg-1.jpg" alt="img" />
-								</a>
-								<div class="content-holder">
-									<div class="ribbon">
-										<p>. <span class="day">25</span>/<span class="month">12</span></p>
-									</div><span class="category">Windmill Technology</span>
-									<h4 class="title"><a href="blog-detail.html">Clean Energy without CO2</a></h4>
-									<div class="text-holder">
-										<p class="text">Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout</p>
+							@if (lastBlog != null)
+							{
+								<div class="blog-item">
+									<a class="img-holder" asp-controller="Blogs" asp-action="Index">
+										<div class="overlay"></div><img class="img-bg" src="~/img/@lastBlog.Image" alt="img" />
+									</a>
+									<div class="content-holder">
+										<div class="ribbon">
+											<p>. <span class="day">25</span>/<span class="month">12</span></p>
+										</div><span class="category">@lastBlog.BlogCategory.Name</span>
+										<h4 class="title"><a asp-controller="Blogs" asp-action="Index">@lastBlog.Title</a></h4>
+										<div class="text-holder">
+											<p class="text">@lastBlog.SubTitle</p>
+										</div>
 									</div>
 								</div>
-							</div>
+							}
 							<!-- item end-->
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
+		<div class="col-md-6">
 					<div class="row">
 						<div class="col-12">
 							<!-- item start-->
-							<div class="blog-item">
-								<a class="img-holder" href="blog-detail.html">
-									<div class="overlay"></div><img class="img-bg" src="~/img/blog-bg-2.jpg" alt="img" />
-								</a>
-								<div class="content-holder">
-									<div class="ribbon">
-										<p>. <span class="day">25</span>/<span class="month">12</span></p>
-									</div><span class="category">Solar Systems</span>
-									<h4 class="title"><a href="blog-detail.html">Renewable Energy for Business</a></h4>
-									<div class="text-holder">
-										<p class="text">Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster</p>
+						 	@foreach (var blog in lastThreeBlogsExceptLast)
+							{
+								<div class="blog-item">
+									<a class="img-holder" asp-controller="Blogs" asp-action="Index">
+										<div class="overlay"></div><img class="img-bg" src="~/img/@blog.Image" alt="img" />
+									</a>
+									<div class="content-holder">
+										<div class="ribbon">
+											<p>. <span class="day">25</span>/<span class="month">12</span></p>
+										</div><span class="category">@blog.BlogCategory.Name</span>
+										<h4 class="title"><a asp-controller="Blogs" asp-action="Index">@blog.Title</a></h4>
+										<div class="text-holder">
+											<p class="text">@blog.SubTitle</p>
+										</div>
 									</div>
 								</div>
-							</div>
+							} 
+						
 							<!-- item end-->
 							<!-- item start-->
 							<div class="blog-item">
@@ -509,17 +526,17 @@
 										<p class="text">Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster</p>
 									</div>
 								</div>
-							</div>
+							</div> 
 							<!-- item end-->
-						</div>
+					 	</div>
 					</div>
 				</div>
-			</div>
+ 		</div>
 		</div>
-	</section>
-	<!-- news-style-3 end-->
+	</section> 
+ <!-- news-style-3 end-->
 	<!-- instagram start-->
-	<section class="section instagram no-padding-top no-padding-bottom">
+ 	<section class="section instagram no-padding-top no-padding-bottom">
 		<div class="container">
 			<div class="row align-items-end margin-bottom">
 				<div class="col-10">
@@ -559,9 +576,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- instagram end-->
+ 	<!-- instagram end-->
 	<!-- map section start-->
-	<section class="section map-section">
+	 <section class="section map-section">
 		<!-- contact form start-->
 		<form class="form js-contact-form contact--form" autocomplete="off" action="#">
 			<div class="container">
@@ -600,6 +617,6 @@
 		</form>
 		<!-- contact form end-->
 		<div class="map" id="map" data-api-key="AIzaSyD5ES8GFHrarPhIVpDhFDea6fPtga0Wy4Y" data-longitude="-9.141827" data-latitude="38.737749" data-marker="~/img/placeholder.png"></div>
-	</section>
+	</section> 
 	<!-- map section end-->
-</main>
+	</main>

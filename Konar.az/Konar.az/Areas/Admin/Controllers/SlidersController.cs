@@ -12,7 +12,7 @@ namespace Konar.az.Areas.Admin.Controllers
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
     public class SlidersController : Controller
-	{
+    {
         private readonly AppDbContext _db;
         private readonly IWebHostEnvironment _env;
         public SlidersController(AppDbContext db, IWebHostEnvironment env)
@@ -22,10 +22,10 @@ namespace Konar.az.Areas.Admin.Controllers
 
         }
         public async Task<ActionResult> Index()
-		{
+        {
             List<Slider> sliders = await _db.Sliders.ToListAsync();
-			return View(sliders);
-		}
+            return View(sliders);
+        }
 
         public IActionResult Create()
         {
@@ -64,14 +64,14 @@ namespace Konar.az.Areas.Admin.Controllers
 
         public async Task<IActionResult> Update(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return BadRequest();
             }
             Slider dbSlider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
             if (dbSlider == null)
             {
-                return NotFound();  
+                return NotFound();
             }
 
             return View(dbSlider);
@@ -80,16 +80,16 @@ namespace Konar.az.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id,Slider slider)
+        public async Task<IActionResult> Update(int? id, Slider slider)
         {
-            if(id == null)
+            if (id == null)
             {
                 return BadRequest();
             }
             Slider dbSlider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
             if (dbSlider == null)
             {
-                return NotFound();  
+                return NotFound();
             }
 
             if (slider.Photo != null)
@@ -111,8 +111,8 @@ namespace Konar.az.Areas.Admin.Controllers
                 slider.Image = await slider.Photo.SaveImageAsync(folder);
             }
 
-            dbSlider.Title=slider.Title;
-            dbSlider.SubTitle=slider.SubTitle;
+            dbSlider.Title = slider.Title;
+            dbSlider.SubTitle = slider.SubTitle;
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

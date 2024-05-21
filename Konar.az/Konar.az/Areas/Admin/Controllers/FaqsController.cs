@@ -18,7 +18,7 @@ namespace Konar.az.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Faq> faqs =await _db.Faqs.ToListAsync();
+            List<Faq> faqs = await _db.Faqs.ToListAsync();
             return View(faqs);
         }
 
@@ -63,7 +63,7 @@ namespace Konar.az.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(Faq faq,int? id)
+        public async Task<IActionResult> Update(Faq faq, int? id)
         {
             if (faq.Answer == null)
             {
@@ -85,8 +85,8 @@ namespace Konar.az.Areas.Admin.Controllers
             {
                 return BadRequest();
             }
-            dbFaq.Answer=faq.Answer;
-            dbFaq.Question=faq.Question;
+            dbFaq.Answer = faq.Answer;
+            dbFaq.Question = faq.Question;
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

@@ -1,4 +1,4 @@
-﻿@model List<Faq>
+﻿ @model List<Faq>
 
 <div class="row">
     <div class="col-12">
@@ -22,27 +22,19 @@
                             {
                                 <tr>
                                     <td>
-                                      @*   @if (item.Answer.Length > 50)
-                                        {
-                                            @item.Answer.Substring(0, 50)
-                                            
-                                        }
-                                        else
-                                        { *@
                                             @item.Answer
                                            
-                                        @* } *@
                                     </td>
 
-                                    <td>
-                                        @*   @if (item.IsDeactive)
+                                    <td> 
+                                            @if (item.IsDeactive)
                                     {
                                     <span class="text-danger">Passiv</span>
                                     }
                                     else
                                     {
                                     <span class="text-success">Active</span>
-                                    } *@
+                                    } 
                                     </td>
                                     <td>
 
@@ -51,7 +43,7 @@
                                             <a asp-action="Detail" asp-route-id="@item.Id" class="btn rounded-pill btn-warning text-white" style="margin-right:5px">Ətraflı</a>
                                             <a asp-action="Update" asp-route-id="@item.Id" class="btn rounded-pill  btn-info text-white" style="margin-right:5px">Edit</a>
 
-                                            @*  @if (item.IsDeactive)
+                                              @if (item.IsDeactive)
                                         {
                                         <a asp-action="Activity" asp-route-id="@item.Id" class="btn rounded-pill  btn-success text-white" style="margin-right:5px;width:120px">Aktiv et</a>
                                         }
@@ -59,7 +51,7 @@
                                         {
                                         <a asp-action="Activity" asp-route-id="@item.Id" class="btn rounded-pill  btn-danger text-white" style="margin-right:5px;width:120px">De Aktiv</a>
 
-                                        } *@
+                                        } 
                                         </div>
                                     </td>
                                 </tr>

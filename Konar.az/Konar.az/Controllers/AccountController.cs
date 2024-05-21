@@ -119,11 +119,11 @@ namespace Konar.az.Controllers
 		#endregion
 
 		#region CreateRoles
-		//      public async Task CreateRoles()
-		//      {
-		//          if(!await _roleManager.RoleExistsAsync(Helper.Roles.Admin.ToString()))
-		//          {
-		//              await _roleManager.CreateAsync(new IdentityRole { Name = Helper.Roles.Admin.ToString() });
+		//public async Task CreateRoles()
+		//{
+		//	if (!await _roleManager.RoleExistsAsync(Helper.Roles.Admin.ToString()))
+		//	{
+		//		await _roleManager.CreateAsync(new IdentityRole { Name = Helper.Roles.Admin.ToString() });
 
 		//	}
 		//	if (!await _roleManager.RoleExistsAsync(Helper.Roles.Member.ToString()))

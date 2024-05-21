@@ -17,7 +17,7 @@ namespace Konar.az.Areas.Admin.Controllers
             _db = db;
 
         }
-     
+
         public async Task<IActionResult> Index()
         {
             List<Position> positions = await _db.Positions.ToListAsync();
@@ -37,7 +37,7 @@ namespace Konar.az.Areas.Admin.Controllers
                 ModelState.AddModelError("Name", "Boş ola bilməz");
                 return View();
             }
-            bool isExist=await _db.Positions.AnyAsync(x=>x.Name==position.Name);
+            bool isExist = await _db.Positions.AnyAsync(x => x.Name == position.Name);
             if (isExist)
             {
                 ModelState.AddModelError("Name", "Bu adda Vəzifə daha əvvəl istifadə olunub");
@@ -50,11 +50,11 @@ namespace Konar.az.Areas.Admin.Controllers
 
         public async Task<IActionResult> Update(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            Position? dbPosition=await _db.Positions.FirstOrDefaultAsync(x => x.Id == id);
+            Position? dbPosition = await _db.Positions.FirstOrDefaultAsync(x => x.Id == id);
             if (dbPosition == null)
             {
                 return BadRequest();
@@ -63,7 +63,7 @@ namespace Konar.az.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(Position position,int? id)
+        public async Task<IActionResult> Update(Position position, int? id)
         {
             if (position.Name == null)
             {
