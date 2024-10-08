@@ -1,0 +1,105 @@
+﻿@model Bio 
+<footer class="footer">
+	<div class="footer-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<!-- logo start-->
+					<div class="footer-logo">
+						<a class="logo" href="index.html">
+							<svg><img src="~/img/svg/konarlogo.svg" alt=""></svg>
+						</a>
+					</div>
+					<!-- logo end-->
+					<!-- footer contacts start-->
+					<div class="footer-contacts">
+						<p class="address">@Model?.Adres</p>
+						<p class="phone-number">Telefon: <a>@Model?.Tel</a></p>
+						<p class="e-main">Email: <a href="mailto:sales@konar.az">@Model?.Mail</a></p>
+					</div>
+					<!-- footer contacts end-->
+				</div>
+				<div class="col-lg-4 offset-lg-0 col-md-7 offset-md-1">
+					<h4 class="title">Şirkət və Qısayollar</h4>
+					<!-- footer nav start-->
+					<nav class="footer-nav">
+						<ul class="footer-menu">
+							<li><a href="index-3.html">Ana səhifə</a></li>
+							<li><a href="catalog-page.html">Mağaza</a></li>
+							<li><a href="about.html">Haqqımızda</a></li>
+							<li><a href="blog.html">Bloq</a></li>
+							<li><a href="account.html">Akkaunt</a></li>
+							<!--	<li><a href="#">Elements</a></li>
+							<li><a href="#">Case studios</a></li>-->
+							<li><a href="contacts.html">Əlaqə</a></li>
+						</ul>
+					</nav>
+					<!-- footer nav end-->
+				</div>
+				<div class="col-md-4 d-lg-none">
+					<!-- socials start-->
+					<nav class="socials-holder socials-tablet">
+						<ul class="socials-primary">
+							<li><a href="@Model?.Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="@Model?.Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a href="@Model?.Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+							<li><a href="@Model?.Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						</ul>
+					</nav>
+					<!-- socials end -->
+				</div>
+				<div class="col-lg-4 offset-lg-0 col-md-7 offset-md-1">
+					<!-- footer subscribe start-->
+					<div class="footer-subscribe">
+						<h4 class="title">Yeniliklərdən xəbərdar ol</h4>
+						<form class="subscribe-form" action="javascript:void(0);">
+							<input class="input-mail" type="email" placeholder="Email" />
+							<button class="button button--filled" type="submit" data-hover="Abunə ol"><span>Abunə ol</span></button>
+						</form>
+						<!-- socials start-->
+						<nav class="socials-holder socials-mobile d-md-none">
+							<ul class="socials-primary">
+								<li><a href="@Model?.Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="@Model?.Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								<li><a href="@Model?.Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+								<li><a href="@Model?.Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+						</nav>
+						<!-- socials end -->
+					</div>
+					<!-- footer subscribe end-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="footer-lower">
+					<div class="row align-items-baseline">
+						<div class="col-lg-4 col-md-6">
+							<p class="copyright">© 2024 Made by <a href="#">Digidot Ltd</a></p>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<!-- privacy start-->
+							<div class="privacy-block"><a href="#">Privacy Policy <span class="separator">|</span> </a><a href="#">Term and Condision</a></div>
+							<!-- privacy end-->
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<!-- socials start-->
+							<nav class="socials-holder socials-desktop">
+								<ul class="socials-primary">
+									<li><a href="@Model?.Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="@Model?.Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									<li><a href="@Model?.Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+									<li><a href="@Model?.Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								</ul>
+							</nav>
+							<!-- socials end -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
