@@ -25,5 +25,23 @@ namespace Konar.az.Controllers
 
             return View(blogVM);
         }
+        public async Task<IActionResult> Detail (int? id)
+        {
+            if(id== null)
+            {
+                return NotFound();
+
+            }
+            Blog? dbBlog=await _db.Blogs
+                .Include(x => x.BlogCategory)
+                .Include(x => x.BlogTags)
+                .FirstOrDefaultAsync(x => x.Id == id);
+			if (dbBlog == null)
+			{
+				return BadRequest();
+
+			}
+			return View(dbBlog);
+        }
     }
 }

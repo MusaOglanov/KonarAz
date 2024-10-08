@@ -1,4 +1,7 @@
 ﻿@model Product
+@{
+    int reqem = 1;
+}
 
 <div class="card">
     <div class="card-body">
@@ -70,7 +73,7 @@
                 </select>
             </div>
             <div style="text-align:center">Məhsulun xüsusiyyətləri</div>
-            @for (int i = 0; i < 1; i++)
+            @for (int i = 0; i < reqem; i++)
             {
                 <div class="form-group row">
 
@@ -86,6 +89,7 @@
                     </div>
                 </div>
             }
+            <button type="button" id="addFeatureBtn" class="btn btn-primary">+</button>
 
      
             <div class="form-group">
@@ -106,3 +110,15 @@
         </form>
     </div>
 </div>
+@section Scripts {
+    <script>
+        $(document).click(function () {
+            var number = @reqem;
+
+            $('#addFeatureBtn').click(function () {
+                number++;
+              
+            });
+        });
+    </script>
+}

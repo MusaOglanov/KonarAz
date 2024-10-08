@@ -1,0 +1,56 @@
+﻿@model Bio?
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-header">Bio</h5>
+@*                 <a asp-action="Create" class="btn rounded-pill btn-primary text-white " style="margin-right:20px">Yarat</a>
+ *@            </div>
+            <div class="card-body">
+                <div class="table-responsive text-nowrap">
+                    <table id="myTable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Adres</th>
+                                <th>Telefon</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th style="text-align:right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    @Model?.Adres
+                                </td>
+                                <td>
+                                    @Model?.Tel
+                                </td>
+                                <td>
+                                    @Model?.Mail
+                                </td>
+
+
+                                <td>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex justify-content-end">
+
+                                        <a asp-action="Detail" asp-route-id="@Model?.Id" class="btn rounded-pill btn-warning text-white" style="margin-right:5px">Ətraflı</a>
+                                        <a asp-action="Update" asp-route-id="@Model.Id" class="btn rounded-pill  btn-info text-white" style="margin-right:5px">Edit</a>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

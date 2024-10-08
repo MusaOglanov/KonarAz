@@ -34,33 +34,39 @@
 			</div> 
 			<!-- item end-->
 			<!-- item start-->
+				@foreach (Slider slider in Model.Sliders)
+				{
 			 <div class="slider-item item--style-2">
 				<div class="overlay"></div>
 				<div class="bg-holder jarallax">
 					<picture>
-						<source srcset="~/img/promo-2.jpg" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/emektehlukesizliyi.webp" alt="img" />
+							<source srcset="~/img/@slider.Image" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/@slider.Image" alt="img" />
 					</picture>
 				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-10 offset-xl-1">
-							<div class="align-container">
-								<div class="align-item">
-									<div class="promo-slider__wrapper-1">
-										<h2 class="title">İşçilərinin təhlükəsizliyini önəmsəyən <span> sahibkarlar üçün</span></h2>
-									</div>
-									<div class="promo-slider__wrapper-2">
-										<p class="subtitle">İşdə biz bir ailəyik prinsipini qoruyan və işçilərinin təhlükəsizliyini prioritet tutan sahibkarlar üçün olan təkliflərimiz təhlükəsizlik kolleksiyasında</p>
-									</div>
-									<div class="promo-slider__wrapper-3">
-										<a class="button button--filled" href="#" data-hover="Kolleksiyaya Bax"><span>Kolleksiyaya Bax</span></a>
+			
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-10 offset-xl-1">
+								<div class="align-container">
+									<div class="align-item">
+										<div class="promo-slider__wrapper-1">
+											<h2 class="title">@slider.Title</h2>
+										</div>
+										<div class="promo-slider__wrapper-2">
+											<p class="subtitle">@slider.SubTitle</p>
+										</div>
+										<div class="promo-slider__wrapper-3">
+											<a class="button button--filled" href="#" data-hover="Kolleksiyaya Bax"><span>Kolleksiyaya Bax</span></a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div> 
+			
+			</div>
+			}
+
 			<!-- item end-->
 			<!-- item start-->
 		@foreach (Slider slider in Model.Sliders)
@@ -106,7 +112,7 @@
 		<!-- slider nav end-->
 		<!-- video block start-->
 		<div class="video-block">
-			<div class="img-holder">
+			<div class="img-holder"> 
 				<img class="img-bg" src="~/img/video-bg.jpg" alt="img" />
 				<div class="overlay"></div><a class="fancy-video" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><i class="fa fa-play" aria-hidden="aria-hidden"></i></a>
 			</div>
@@ -240,21 +246,6 @@
 		</div>
 	</section>
 	<!-- cases-style-2 end-->
-	<!-- banner start-->
-	<section class="section banner">
-		<picture>
-			<source srcset="~/img/bannerkonar.webp" media="(min-width: 576px)" /><img class="img-bg" src="~/img/bannerkonar.webp" alt="banner" />
-		</picture>
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-7 col-lg-8 col-md-9">
-					<h1 class="title">Benjamin Franklin</h1>
-					<p>"Safety is not just a slogan; it's a way of life. An investment in knowledge pays the best interest, and the interest is the safety and well-being of those you lead."</p><a class="button button--transparent" href="#" data-hover="Discover"><span>Discover</span></a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- banner end-->
 	<!-- brands start-->
 	<section class="section brands no-padding-bottom">
 		<div class="container">
@@ -311,70 +302,19 @@
 				<!-- products slider start-->
 				<div class="products-slider">
 					<!-- item start-->
-					<div class="slider-item">
-						<figure class="product-item product-item--primary">
-							<a class="img-holder" href="shop-product.html"><img src="~/img/product-1.png" alt="product" /></a>
-							<figcaption>
-								<span class="description price">$ 1250.00</span>
-								<h4 class="title"><a href="shop-product.html">DUOMAX twin-DEG5C.07(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
-							</figcaption>
-						</figure>
-					</div>
-					<!-- item end-->
-					<!-- item start-->
-					<div class="slider-item">
-						<figure class="product-item product-item--primary">
-							<a class="img-holder" href="shop-product.html"><img src="~/img/product-2.png" alt="product" /></a>
-							<figcaption>
-								<span class="description price">$ 900.00</span>
-								<h4 class="title"><a href="shop-product.html">DUOMAX-PEG5.07</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
-							</figcaption>
-						</figure>
-					</div>
-					<!-- item end-->
-					<!-- item start-->
-					<div class="slider-item">
-						<figure class="product-item product-item--primary">
-							<a class="img-holder" href="shop-product.html"><img src="~/img/product-3.png" alt="product" /></a>
-							<figcaption>
-								<span class="description price">$ 950.00</span>
-								<h4 class="title"><a href="shop-product.html">DUOMAX-PEG40.07</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
-							</figcaption>
-						</figure>
-					</div>
-					<!-- item end-->
-					<!-- item start-->
-					<div class="slider-item">
-						<figure class="product-item product-item--primary">
-							<a class="img-holder" href="shop-product.html"><img src="~/img/product-4.png" alt="product" /></a>
-							<figcaption>
-								<span class="description price">$ 1150.00</span>
-								<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
-							</figcaption>
-						</figure>
-					</div>
-					<!-- item end-->
-					<!-- item start-->
-					<div class="slider-item">
-						<figure class="product-item product-item--primary">
-							<a class="img-holder" href="shop-product.html"><img src="~/img/product-2.png" alt="product" /></a>
-							<figcaption>
-								<span class="description price">$ 1150.00</span>
-								<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
-							</figcaption>
-						</figure>
-					</div>
-					<!-- item end-->
-					<!-- item start-->
-					<div class="slider-item">
-						<figure class="product-item product-item--primary">
-							<a class="img-holder" href="shop-product.html"><img src="~/img/product-7.png" alt="product" /></a>
-							<figcaption>
-								<span class="description price">$ 1150.00</span>
-								<h4 class="title"><a href="shop-product.html">DUOMAX M PLUS - DEG5(II)</a></h4><a class="with--line" href="#"><span>Add to cart</span></a>
-							</figcaption>
-						</figure>
-					</div>
+					@foreach (Product item in Model.Products)
+					{
+						<div class="slider-item">
+							<figure class="product-item product-item--primary">
+								<a class="img-holder" asp-controller="Products" asp-action="Detail" asp-route-id="@item.Id"><img src="~/img/@item.ProductImages" alt="product" /></a>
+								<figcaption>
+									<span class="description price">@item.Price</span>
+									<h4 class="title"><a asp-controller="Products" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h4>
+								</figcaption>
+							</figure>
+						</div>
+					}
+				
 					<!-- item end-->
 				</div>
 				<!-- products slider end-->
@@ -387,25 +327,7 @@
 		</div>
 	</section>
 	<!-- products-style-3 end-->
-	<!-- app start-->
-	<section class="section app">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="heading primary-heading">
-						<h3 class="title">Mobile app</h3>
-						<h5 class="subtitle"><span>R-energy in</span> <span>Your Phone</span></h5>
-						<p>Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin: herring.</p>
-					</div>
-					<div class="downloads-block"><a href="#"><img src="~/img/google-badge.png" alt="google" /></a><a href="#"><img src="~/img/apple-badge.png" alt="apple" /></a></div>
-				</div>
-				<div class="col-lg-6">
-					<div class="img-block"><img src="~/img/banner2konar.png" alt="phone" /></div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- app end-->
+@* 
 	<!-- testimonials-primary start-->
 	<section class="section testimonials testimonials--primary testimonials--style-3 no-padding-bottom">
 		<div class="slider-holder">
@@ -455,7 +377,7 @@
 			</div>
 		</div>
 	</section> 
-	<!-- testimonials-primary end-->
+	<!-- testimonials-primary end--> *@
 	<!-- news-style-3 start-->
  	<section class="section news--style-3">
 		<div class="container">
@@ -466,19 +388,19 @@
 							<div class="heading primary-heading">
 								<h3 class="title">MƏLUMATLI OLAQ!</h3>
 								<h5 class="subtitle"><span>Bloq &amp;</span> <span>Xəbərlər</span></h5>
-								<p>Əmək təhlükəsizliyi və iş sferası ilə bağlı ən son xəbərlər, bloqlar və məlumatlandırıcı məqalələr burada.</p><a class="button button--transparent" href="#" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
+								<p>Əmək təhlükəsizliyi və iş sferası ilə bağlı ən son xəbərlər, bloqlar və məlumatlandırıcı məqalələr burada.</p><a class="button button--transparent" asp-controller="Blogs" asp-action="Index" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
 							</div>
 							@if (lastBlog != null)
 							{
 								<div class="blog-item">
-									<a class="img-holder" asp-controller="Blogs" asp-action="Index">
+									<a class="img-holder" asp-controller="Blogs" asp-action="Detail" asp-route-id="@lastBlog.Id ">
 										<div class="overlay"></div><img class="img-bg" src="~/img/@lastBlog.Image" alt="img" />
 									</a>
 									<div class="content-holder">
 										<div class="ribbon">
 											<p>. <span class="day">25</span>/<span class="month">12</span></p>
 										</div><span class="category">@lastBlog.BlogCategory.Name</span>
-										<h4 class="title"><a asp-controller="Blogs" asp-action="Index">@lastBlog.Title</a></h4>
+										<h4 class="title"><a asp-controller="Blogs" asp-action="Detail" asp-route-id="@lastBlog.Id">@lastBlog.Title</a></h4>
 										<div class="text-holder">
 											<p class="text">@lastBlog.SubTitle</p>
 										</div>
@@ -496,14 +418,14 @@
 						 	@foreach (var blog in lastThreeBlogsExceptLast)
 							{
 								<div class="blog-item">
-									<a class="img-holder" asp-controller="Blogs" asp-action="Index">
+									<a class="img-holder" asp-controller="Blogs" asp-action="Detail" asp-route-id="@blog.Id">
 										<div class="overlay"></div><img class="img-bg" src="~/img/@blog.Image" alt="img" />
 									</a>
 									<div class="content-holder">
 										<div class="ribbon">
 											<p>. <span class="day">25</span>/<span class="month">12</span></p>
 										</div><span class="category">@blog.BlogCategory.Name</span>
-										<h4 class="title"><a asp-controller="Blogs" asp-action="Index">@blog.Title</a></h4>
+										<h4 class="title"><a asp-controller="Blogs" asp-action="Detail" asp-route-id="@blog.Id">@blog.Title</a></h4>
 										<div class="text-holder">
 											<p class="text">@blog.SubTitle</p>
 										</div>
@@ -513,7 +435,7 @@
 						
 							<!-- item end-->
 							<!-- item start-->
-							<div class="blog-item">
+						@* 	<div class="blog-item">
 								<a class="img-holder" href="blog-detail.html">
 									<div class="overlay"></div><img class="img-bg" src="~/img/blog-in-6.jpg" alt="img" />
 								</a>
@@ -526,7 +448,7 @@
 										<p class="text">Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster</p>
 									</div>
 								</div>
-							</div> 
+							</div>  *@
 							<!-- item end-->
 					 	</div>
 					</div>
@@ -580,7 +502,7 @@
 	<!-- map section start-->
 	 <section class="section map-section">
 		<!-- contact form start-->
-		<form class="form js-contact-form contact--form" autocomplete="off" action="#">
+	@* 	<form class="form js-contact-form contact--form" autocomplete="off" action="#">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -614,9 +536,8 @@
 					</div>
 				</div>
 			</div>
-		</form>
+		</form> *@
 		<!-- contact form end-->
-		<div class="map" id="map" data-api-key="AIzaSyD5ES8GFHrarPhIVpDhFDea6fPtga0Wy4Y" data-longitude="-9.141827" data-latitude="38.737749" data-marker="~/img/placeholder.png"></div>
 	</section> 
 	<!-- map section end-->
 	</main>

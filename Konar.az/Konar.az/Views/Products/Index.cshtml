@@ -141,6 +141,7 @@
 										<figure class="product-item product-item--primary">
 												<a class="img-holder" asp-action="Detail" asp-route-id="@item.Id">
 												<img src="~/img/@item.ProductImages.FirstOrDefault().Image" alt="product" /></a>
+
 											<figcaption>
 												<span class="price">$ @item.Price</span>
 													<h4 class="title"><a asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h4>

@@ -81,10 +81,16 @@ namespace Konar.az.Areas.Admin.Controllers
 				};
 				blogTags.Add(blogTag);
 			}
-			blog.BlogTags = blogTags;
+			if (blog.BlogCategoryId == null)
+			{
+				ModelState.AddModelError("BlogCategory", "Kategoriya seçin və ya yoxdursa yenisini yaradın");
+				return View();
+			}
 			blog.BlogCategoryId = catId;
+
+			blog.BlogTags = blogTags;
 			blog.CreateTime = DateTime.Now;
-			//await _db.Blogs.AddAsync(blog);
+			await _db.Blogs.AddAsync(blog);
 			await _db.SaveChangesAsync();
 			return RedirectToAction("Index");
 		}
