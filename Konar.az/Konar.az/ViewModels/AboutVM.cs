@@ -6,5 +6,6 @@ namespace Konar.az.ViewModels
 	{
         public About Abouts { get; set; }
 		public Statistics Statistics { get; set; }
+		public List<Employee> Employee { get; set; }
 	}
 }

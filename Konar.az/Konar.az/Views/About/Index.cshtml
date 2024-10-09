@@ -160,126 +160,30 @@
 		</div>
 		<div class="container">
 			<div class="row offset-margin">
-				<div class="col-lg-4 col-sm-6">
-					<!-- item start-->
-					<div class="team-item team-item--primary">
-						<div class="img-holder">
-							<img class="img-bg" src="~/img/team-bg-1.jpg" alt="img" />
-							<!-- socials start-->
-							<nav class="socials-holder">
-								<ul class="socials-primary">
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								</ul>
-							</nav>
-							<!-- socials end -->
-							<div class="description"><span class="name">Florian Bottmann</span><span class="position">Partner & CEO</span></div>
+			
+				@foreach (Employee employee in Model.Employee)
+				{
+					<div class="col-lg-4 col-sm-6">
+						<!-- item start-->
+						<div class="team-item team-item--primary">
+							<div class="img-holder">
+								<img class="img-bg" src="~/img/@employee.Image" alt="img" />
+								<!-- socials start-->
+								@* <nav class="socials-holder">
+							<ul class="socials-primary">
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+							</nav> *@
+								<!-- socials end -->
+								<div class="description"><span class="name">@employee.FullName</span><span class="position">@employee.Position.Name</span></div>
+							</div>
 						</div>
+						<!-- item end-->
 					</div>
-					<!-- item end-->
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<!-- item start-->
-					<div class="team-item team-item--primary">
-						<div class="img-holder">
-							<img class="img-bg" src="~/img/team-bg-2.jpg" alt="img" />
-							<!-- socials start-->
-							<nav class="socials-holder">
-								<ul class="socials-primary">
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								</ul>
-							</nav>
-							<!-- socials end -->
-							<div class="description"><span class="name">Fynn Kliemann</span><span class="position">Chief Technology Officer</span></div>
-						</div>
-					</div>
-					<!-- item end-->
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<!-- item start-->
-					<div class="team-item team-item--primary">
-						<div class="img-holder">
-							<img class="img-bg" src="~/img/team-bg-3.jpg" alt="img" />
-							<!-- socials start-->
-							<nav class="socials-holder">
-								<ul class="socials-primary">
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								</ul>
-							</nav>
-							<!-- socials end -->
-							<div class="description"><span class="name">Matt Harpin</span><span class="position">Chief Financial Officer</span></div>
-						</div>
-					</div>
-					<!-- item end-->
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<!-- item start-->
-					<div class="team-item team-item--primary">
-						<div class="img-holder">
-							<img class="img-bg" src="~/img/team-bg-4.jpg" alt="img" />
-							<!-- socials start-->
-							<nav class="socials-holder">
-								<ul class="socials-primary">
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								</ul>
-							</nav>
-							<!-- socials end -->
-							<div class="description"><span class="name">Carla Santos</span><span class="position">Chief People Officer</span></div>
-						</div>
-					</div>
-					<!-- item end-->
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<!-- item start-->
-					<div class="team-item team-item--primary">
-						<div class="img-holder">
-							<img class="img-bg" src="~/img/team-bg-5.jpg" alt="img" />
-							<!-- socials start-->
-							<nav class="socials-holder">
-								<ul class="socials-primary">
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								</ul>
-							</nav>
-							<!-- socials end -->
-							<div class="description"><span class="name">Gary Hides</span><span class="position">Learning & Career Manager</span></div>
-						</div>
-					</div>
-					<!-- item end-->
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<!-- item start-->
-					<div class="team-item team-item--primary">
-						<div class="img-holder">
-							<img class="img-bg" src="~/img/team-bg-6.jpg" alt="img" />
-							<!-- socials start-->
-							<nav class="socials-holder">
-								<ul class="socials-primary">
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								</ul>
-							</nav>
-							<!-- socials end -->
-							<div class="description"><span class="name">Georgina Wilson</span><span class="position">Office Manager</span></div>
-						</div>
-					</div>
-					<!-- item end-->
-				</div>
+				}
 			</div>
 		</div>
 	</section>

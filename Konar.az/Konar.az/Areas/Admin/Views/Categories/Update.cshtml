@@ -1,0 +1,17 @@
+﻿@model Category
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Kategoriya dəyiş</h4>
+        <form method="post" class="forms-sample" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Name">Ad</label>
+                <input asp-for="Name" type="text" class="form-control" />
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+        </form>
+    </div>
+</div>

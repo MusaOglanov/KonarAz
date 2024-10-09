@@ -21,7 +21,7 @@ namespace Konar.az.Controllers
 			{
 				Sliders = await _db.Sliders.ToListAsync(),
 				Blogs = await _db.Blogs.Include(x => x.BlogCategory).ToListAsync(),
-				Products = await _db.Products.ToListAsync(),
+				Products = await _db.Products.Include(x=>x.ProductImages).ToListAsync(),
 			};
 			return View(homeVM);
 		}

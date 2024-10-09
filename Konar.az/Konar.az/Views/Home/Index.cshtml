@@ -1,543 +1,543 @@
 ﻿@model HomeVM
 @{
-	var lastBlog = Model.Blogs.LastOrDefault();
-	var lastThreeBlogsExceptLast = Model.Blogs.TakeLast(3).Reverse().Skip(1).ToList();
+    var lastBlog = Model.Blogs.LastOrDefault();
+    var lastThreeBlogsExceptLast = Model.Blogs.TakeLast(3).Reverse().Skip(1).ToList();
 }
-	
+
 
 <main class="main">
-	<!-- promo-style-3 start-->
-	<section class="promo--style-3">
-		<!-- promo-style-3-slider start-->
-		<div class="promo-slider promo--style-3-slider"> 
-			 <!-- item start-->
-			<div class="slider-item item--style-3">
-				<div class="overlay"></div>
-				<div class="bg-holder jarallax">
-					<picture>
-						<source srcset="~/img/promo-3.jpg" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/guvenaltinda.webp" alt="img" />
-					</picture>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<div class="align-container">
-								<div class="align-item">
-									<div class="promo-slider__wrapper-1">
-										<h2 class="title">Güvən <span>—</span> Altında</h2>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> 
-			<!-- item end-->
-			<!-- item start-->
-				@foreach (Slider slider in Model.Sliders)
-				{
-			 <div class="slider-item item--style-2">
-				<div class="overlay"></div>
-				<div class="bg-holder jarallax">
-					<picture>
-							<source srcset="~/img/@slider.Image" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/@slider.Image" alt="img" />
-					</picture>
-				</div>
-			
-					<div class="container">
-						<div class="row">
-							<div class="col-xl-10 offset-xl-1">
-								<div class="align-container">
-									<div class="align-item">
-										<div class="promo-slider__wrapper-1">
-											<h2 class="title">@slider.Title</h2>
-										</div>
-										<div class="promo-slider__wrapper-2">
-											<p class="subtitle">@slider.SubTitle</p>
-										</div>
-										<div class="promo-slider__wrapper-3">
-											<a class="button button--filled" href="#" data-hover="Kolleksiyaya Bax"><span>Kolleksiyaya Bax</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-			
-			</div>
-			}
+    <!-- promo-style-3 start-->
+    <section class="promo--style-3">
+        <!-- promo-style-3-slider start-->
+        <div class="promo-slider promo--style-3-slider">
+            <!-- item start-->
+           @*  <div class="slider-item item--style-3">
+                <div class="overlay"></div>
+                <div class="bg-holder jarallax">
+                    <picture>
+                        <source srcset="~/img/promo-3.jpg" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/guvenaltinda.webp" alt="img" />
+                    </picture>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="align-container">
+                                <div class="align-item">
+                                    <div class="promo-slider__wrapper-1">
+                                        <h2 class="title">Güvən <span>—</span> Altında</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> *@
+            <!-- item end-->
+            <!-- item start-->
+           @*  @foreach (Slider slider in Model.Sliders)
+            {
+                <div class="slider-item item--style-2">
+                    <div class="overlay"></div>
+                    <div class="bg-holder jarallax">
+                        <picture>
+                            <source srcset="~/img/@slider.Image" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/@slider.Image" alt="img" />
+                        </picture>
+                    </div>
 
-			<!-- item end-->
-			<!-- item start-->
-		@foreach (Slider slider in Model.Sliders)
-			{
-				<div class="slider-item item--style-1">
-					<div class="overlay"></div>
-					<div class="bg-holder jarallax">
-						<picture>
-							<source srcset="~/img/@slider.Image" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/@slider.Image" alt="img" />
-						</picture>
-					</div>
-					<div class="container">
-						<div class="row">
-							<div class="col-xl-6 col-lg-7 col-md-9">
-								<div class="align-container">
-									<div class="align-item">
-										<div class="promo-slider__wrapper-1">
-											<h2 class="title">@slider.Title</h2>
-										</div>
-										<div class="promo-slider__wrapper-2">
-											<p class="subtitle">@slider.SubTitle </p>
-										</div>
-										<div class="promo-slider__wrapper-3">
-											<a class="button button--filled" href="#" data-hover="Kolleksiyaya Bax"><span>Kolleksiyaya Bax</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-10 offset-xl-1">
+                                <div class="align-container">
+                                    <div class="align-item">
+                                        <div class="promo-slider__wrapper-1">
+                                            <h2 class="title">@slider.Title</h2>
+                                        </div>
+                                        <div class="promo-slider__wrapper-2">
+                                            <p class="subtitle">@slider.SubTitle</p>
+                                        </div>
+                                        <div class="promo-slider__wrapper-3">
+                                            <a class="button button--filled" href="#" data-hover="Kolleksiyaya Bax"><span>Kolleksiyaya Bax</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-			<!-- item end-->
-		 </div>
-		<!-- promo-slider end-->
-		<!-- slider nav start-->
-		<div class="slider-nav">
-			<div class="inner-holder">
-				<div class="promo-dots"></div><span class="paging-info"></span>
-			</div>
-		</div>
-		<!-- slider nav end-->
-		<!-- video block start-->
-		<div class="video-block">
-			<div class="img-holder"> 
-				<img class="img-bg" src="~/img/video-bg.jpg" alt="img" />
-				<div class="overlay"></div><a class="fancy-video" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><i class="fa fa-play" aria-hidden="aria-hidden"></i></a>
-			</div>
-		</div>
-		<!-- video block end-->
-	</section>
-	<!-- promo-style-3-slider end-->
-	<!-- services-style-2 start-->
-	<section class="section services--style-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="heading primary-heading">
-						<h3 class="title">Məhsullar</h3>
-						<h5 class="subtitle"><span>Nə təklif</span> <span>edirik?</span></h5>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row offset-margin">
-				<div class="col-sm-6 col-lg-4">
-					<!-- icon item start-->
-					<figure class="icon-item icon-item--with-btn">
-						<div class="img-holder"><img src="~/img/uniforms.png" alt="img" /></div>
-						<figcaption>
-							<h4 class="title">Uniformalar</h4>
-							<p>Keyfiyyətin rahatlıqla birləşdiyi Konar Uniforms ilə peşəkarlığın gücünü ortaya qoyun.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
-						</figcaption>
-					</figure>
-					<!-- icon item end-->
-				</div>
-				<div class="col-sm-6 col-lg-4">
-					<!-- icon item start-->
-					<figure class="icon-item icon-item--with-btn">
-						<div class="img-holder"><img src="~/img/selfprotection.png" alt="img" /></div>
-						<figcaption>
-							<h4 class="title">Fərdi Qorunma Vasitələri</h4>
-							<p>Fosforlu jiletlərdən qoruyucu eynəklərə qədər geniş çeşidli aksesuarlar ilə komandanızın iş yerində güvəndə olmasını təmin edin.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
-						</figcaption>
-					</figure>
-					<!-- icon item end-->
-				</div>
-				<div class="col-sm-6 col-lg-4">
-					<!-- icon item start-->
-					<figure class="icon-item icon-item--with-btn">
-						<div class="img-holder"><img src="~/img/accessories.png" alt="img" /></div>
-						<figcaption>
-							<h4 class="title">Aksesuarlar</h4>
-							<p>İş mühitində ehtiyacınız olan bütün növ aksesuarlar sizə Konar qədər yaxın.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
-						</figcaption>
-					</figure>
-					<!-- icon item end-->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- services-style-2 end-->
-	<!-- cases-style-2 start-->
-	<section class="section cases--style-2 no-padding-top">
-		<div class="container">
-			<div class="row align-items-end margin-bottom">
-				<div class="col-lg-9">
-					<div class="heading primary-heading">
-						<h3 class="title">#casestudies</h3>
-						<h5 class="subtitle"><span>Ən çox rastlanan</span> <span>iş qəzaları</span></h5>
-						<p class="no-margin-bottom">İş prosesi zamanı yaşanmış qəzalar sahibkarlara və işçilərə hansı situasiyalarda ekstra diqqətli olmaları haqqında qiymətli məlumatlar verir. Konar MMC olaraq sizlərə əmək mühitində yaşanmış qəzaları təqdim edirik. </p>
-					</div>
-				</div>
-				<div class="col-lg-3 text-lg-right d-none d-lg-block"><a class="button button--transparent button--common" href="#" data-hover="Daha çox bax"><span>Daha çox bax</span></a></div>
-			</div>
-		</div>
-		<!-- cases slider start-->
-		<div class="cases-slider-holder">
-			<div class="cases-slider">
-				<!-- item start-->
-				<div class="slider-item">
-					<figure>
-						<a class="img-holder" href="#">
-							<div class="overlay"></div><img class="img-bg" src="~/img/accidient1.webp" alt="img" />
-						</a>
-						<figcaption>
-							<h5 class="title"> <a href="#">Renewable Energy Station</a></h5>
-							<p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
-						</figcaption>
-					</figure>
-				</div>
-				<!-- item end-->
-				<!-- item start-->
-				<div class="slider-item">
-					<figure>
-						<a class="img-holder" href="#">
-							<div class="overlay"></div><img class="img-bg" src="~/img/falling.webp" alt="img" />
-						</a>
-						<figcaption>
-							<h5 class="title"><a href="#">Renewable Energy Station</a></h5>
-							<p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
-						</figcaption>
-					</figure>
-				</div>
-				<!-- item end-->
-				<!-- item start-->
-				<div class="slider-item">
-					<figure>
-						<a class="img-holder" href="#">
-							<div class="overlay"></div><img class="img-bg" src="~/img/accidient2.webp" alt="img" />
-						</a>
-						<figcaption>
-							<h5 class="title"><a href="#">Renewable Energy Station</a></h5>
-							<p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
-						</figcaption>
-					</figure>
-				</div>
-				<!-- item end-->
-				<!-- item start-->
-				<div class="slider-item">
-					<figure>
-						<a class="img-holder" href="#">
-							<div class="overlay"></div><img class="img-bg" src="~/img/accidient3.webp" alt="img" />
-						</a>
-						<figcaption>
-							<h5 class="title"> <a href="#">Renewable Energy Station</a></h5>
-							<p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
-						</figcaption>
-					</figure>
-				</div>
-				<!-- item end-->
-			</div>
-			<div class="cases-dots"></div>
-			<!-- cases slider end-->
-		</div>
-	</section>
-	<!-- cases-style-2 end-->
-	<!-- brands start-->
-	<section class="section brands no-padding-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<!-- brands slider start-->
-					<div class="brands-holder">
-						<div class="brands-slider">
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-1.png" alt="brand" /></div>
-							<!-- item end-->
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-2.png" alt="brand" /></div>
-							<!-- item end-->
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-3.png" alt="brand" /></div>
-							<!-- item end-->
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-4.png" alt="brand" /></div>
-							<!-- item end-->
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-5.png" alt="brand" /></div>
-							<!-- item end-->
-						</div>
-						<div class="brands-dots"></div>
-					</div>
-					<!-- brands slider end-->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- brands end-->
-	<!-- products-style-3 start-->
-	<section class="section products--style-3">
-		<div class="container">
-			<div class="row align-items-center margin-bottom">
-				<div class="col-xl-6 col-lg-7">
-					<div class="heading primary-heading heading-with-button">
-						<div class="text-block">
-							<h3 class="title">Məhsullar</h3>
-							<h5 class="subtitle"><span>Öncə </span> <span>Həyat!</span></h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-5">
-					<div class="button-block">
-						<div class="products-slider-dots"></div><a class="button button--transparent d-none d-lg-inline-block" href="#" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="slider-holder offset-top-10">
-			<div class="slider-wrapper">
-				<!-- products slider start-->
-				<div class="products-slider">
-					<!-- item start-->
-					@foreach (Product item in Model.Products)
-					{
-						<div class="slider-item">
-							<figure class="product-item product-item--primary">
-								<a class="img-holder" asp-controller="Products" asp-action="Detail" asp-route-id="@item.Id"><img src="~/img/@item.ProductImages" alt="product" /></a>
-								<figcaption>
-									<span class="description price">@item.Price</span>
-									<h4 class="title"><a asp-controller="Products" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h4>
-								</figcaption>
-							</figure>
-						</div>
-					}
-				
-					<!-- item end-->
-				</div>
-				<!-- products slider end-->
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-12 text-center d-block d-lg-none margin-top"><a class="button button--transparent" href="#" data-hover="Discover"><span>Discover</span></a></div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- products-style-3 end-->
-@* 
-	<!-- testimonials-primary start-->
-	<section class="section testimonials testimonials--primary testimonials--style-3 no-padding-bottom">
-		<div class="slider-holder">
-			<div class="wrapper">
-				<div class="container">
-					<div class="row align-items-end">
-						<div class="col-xl-9 col-md-8">
-							<div class="testimonials-top">
-								<div class="quote-icon"><span>“ </span></div>
-								<div class="heading primary-heading">
-									<h3 class="title">MÜŞTƏRİLƏRİMİZ NƏ DÜŞÜNÜR?!</h3>
-									<h5 class="subtitle"><span>People</span> <span>Says</span></h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-md-4">
-							<div class="testimonials-dots"></div>
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-10 offset-xl-1">
-							<!-- testimonials slider start-->
-							<div class="testimonials-slider testimonials-primary-slider">
-								<!-- item start-->
-								<div class="slider-item">
-									<p>Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin herring, Moses sole sea snail grouper discus. European eel slender snipe eel. Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin Atlantic saury swordfish</p><span class="user"><span class="name">Sam Peters</span>, <span class="position">CEO Solar Systems LLC</span></span>
-								</div>
-								<!-- item end-->
-								<!-- item start-->
-								<div class="slider-item">
-									<p>Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin herring, Moses sole sea snail grouper discus. European eel slender snipe eel. Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin Atlantic saury swordfish</p>
-									<p>Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin herring, Moses sole sea snail grouper discus. European eel slender snipe eel. Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin Atlantic saury swordfish</p><span class="user"><span class="name">Sam Peters</span>, <span class="position">CEO Solar Systems LLC</span></span>
-								</div>
-								<!-- item end-->
-								<!-- item start-->
-								<div class="slider-item">
-									<p>Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin herring, Moses sole sea snail grouper discus. European eel slender snipe eel. Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin Atlantic saury swordfish</p><span class="user"><span class="name">Sam Peters</span>, <span class="position">CEO Solar Systems LLC</span></span>
-								</div>
-								<!-- item end-->
-							</div>
-							<!-- testimonials slider end-->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> 
-	<!-- testimonials-primary end--> *@
-	<!-- news-style-3 start-->
- 	<section class="section news--style-3">
-		<div class="container">
-			<div class="row offset-margin">
-				<div class="col-md-6">
-					<div class="row">
-						<div class="col-12">
-							<div class="heading primary-heading">
-								<h3 class="title">MƏLUMATLI OLAQ!</h3>
-								<h5 class="subtitle"><span>Bloq &amp;</span> <span>Xəbərlər</span></h5>
-								<p>Əmək təhlükəsizliyi və iş sferası ilə bağlı ən son xəbərlər, bloqlar və məlumatlandırıcı məqalələr burada.</p><a class="button button--transparent" asp-controller="Blogs" asp-action="Index" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
-							</div>
-							@if (lastBlog != null)
-							{
-								<div class="blog-item">
-									<a class="img-holder" asp-controller="Blogs" asp-action="Detail" asp-route-id="@lastBlog.Id ">
-										<div class="overlay"></div><img class="img-bg" src="~/img/@lastBlog.Image" alt="img" />
-									</a>
-									<div class="content-holder">
-										<div class="ribbon">
-											<p>. <span class="day">25</span>/<span class="month">12</span></p>
-										</div><span class="category">@lastBlog.BlogCategory.Name</span>
-										<h4 class="title"><a asp-controller="Blogs" asp-action="Detail" asp-route-id="@lastBlog.Id">@lastBlog.Title</a></h4>
-										<div class="text-holder">
-											<p class="text">@lastBlog.SubTitle</p>
-										</div>
-									</div>
-								</div>
-							}
-							<!-- item end-->
-						</div>
-					</div>
-				</div>
-		<div class="col-md-6">
-					<div class="row">
-						<div class="col-12">
-							<!-- item start-->
-						 	@foreach (var blog in lastThreeBlogsExceptLast)
-							{
-								<div class="blog-item">
-									<a class="img-holder" asp-controller="Blogs" asp-action="Detail" asp-route-id="@blog.Id">
-										<div class="overlay"></div><img class="img-bg" src="~/img/@blog.Image" alt="img" />
-									</a>
-									<div class="content-holder">
-										<div class="ribbon">
-											<p>. <span class="day">25</span>/<span class="month">12</span></p>
-										</div><span class="category">@blog.BlogCategory.Name</span>
-										<h4 class="title"><a asp-controller="Blogs" asp-action="Detail" asp-route-id="@blog.Id">@blog.Title</a></h4>
-										<div class="text-holder">
-											<p class="text">@blog.SubTitle</p>
-										</div>
-									</div>
-								</div>
-							} 
-						
-							<!-- item end-->
-							<!-- item start-->
-						@* 	<div class="blog-item">
-								<a class="img-holder" href="blog-detail.html">
-									<div class="overlay"></div><img class="img-bg" src="~/img/blog-in-6.jpg" alt="img" />
-								</a>
-								<div class="content-holder">
-									<div class="ribbon">
-										<p>. <span class="day">25</span>/<span class="month">12</span></p>
-									</div><span class="category">Solar Systems</span>
-									<h4 class="title"><a href="blog-detail.html">Crash test of photovoltaic module</a></h4>
-									<div class="text-holder">
-										<p class="text">Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster</p>
-									</div>
-								</div>
-							</div>  *@
-							<!-- item end-->
-					 	</div>
-					</div>
-				</div>
- 		</div>
-		</div>
-	</section> 
- <!-- news-style-3 end-->
-	<!-- instagram start-->
- 	<section class="section instagram no-padding-top no-padding-bottom">
-		<div class="container">
-			<div class="row align-items-end margin-bottom">
-				<div class="col-10">
-					<div class="heading primary-heading">
-						<h3 class="title">Instagram</h3>
-						<h5 class="subtitle"><span>#konar_uniform</span> <span></span></h5>
-					</div>
-				</div>
-				<div class="col-2">
-					<div class="icon-holder"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-				</div>
-			</div>
-		</div>
-		<div class="instagram-slider-holder">
-			<!-- instagram slider start-->
-			<div class="instagram-slider">
-				<!-- item start-->
-				<div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-1.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
-				<!-- item end-->
-				<!-- item start-->
-				<div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-2.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
-				<!-- item end-->
-				<!-- item start-->
-				<div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-3.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
-				<!-- item end-->
-				<!-- item start-->
-				<div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-4.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
-				<!-- item end-->
-				<!-- item start-->
-				<div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-5.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
-				<!-- item end-->
-				<!-- item start-->
-				<div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-6.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
-				<!-- item end-->
-				<!-- instagram slider end-->
-				<div class="instagram-dots"></div>
-			</div>
-		</div>
-	</section>
- 	<!-- instagram end-->
-	<!-- map section start-->
-	 <section class="section map-section">
-		<!-- contact form start-->
-	@* 	<form class="form js-contact-form contact--form" autocomplete="off" action="#">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="title-block">
-							<h3 class="title">Sorğu <span>Göndər</span></h3><span class="trigger">Xəritələrdə bax</span>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<label class="input-label">
-							<input class="form-field input input-name" type="text" name="name" required="required" /><span>Ad</span>
-						</label>
-						<label class="input-label">
-							<input class="form-field input input-mail" type="email" name="email" required="required" /><span>Email</span>
-						</label>
-					</div>
-					<div class="col-md-6">
-						<label class="textarea-label">
-							<textarea class="form-field textarea" name="message"></textarea><span>Mesaj</span>
-						</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="button-holder">
-							<button class="button button--transparent" type="submit" data-hover="Göndər"><span>Göndər</span></button>
-							<div class="trigger-holder d-sm-none"><span class="trigger mobile-trigger">Xəritələrdə bax</span></div>
-							<div class="form__note"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</form> *@
-		<!-- contact form end-->
-	</section> 
-	<!-- map section end-->
-	</main>
+                </div>
+            } *@
+
+            <!-- item end-->
+            <!-- item start-->
+            @foreach (Slider slider in Model.Sliders)
+            {
+                <div class="slider-item item--style-1">
+                    <div class="overlay"></div>
+                    <div class="bg-holder jarallax">
+                        <picture>
+                            <source srcset="~/img/@slider.Image" media="(min-width: 992px)" /><img class="img-bg jarallax-img" src="~/img/@slider.Image" alt="img" />
+                        </picture>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-7 col-md-9">
+                                <div class="align-container">
+                                    <div class="align-item">
+                                        <div class="promo-slider__wrapper-1">
+                                            <h2 class="title">@slider.Title</h2>
+                                        </div>
+                                        <div class="promo-slider__wrapper-2">
+                                            <p class="subtitle">@slider.SubTitle </p>
+                                        </div>
+                                        <div class="promo-slider__wrapper-3">
+                                            <a class="button button--filled" href="#" data-hover="Kolleksiyaya Bax"><span>Kolleksiyaya Bax</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!-- item end-->
+        </div>
+        <!-- promo-slider end-->
+        <!-- slider nav start-->
+        <div class="slider-nav">
+            <div class="inner-holder">
+                <div class="promo-dots"></div><span class="paging-info"></span>
+            </div>
+        </div>
+        <!-- slider nav end-->
+        <!-- video block start-->
+        <div class="video-block">
+            <div class="img-holder">
+                <img class="img-bg" src="~/img/video-bg.jpg" alt="img" />
+                <div class="overlay"></div><a class="fancy-video" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><i class="fa fa-play" aria-hidden="aria-hidden"></i></a>
+            </div>
+        </div>
+        <!-- video block end-->
+    </section>
+    <!-- promo-style-3-slider end-->
+    <!-- services-style-2 start-->
+    <section class="section services--style-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="heading primary-heading">
+                        <h3 class="title">Məhsullar</h3>
+                        <h5 class="subtitle"><span>Nə təklif</span> <span>edirik?</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row offset-margin">
+                <div class="col-sm-6 col-lg-4">
+                    <!-- icon item start-->
+                    <figure class="icon-item icon-item--with-btn">
+                        <div class="img-holder"><img src="~/img/uniforms.png" alt="img" /></div>
+                        <figcaption>
+                            <h4 class="title">Uniformalar</h4>
+                            <p>Keyfiyyətin rahatlıqla birləşdiyi Konar Uniforms ilə peşəkarlığın gücünü ortaya qoyun.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
+                        </figcaption>
+                    </figure>
+                    <!-- icon item end-->
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <!-- icon item start-->
+                    <figure class="icon-item icon-item--with-btn">
+                        <div class="img-holder"><img src="~/img/selfprotection.png" alt="img" /></div>
+                        <figcaption>
+                            <h4 class="title">Fərdi Qorunma Vasitələri</h4>
+                            <p>Fosforlu jiletlərdən qoruyucu eynəklərə qədər geniş çeşidli aksesuarlar ilə komandanızın iş yerində güvəndə olmasını təmin edin.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
+                        </figcaption>
+                    </figure>
+                    <!-- icon item end-->
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <!-- icon item start-->
+                    <figure class="icon-item icon-item--with-btn">
+                        <div class="img-holder"><img src="~/img/accessories.png" alt="img" /></div>
+                        <figcaption>
+                            <h4 class="title">Aksesuarlar</h4>
+                            <p>İş mühitində ehtiyacınız olan bütün növ aksesuarlar sizə Konar qədər yaxın.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
+                        </figcaption>
+                    </figure>
+                    <!-- icon item end-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services-style-2 end-->
+    <!-- cases-style-2 start-->
+    <section class="section cases--style-2 no-padding-top">
+        <div class="container">
+            <div class="row align-items-end margin-bottom">
+                <div class="col-lg-9">
+                    <div class="heading primary-heading">
+                        <h3 class="title">#casestudies</h3>
+                        <h5 class="subtitle"><span>Ən çox rastlanan</span> <span>iş qəzaları</span></h5>
+                        <p class="no-margin-bottom">İş prosesi zamanı yaşanmış qəzalar sahibkarlara və işçilərə hansı situasiyalarda ekstra diqqətli olmaları haqqında qiymətli məlumatlar verir. Konar MMC olaraq sizlərə əmək mühitində yaşanmış qəzaları təqdim edirik. </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-lg-right d-none d-lg-block"><a class="button button--transparent button--common" href="#" data-hover="Daha çox bax"><span>Daha çox bax</span></a></div>
+            </div>
+        </div>
+        <!-- cases slider start-->
+        <div class="cases-slider-holder">
+            <div class="cases-slider">
+                <!-- item start-->
+                <div class="slider-item">
+                    <figure>
+                        <a class="img-holder" href="#">
+                            <div class="overlay"></div><img class="img-bg" src="~/img/accidient1.webp" alt="img" />
+                        </a>
+                        <figcaption>
+                            <h5 class="title"> <a href="#">Renewable Energy Station</a></h5>
+                            <p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- item end-->
+                <!-- item start-->
+                <div class="slider-item">
+                    <figure>
+                        <a class="img-holder" href="#">
+                            <div class="overlay"></div><img class="img-bg" src="~/img/falling.webp" alt="img" />
+                        </a>
+                        <figcaption>
+                            <h5 class="title"><a href="#">Renewable Energy Station</a></h5>
+                            <p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- item end-->
+                <!-- item start-->
+                <div class="slider-item">
+                    <figure>
+                        <a class="img-holder" href="#">
+                            <div class="overlay"></div><img class="img-bg" src="~/img/accidient2.webp" alt="img" />
+                        </a>
+                        <figcaption>
+                            <h5 class="title"><a href="#">Renewable Energy Station</a></h5>
+                            <p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- item end-->
+                <!-- item start-->
+                <div class="slider-item">
+                    <figure>
+                        <a class="img-holder" href="#">
+                            <div class="overlay"></div><img class="img-bg" src="~/img/accidient3.webp" alt="img" />
+                        </a>
+                        <figcaption>
+                            <h5 class="title"> <a href="#">Renewable Energy Station</a></h5>
+                            <p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- item end-->
+            </div>
+            <div class="cases-dots"></div>
+            <!-- cases slider end-->
+        </div>
+    </section>
+    <!-- cases-style-2 end-->
+    <!-- brands start-->
+    <section class="section brands no-padding-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- brands slider start-->
+                    <div class="brands-holder">
+                        <div class="brands-slider">
+                            <!-- item start-->
+                            <div class="slider-item"><img src="~/img/brand-1.png" alt="brand" /></div>
+                            <!-- item end-->
+                            <!-- item start-->
+                            <div class="slider-item"><img src="~/img/brand-2.png" alt="brand" /></div>
+                            <!-- item end-->
+                            <!-- item start-->
+                            <div class="slider-item"><img src="~/img/brand-3.png" alt="brand" /></div>
+                            <!-- item end-->
+                            <!-- item start-->
+                            <div class="slider-item"><img src="~/img/brand-4.png" alt="brand" /></div>
+                            <!-- item end-->
+                            <!-- item start-->
+                            <div class="slider-item"><img src="~/img/brand-5.png" alt="brand" /></div>
+                            <!-- item end-->
+                        </div>
+                        <div class="brands-dots"></div>
+                    </div>
+                    <!-- brands slider end-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- brands end-->
+    <!-- products-style-3 start-->
+    <section class="section products--style-3">
+        <div class="container">
+            <div class="row align-items-center margin-bottom">
+                <div class="col-xl-6 col-lg-7">
+                    <div class="heading primary-heading heading-with-button">
+                        <div class="text-block">
+                            <h3 class="title">Məhsullar</h3>
+                            <h5 class="subtitle"><span>Öncə </span> <span>Həyat!</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5">
+                    <div class="button-block">
+                        <div class="products-slider-dots"></div><a class="button button--transparent d-none d-lg-inline-block" href="#" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-holder offset-top-10">
+            <div class="slider-wrapper">
+                <!-- products slider start-->
+                <div class="products-slider">
+                    <!-- item start-->
+                    @foreach (Product item in Model.Products)
+                    {
+                        <div class="slider-item">
+                            <figure class="product-item product-item--primary">
+                                <a class="img-holder" asp-controller="Products" asp-action="Detail" asp-route-id="@item.Id"><img src="~/img/@item.ProductImages.FirstOrDefault().Image" alt="product" /></a>
+                                <figcaption>
+                                    <span class="description price">@item.Price</span>
+                                    <h4 class="title"><a asp-controller="Products" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h4>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    }
+
+                    <!-- item end-->
+                </div>
+                <!-- products slider end-->
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center d-block d-lg-none margin-top"><a class="button button--transparent" href="#" data-hover="Discover"><span>Discover</span></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- products-style-3 end-->
+    @*
+    <!-- testimonials-primary start-->
+    <section class="section testimonials testimonials--primary testimonials--style-3 no-padding-bottom">
+    <div class="slider-holder">
+    <div class="wrapper">
+    <div class="container">
+    <div class="row align-items-end">
+    <div class="col-xl-9 col-md-8">
+    <div class="testimonials-top">
+    <div class="quote-icon"><span>“ </span></div>
+    <div class="heading primary-heading">
+    <h3 class="title">MÜŞTƏRİLƏRİMİZ NƏ DÜŞÜNÜR?!</h3>
+    <h5 class="subtitle"><span>People</span> <span>Says</span></h5>
+    </div>
+    </div>
+    </div>
+    <div class="col-xl-2 col-md-4">
+    <div class="testimonials-dots"></div>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="col-xl-10 offset-xl-1">
+    <!-- testimonials slider start-->
+    <div class="testimonials-slider testimonials-primary-slider">
+    <!-- item start-->
+    <div class="slider-item">
+    <p>Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin herring, Moses sole sea snail grouper discus. European eel slender snipe eel. Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin Atlantic saury swordfish</p><span class="user"><span class="name">Sam Peters</span>, <span class="position">CEO Solar Systems LLC</span></span>
+    </div>
+    <!-- item end-->
+    <!-- item start-->
+    <div class="slider-item">
+    <p>Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin herring, Moses sole sea snail grouper discus. European eel slender snipe eel. Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin Atlantic saury swordfish</p>
+    <p>Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin herring, Moses sole sea snail grouper discus. European eel slender snipe eel. Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin Atlantic saury swordfish</p><span class="user"><span class="name">Sam Peters</span>, <span class="position">CEO Solar Systems LLC</span></span>
+    </div>
+    <!-- item end-->
+    <!-- item start-->
+    <div class="slider-item">
+    <p>Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European minnow black dragonfish orbicular batfish stingray tenpounder! Flying characin herring, Moses sole sea snail grouper discus. European eel slender snipe eel. Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin Atlantic saury swordfish</p><span class="user"><span class="name">Sam Peters</span>, <span class="position">CEO Solar Systems LLC</span></span>
+    </div>
+    <!-- item end-->
+    </div>
+    <!-- testimonials slider end-->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!-- testimonials-primary end--> *@
+    <!-- news-style-3 start-->
+    <section class="section news--style-3">
+        <div class="container">
+            <div class="row offset-margin">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="heading primary-heading">
+                                <h3 class="title">MƏLUMATLI OLAQ!</h3>
+                                <h5 class="subtitle"><span>Bloq &amp;</span> <span>Xəbərlər</span></h5>
+                                <p>Əmək təhlükəsizliyi və iş sferası ilə bağlı ən son xəbərlər, bloqlar və məlumatlandırıcı məqalələr burada.</p><a class="button button--transparent" asp-controller="Blogs" asp-action="Index" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
+                            </div>
+                            @if (lastBlog != null)
+                            {
+                                <div class="blog-item">
+                                    <a class="img-holder" asp-controller="Blogs" asp-action="Detail" asp-route-id="@lastBlog.Id ">
+                                        <div class="overlay"></div><img class="img-bg" src="~/img/@lastBlog.Image" alt="img" />
+                                    </a>
+                                    <div class="content-holder">
+                                        <div class="ribbon">
+                                            <p>. <span class="day">25</span>/<span class="month">12</span></p>
+                                        </div><span class="category">@lastBlog.BlogCategory.Name</span>
+                                        <h4 class="title"><a asp-controller="Blogs" asp-action="Detail" asp-route-id="@lastBlog.Id">@lastBlog.Title</a></h4>
+                                        <div class="text-holder">
+                                            <p class="text">@lastBlog.SubTitle</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <!-- item end-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- item start-->
+                            @foreach (var blog in lastThreeBlogsExceptLast)
+                            {
+                                <div class="blog-item">
+                                    <a class="img-holder" asp-controller="Blogs" asp-action="Detail" asp-route-id="@blog.Id">
+                                        <div class="overlay"></div><img class="img-bg" src="~/img/@blog.Image" alt="img" />
+                                    </a>
+                                    <div class="content-holder">
+                                        <div class="ribbon">
+                                            <p>. <span class="day">25</span>/<span class="month">12</span></p>
+                                        </div><span class="category">@blog.BlogCategory.Name</span>
+                                        <h4 class="title"><a asp-controller="Blogs" asp-action="Detail" asp-route-id="@blog.Id">@blog.Title</a></h4>
+                                        <div class="text-holder">
+                                            <p class="text">@blog.SubTitle</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            <!-- item end-->
+                            <!-- item start-->
+                            @* 	<div class="blog-item">
+                            <a class="img-holder" href="blog-detail.html">
+                            <div class="overlay"></div><img class="img-bg" src="~/img/blog-in-6.jpg" alt="img" />
+                            </a>
+                            <div class="content-holder">
+                            <div class="ribbon">
+                            <p>. <span class="day">25</span>/<span class="month">12</span></p>
+                            </div><span class="category">Solar Systems</span>
+                            <h4 class="title"><a href="blog-detail.html">Crash test of photovoltaic module</a></h4>
+                            <div class="text-holder">
+                            <p class="text">Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster</p>
+                            </div>
+                            </div>
+                            </div>  *@
+                            <!-- item end-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- news-style-3 end-->
+    <!-- instagram start-->
+    <section class="section instagram no-padding-top no-padding-bottom">
+        <div class="container">
+            <div class="row align-items-end margin-bottom">
+                <div class="col-10">
+                    <div class="heading primary-heading">
+                        <h3 class="title">Instagram</h3>
+                        <h5 class="subtitle"><span>#konar_uniform</span> <span></span></h5>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="icon-holder"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="instagram-slider-holder">
+            <!-- instagram slider start-->
+            <div class="instagram-slider">
+                <!-- item start-->
+                <div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-1.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                <!-- item end-->
+                <!-- item start-->
+                <div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-2.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                <!-- item end-->
+                <!-- item start-->
+                <div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-3.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                <!-- item end-->
+                <!-- item start-->
+                <div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-4.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                <!-- item end-->
+                <!-- item start-->
+                <div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-5.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                <!-- item end-->
+                <!-- item start-->
+                <div class="instagram-slider__item"><a class="img-holder" href="#"><img class="img-bg" src="~/img/ig-6.jpg" alt="image" /><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                <!-- item end-->
+                <!-- instagram slider end-->
+                <div class="instagram-dots"></div>
+            </div>
+        </div>
+    </section>
+    <!-- instagram end-->
+    <!-- map section start-->
+    <section class="section map-section">
+        <!-- contact form start-->
+        @* 	<form class="form js-contact-form contact--form" autocomplete="off" action="#">
+        <div class="container">
+        <div class="row">
+        <div class="col-12">
+        <div class="title-block">
+        <h3 class="title">Sorğu <span>Göndər</span></h3><span class="trigger">Xəritələrdə bax</span>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6">
+        <label class="input-label">
+        <input class="form-field input input-name" type="text" name="name" required="required" /><span>Ad</span>
+        </label>
+        <label class="input-label">
+        <input class="form-field input input-mail" type="email" name="email" required="required" /><span>Email</span>
+        </label>
+        </div>
+        <div class="col-md-6">
+        <label class="textarea-label">
+        <textarea class="form-field textarea" name="message"></textarea><span>Mesaj</span>
+        </label>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-12">
+        <div class="button-holder">
+        <button class="button button--transparent" type="submit" data-hover="Göndər"><span>Göndər</span></button>
+        <div class="trigger-holder d-sm-none"><span class="trigger mobile-trigger">Xəritələrdə bax</span></div>
+        <div class="form__note"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </form> *@
+        <!-- contact form end-->
+    </section>
+    <!-- map section end-->
+</main>

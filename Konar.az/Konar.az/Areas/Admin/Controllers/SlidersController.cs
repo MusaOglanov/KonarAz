@@ -108,7 +108,7 @@ namespace Konar.az.Areas.Admin.Controllers
                 }
                 string folder = Path.Combine(_env.WebRootPath, "img");
                 Extensions.DeleteFile(folder, dbSlider.Image);
-                slider.Image = await slider.Photo.SaveImageAsync(folder);
+                dbSlider.Image = await slider.Photo.SaveImageAsync(folder);
             }
 
             dbSlider.Title = slider.Title;

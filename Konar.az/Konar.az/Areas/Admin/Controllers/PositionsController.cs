@@ -79,7 +79,7 @@ namespace Konar.az.Areas.Admin.Controllers
             {
                 return BadRequest();
             }
-            bool isExist = await _db.Positions.AnyAsync(x => x.Name == position.Name);
+            bool isExist = await _db.Positions.AnyAsync(x => x.Name == position.Name && x.Id!=id);
             if (isExist)
             {
                 ModelState.AddModelError("Name", "Bu adda Vəzifə daha əvvəl istifadə olunub");
