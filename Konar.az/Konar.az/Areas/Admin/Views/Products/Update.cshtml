@@ -1,4 +1,7 @@
 ﻿@model Product
+@{
+    int reqem = 2;
+}
 
 <div class="card">
     <div class="card-body">
@@ -77,9 +80,6 @@
 
                 </select>
             </div>
-
-
-
             <div class="form-group">
                 <label>Məhsulun Brendi</label>
                 <select class="form-control" name="brandId">
@@ -99,8 +99,6 @@
 
                 </select>
             </div>
-
-
             <div class="form-group">
                 <label> Məhsulun Teqləri</label>
                 <select multiple class="form-control" name="tagsId[]">
@@ -119,25 +117,40 @@
                     }
                 </select>
             </div>
-            <div style="text-align:center">Məhsulun xüsusiyyətləri</div>
-            <br />
-            @for (int i = 0; i < 1; i++)
-            {
-                <div class="form-group row">
 
-                    <div class="col">
-                        <label asp-for="ProductFeatures[i].Name" class="control-label">Məhsulun xüsusiyyətinin adı</label>
-                        <input asp-for="ProductFeatures[i].Name" class="form-control" />
-                        <span asp-validation-for="ProductFeatures[i].Name" class="text-danger"></span>
+            <div style="text-align:center">Məhsulun xüsusiyyətləri</div>
+
+            <!-- Mövcud xüsusiyyətlər -->
+            <div id="productFeaturesContainer">
+                @for (int i = 0; i < Model.ProductFeatures.Count; i++)
+                {
+                    <div class="form-group row feature-form">
+                        <div class="col">
+                            <label for="ProductFeatures[@i].Name" class="control-label">Məhsulun xüsusiyyətinin adı</label>
+                            <input name="ProductFeatures[@i].Name" value="@Model.ProductFeatures[i].Name" class="form-control" />
+                            <input type="hidden" name="ProductFeatures[@i].Id" value="@Model.ProductFeatures[i].Id" />
+                            <span asp-validation-for="ProductFeatures[@i].Name" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <label for="ProductFeatures[@i].Value" class="control-label">Məhsulun xüsusiyyətinin dəyəri</label>
+                            <input name="ProductFeatures[@i].Value" value="@Model.ProductFeatures[i].Value" class="form-control" />
+                            <span asp-validation-for="ProductFeatures[@i].Value" class="text-danger"></span>
+                        </div>
                     </div>
-                    <div class="col">
-                        <label asp-for="ProductFeatures[i].Value" class="control-label">Məhsulun xüsusiyyətinin dəyəri</label>
-                        <input asp-for="ProductFeatures[i].Value" class="form-control" />
-                        <span asp-validation-for="ProductFeatures[i].Value" class="text-danger"></span>
-                    </div>
+                }
+            </div>
+
+            <!-- Yeni xüsusiyyətlərin əlavə olunacağı yer -->
+            <div id="newProductFeaturesContainer"></div>
+
+            <!-- "+" və "-" düymələri ilə xüsusiyyətləri idarə etmək üçün düymələr -->
+            <div class="text-center mt-3">
+                <span>Məhsul xüsusiyyətini artırıb azaltmaq üçün düymələrdən istifadə edin</span>
+                <div class="d-flex justify-content-center mt-2">
+                    <button type="button" id="addFeatureBtn" class="btn btn-primary" style="margin-right: 5px;">+</button>
+                    <button type="button" id="removeFeatureBtn" class="btn btn-danger">-</button>
                 </div>
-            }
-            <button type="button" id="addFeatureBtn" class="btn btn-primary">+</button>
+            </div>
 
             <div class="form-group">
                 <label asp-for="ProductDetail.Description">Məhsul haqqında məlumat</label>
@@ -157,11 +170,49 @@
         </form>
     </div>
 </div>
-@section Scripts{
+@section Scripts {
     <script>
-        $(document).on('click', function () {
-            number++;
-            console.log('Number is now: ' + number);
+        $(document).ready(function () {
+            let featureCount = @Model.ProductFeatures.Count - 1;
+
+            $('#addFeatureBtn').click(function () {
+                featureCount++; // İndeksi artırırıq
+                $('#newProductFeaturesContainer').append(`
+                    <div class="form-group row feature-form">
+                        <div class="col">
+                            <label for="ProductFeatures[${featureCount}].Name">Yeni Xüsusiyyət Adı</label>
+                            <input type="text" name="ProductFeatures[${featureCount}].Name" class="form-control" />
+                            <input type="hidden" name="ProductFeatures[${featureCount}].Id" value="" /> <!-- Id dəyəri burada boş olacaq -->
+                        </div>
+                        <div class="col">
+                            <label for="ProductFeatures[${featureCount}].Value">Yeni Xüsusiyyət Dəyəri</label>
+                            <input type="text" name="ProductFeatures[${featureCount}].Value" class="form-control" />
+                        </div>
+                    </div>
+                `);
+            });
+            $('#removeFeatureBtn').click(function () {
+                if (featureCount > 0) {  // Sonuncu xüsusiyyəti silmək üçün yoxlayırıq ki, ən azı bir xüsusiyyət olsun
+                    $('#productFeaturesContainer .feature-form:last').remove();  // Sonuncu formu silirik
+                    featureCount--;  // Xüsusiyyət sayını azaldırıq
+                }
+            });
+        });
+        $(document).on("click", ".del-images", function () {
+            let clickedBtn = $(this);
+            $.ajax({
+                url: "/Admin/Products/DeleteImage/",
+                type: "get",
+                data: {
+                    "proImageId": clickedBtn.next().val()
+                },
+                success: function (res) {
+                    clickedBtn.parent().remove();
+                    if ($(".del-images").length == 1) {
+                        $(".del-images").remove();
+                    }
+                }
+            });
         });
     </script>
 }

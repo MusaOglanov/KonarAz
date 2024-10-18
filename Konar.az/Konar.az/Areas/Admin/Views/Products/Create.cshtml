@@ -1,6 +1,6 @@
 ﻿@model Product
 @{
-    int reqem = 1;
+    int reqem = 0;
 }
 
 <div class="card">
@@ -72,26 +72,39 @@
 
                 </select>
             </div>
+
             <div style="text-align:center">Məhsulun xüsusiyyətləri</div>
-            @for (int i = 0; i < reqem; i++)
-            {
-                <div class="form-group row">
+            <!-- Mövcud xüsusiyyətlər -->
+            <div id="productFeaturesContainer">
+                @for (int i = 0; i < reqem; i++)
+                {
+                    <div class="form-group row feature-form">
+                        <div class="col">
+                            <label for="ProductFeatures[@i].Name" class="control-label">Məhsulun xüsusiyyətinin adı</label>
+                            <input name="ProductFeatures[@i].Name" value="@Model.ProductFeatures[i].Name" class="form-control" />
+                            <input type="hidden" name="ProductFeatures[@i].Id" value="@Model.ProductFeatures[i].Id" />
+                            <span asp-validation-for="ProductFeatures[@i].Name" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <label for="ProductFeatures[@i].Value" class="control-label">Məhsulun xüsusiyyətinin dəyəri</label>
+                            <input name="ProductFeatures[@i].Value" value="@Model.ProductFeatures[i].Value" class="form-control" />
+                            <span asp-validation-for="ProductFeatures[@i].Value" class="text-danger"></span>
+                        </div>
+                    </div>
+                }
+            </div>
 
-                    <div class="col">
-                        <label asp-for="ProductFeatures[i].Name" class="control-label">Məhsulun xüsusiyyətinin adı</label>
-                        <input asp-for="ProductFeatures[i].Name" class="form-control" />
-                        <span asp-validation-for="ProductFeatures[i].Name" class="text-danger"></span>
-                    </div>
-                    <div class="col">
-                        <label asp-for="ProductFeatures[i].Value" class="control-label">Məhsulun xüsusiyyətinin dəyəri</label>
-                        <input asp-for="ProductFeatures[i].Value" class="form-control" />
-                        <span asp-validation-for="ProductFeatures[i].Value" class="text-danger"></span>
-                    </div>
+            <!-- Yeni xüsusiyyətlərin əlavə olunacağı yer -->
+            <div id="newProductFeaturesContainer"></div>
+
+            <!-- "+" və "-" düymələri ilə xüsusiyyətləri idarə etmək üçün düymələr -->
+            <div class="text-center mt-3">
+                <span>Məhsul xüsusiyyətini artırıb azaltmaq üçün düymələrdən istifadə edin</span>
+                <div class="d-flex justify-content-center mt-2">
+                    <button type="button" id="addFeatureBtn" class="btn btn-primary" style="margin-right: 5px;">+</button>
+                    <button type="button" id="removeFeatureBtn" class="btn btn-danger">-</button>
                 </div>
-            }
-            <button type="button" id="addFeatureBtn" class="btn btn-primary">+</button>
-
-     
+            </div>
             <div class="form-group">
                 <label asp-for="ProductDetail.Description">Məhsul haqqında məlumat</label>
                 <textarea asp-for="ProductDetail.Description" class="form-control"></textarea>
@@ -112,13 +125,39 @@
 </div>
 @section Scripts {
     <script>
-        $(document).click(function () {
-            var number = @reqem;
+      
+        var featureIndex = @reqem;  // Məhsul xüsusiyyətlərinin ilk sayını təyin edirik.
 
-            $('#addFeatureBtn').click(function () {
-                number++;
-              
-            });
+        $('#addFeatureBtn').click(function () {
+            var newFeature = `
+                    <div class="form-group row feature-form">
+                        <div class="col">
+                            <label for="ProductFeatures_${featureIndex}__Name">Məhsulun xüsusiyyətinin adı</label>
+                            <input type="text" name="ProductFeatures[${featureIndex}].Name" class="form-control" />
+                        </div>
+                        <div class="col">
+                            <label for="ProductFeatures_${featureIndex}__Value">Məhsulun xüsusiyyətinin dəyəri</label>
+                            <input type="text" name="ProductFeatures[${featureIndex}].Value" class="form-control" />
+                        </div>
+                    </div>
+                `;
+            $('#productFeaturesContainer').append(newFeature);
+            featureIndex++;  // İndeksi artırırıq.
         });
+
+        $('#removeFeatureBtn').click(function () {
+            if (featureIndex > 1) {  // Ən azı bir xüsusiyyətin qalmasını təmin edirik.
+                $('#productFeaturesContainer .feature-form:last').remove();
+                featureIndex--;
+            }
+        });
+        $('#removeFeatureBtn').click(function () {
+            if (reqem > 1) { // Ən azı bir form qalmalıdır
+                $('#productFeaturesContainer .feature-form:last').remove(); // Sonuncu formu çıxardırıq
+                reqem--; // Reqemi azaldırıq
+            }
+        });
+
     </script>
+  
 }

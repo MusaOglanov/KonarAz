@@ -4,6 +4,7 @@ using Konar.az.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol.Core.Types;
 using System.Drawing;
 
 namespace Konar.az.Areas.Admin.Controllers
@@ -90,7 +91,6 @@ namespace Konar.az.Areas.Admin.Controllers
             product.ProductImages = productImages;
             #endregion
 
-
             #region Category
             List<ProductCategory> productCategories = new List<ProductCategory>();
 
@@ -163,7 +163,7 @@ namespace Konar.az.Areas.Admin.Controllers
         #region Post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id, int[] tagsId, int brandId, int[] catId, Product product)
+        public async Task<IActionResult> Update(int? id, int[] tagsId, int brandId, int[] catId, Product product, List<ProductFeature> ProductFeatures)
         {
             if (id == null)
             {
@@ -219,7 +219,46 @@ namespace Konar.az.Areas.Admin.Controllers
                 }
             }
 
+
             #endregion
+
+            // Məhsulun xüsusiyyətlərini yenilə
+            #region Product Features Update
+            if (ProductFeatures != null)
+            {
+                // Mövcud xüsusiyyətləri yenilə və ya sil
+                var existingFeatures = dbProduct.ProductFeatures.ToList();
+                foreach (var feature in existingFeatures)
+                {
+                    var updatedFeature = ProductFeatures.FirstOrDefault(f => f.Name == feature.Name);
+                    if (updatedFeature != null)
+                    {
+                        // Mövcud xüsusiyyət yenilənir
+                        feature.Value = updatedFeature.Value;
+                        ProductFeatures.Remove(updatedFeature);  // Artıq işləndiyi üçün siyahıdan çıxarırıq
+                    }
+                    else
+                    {
+                        // Əgər formda xüsusiyyət yoxdursa, onu silirik
+                        dbProduct.ProductFeatures.Remove(feature);
+                    }
+                }
+
+                // Yeni xüsusiyyətlər əlavə et
+                foreach (var feature in ProductFeatures)
+                {
+                    if (!string.IsNullOrEmpty(feature.Name) && !string.IsNullOrEmpty(feature.Value))
+                    {
+                        dbProduct.ProductFeatures.Add(new ProductFeature
+                        {
+                            Name = feature.Name,
+                            Value = feature.Value
+                        });
+                    }
+                }
+            }
+            #endregion
+
 
             dbProduct.BrandId = brandId;
 
@@ -253,6 +292,8 @@ namespace Konar.az.Areas.Admin.Controllers
                 productTags.Add(productTag);
             }
             dbProduct.ProductTags = productTags;
+
+           
             #endregion
             dbProduct.Name = product.Name;
             dbProduct.Price = product.Price;
