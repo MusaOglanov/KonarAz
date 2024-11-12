@@ -1,0 +1,36 @@
+﻿@model Konar.az.Models.MailRequest
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mail göndərmə səhifəsi</h1>
+<form  method="post">
+
+	<div class="row">
+		
+		<div class="col-12">
+			<label class="input-label">
+				<input class="form-field input input-name" asp-for="ReceiverMail" /><span>Alıcı Mail Adresi</span>
+			</label>
+			<span style="margin-bottom:10px" asp-validation-for="ReceiverMail"></span>
+		</div>
+		<div class="col-12">
+			<label class="input-label">
+				<input class="form-field input input-name" asp-for="Subject" /><span>Mövzu başlığı</span>
+			</label>
+			<span style="margin-bottom:10px" asp-validation-for="Subject"></span>
+		</div>
+		<div class="col-12">
+			<label class="input-label">
+				<textarea class="form-field input input-name" asp-for="Body" ><span>Mövzu mətni</span></textarea>
+			</label>
+		</div>
+		
+		
+		<div class="col-12">
+			<div class="button-holder">
+				<button class="button button--transparent" type="submit"><span>Mail göndər</span></button>
+			</div>
+		</div>
+	</div>
+</form>

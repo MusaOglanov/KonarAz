@@ -24,7 +24,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(IdentityOption =>
     IdentityOption.User.RequireUniqueEmail = true;
 
 
-}).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+}).AddDefaultTokenProviders().AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<AppDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

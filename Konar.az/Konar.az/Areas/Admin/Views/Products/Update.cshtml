@@ -140,10 +140,10 @@
                 }
             </div>
 
-            <!-- Yeni xüsusiyyətlərin əlavə olunacağı yer -->
-            <div id="newProductFeaturesContainer"></div>
+            <div id="productFeaturesContainer">
+                <!-- Mövcud xüsusiyyətlər buraya gələcək (HTML tərəfindən render olunur) -->
+            </div>
 
-            <!-- "+" və "-" düymələri ilə xüsusiyyətləri idarə etmək üçün düymələr -->
             <div class="text-center mt-3">
                 <span>Məhsul xüsusiyyətini artırıb azaltmaq üçün düymələrdən istifadə edin</span>
                 <div class="d-flex justify-content-center mt-2">
@@ -151,7 +151,6 @@
                     <button type="button" id="removeFeatureBtn" class="btn btn-danger">-</button>
                 </div>
             </div>
-
             <div class="form-group">
                 <label asp-for="ProductDetail.Description">Məhsul haqqında məlumat</label>
                 <textarea asp-for="ProductDetail.Description" class="form-control"></textarea>
@@ -173,31 +172,70 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-            let featureCount = @Model.ProductFeatures.Count - 1;
+            // Mövcud xüsusiyyətlərin sayını təyin edir
+            let featureCount = $('#productFeaturesContainer .feature-form').length;
 
+            // Mövcud xüsusiyyətləri `existing-feature` olaraq qeyd edirik
+            $('#productFeaturesContainer .feature-form').addClass('existing-feature');
+
+            // Yeni xüsusiyyət əlavə etmək funksiyası
             $('#addFeatureBtn').click(function () {
-                featureCount++; // İndeksi artırırıq
-                $('#newProductFeaturesContainer').append(`
-                    <div class="form-group row feature-form">
-                        <div class="col">
-                            <label for="ProductFeatures[${featureCount}].Name">Yeni Xüsusiyyət Adı</label>
-                            <input type="text" name="ProductFeatures[${featureCount}].Name" class="form-control" />
-                            <input type="hidden" name="ProductFeatures[${featureCount}].Id" value="" /> <!-- Id dəyəri burada boş olacaq -->
+                // Əgər heç bir xüsusiyyət yoxdursa, `featureCount` sıfırdan başlayacaq
+                if (featureCount === 0) {
+                    featureCount = 0;
+                }
+
+                $('#productFeaturesContainer').append(`
+                        <div class="form-group row feature-form new-feature" id="feature-${featureCount}">
+                            <div class="col">
+                                <label for="ProductFeatures[${featureCount}].Name" class="control-label">Məhsulun xüsusiyyətinin adı</label>
+                                <input name="ProductFeatures[${featureCount}].Name" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label for="ProductFeatures[${featureCount}].Value" class="control-label">Məhsulun xüsusiyyətinin dəyəri</label>
+                                <input name="ProductFeatures[${featureCount}].Value" class="form-control" />
+                            </div>
                         </div>
-                        <div class="col">
-                            <label for="ProductFeatures[${featureCount}].Value">Yeni Xüsusiyyət Dəyəri</label>
-                            <input type="text" name="ProductFeatures[${featureCount}].Value" class="form-control" />
-                        </div>
-                    </div>
-                `);
+                    `);
+                featureCount++; // Hər yeni xüsusiyyət əlavə olunduqdan sonra say artırılır
             });
+
+            // Yalnız yeni xüsusiyyətləri silmək funksiyası
             $('#removeFeatureBtn').click(function () {
-                if (featureCount > 0) {  // Sonuncu xüsusiyyəti silmək üçün yoxlayırıq ki, ən azı bir xüsusiyyət olsun
-                    $('#productFeaturesContainer .feature-form:last').remove();  // Sonuncu formu silirik
-                    featureCount--;  // Xüsusiyyət sayını azaldırıq
+                const $newFeatures = $('#productFeaturesContainer .new-feature'); // Yalnız yeni xüsusiyyətləri seçirik
+
+                if ($newFeatures.length > 0) { // Əgər yeni xüsusiyyət varsa
+                    $newFeatures.last().remove(); // Yalnız son əlavə edilmiş yeni xüsusiyyəti silirik
+                    featureCount--; // Yalnız yeni xüsusiyyətlər üçün sayıcıyı azaldırıq
                 }
             });
         });
+
+        //     let featureCount = @Model.ProductFeatures.Count - 1;
+
+        //     $('#addFeatureBtn').click(function () {
+        //         featureCount++; // İndeksi artırırıq
+        //         $('#newProductFeaturesContainer').append(`
+        //             <div class="form-group row feature-form">
+        //                 <div class="col">
+        //                     <label for="ProductFeatures[${featureCount}].Name">Yeni Xüsusiyyət Adı</label>
+        //                     <input type="text" name="ProductFeatures[${featureCount}].Name" class="form-control" />
+        //                     <input type="hidden" name="ProductFeatures[${featureCount}].Id" value="" /> <!-- Id dəyəri burada boş olacaq -->
+        //                 </div>
+        //                 <div class="col">
+        //                     <label for="ProductFeatures[${featureCount}].Value">Yeni Xüsusiyyət Dəyəri</label>
+        //                     <input type="text" name="ProductFeatures[${featureCount}].Value" class="form-control" />
+        //                 </div>
+        //             </div>
+        //         `);
+        //     });
+        //     $('#removeFeatureBtn').click(function () {
+        //         if (featureCount > 0) {  // Sonuncu xüsusiyyəti silmək üçün yoxlayırıq ki, ən azı bir xüsusiyyət olsun
+        //             $('#productFeaturesContainer .feature-form:last').remove();  // Sonuncu formu silirik
+        //             featureCount--;  // Xüsusiyyət sayını azaldırıq
+        //         }
+        //     });
+        // });
         $(document).on("click", ".del-images", function () {
             let clickedBtn = $(this);
             $.ajax({

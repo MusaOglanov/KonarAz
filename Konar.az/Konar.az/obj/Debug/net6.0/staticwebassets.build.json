@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EOurIEvTEXeFeJph/aUOxYplJm3SJRhpN5oSvmIkPH4=",
+  "Hash": "B6XCMGaHIcDvMQdXtqxH2CJ/76hc39KLaGAci849/60=",
   "Source": "Konar.az",
   "BasePath": "_content/Konar.az",
   "Mode": "Default",
@@ -29809,6 +29809,25 @@
       "OriginalItemSpec": "wwwroot\\img\\45a07c98-9841-472f-91d0-6f73c55fd0b4blacklava.jpg"
     },
     {
+      "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\49756b9f-ead9-49db-82ed-7fb0f25d927bZurafe.png",
+      "SourceId": "Konar.az",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\",
+      "BasePath": "_content/Konar.az",
+      "RelativePath": "img/49756b9f-ead9-49db-82ed-7fb0f25d927bZurafe.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\49756b9f-ead9-49db-82ed-7fb0f25d927bZurafe.png"
+    },
+    {
       "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\49a19f78-d26d-4016-a7d1-e699f097527balien - Copy.jpg",
       "SourceId": "Konar.az",
       "SourceType": "Discovered",
@@ -30472,25 +30491,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\a5c2cadf-8051-4d4a-b230-7f709489de38banner-10.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\a5c3b2e5-5647-41e9-a155-1f173779a930dark.jfif",
-      "SourceId": "Konar.az",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\",
-      "BasePath": "_content/Konar.az",
-      "RelativePath": "img/a5c3b2e5-5647-41e9-a155-1f173779a930dark.jfif",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\a5c3b2e5-5647-41e9-a155-1f173779a930dark.jfif"
     },
     {
       "Identity": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\a79fb5d5-02d7-4489-9dfc-bee7416d9f89mandoo.jpg",
