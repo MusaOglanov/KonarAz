@@ -1,0 +1,127 @@
+﻿@model Konar.az.ViewModels.ContactVM
+<main class="main">
+	<!-- promo primary start-->
+	<section class="promo-primary">
+		<div class="overlay"></div>
+		<picture>
+			<source srcset="img/@Model?.ContactBase.Image" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="img/@Model?.ContactBase.Image" alt="img" />
+		</picture>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="align-container">
+						<div class="align-item">
+							<span>KONAR UNIFORM</span>
+							<h1 class="title">ƏLAQƏ</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- promo primary end-->
+	<!-- get in touch start-->
+	<section class="section get-in-touch">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="form-wrapper" style="background-image: url(img/world-map.png);">
+						<!-- contact form start-->
+						<form method="post" class="form  contact--form contacts-page-form" autocomplete="off">
+							<div class="row">
+								<div class="col-12">
+									<div class="title-block">
+										<h3 class="title">Əlaqə <span>Saxla</span></h3>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label class="input-label">
+										<input class="form-field input input-name" asp-for="@Model.ContactMessages.Name" required="required" placeholder="Ad Soyad" />
+										<span class="text-danger" asp-validation-for="@Model.ContactMessages.Name"></span>
+									</label>
+								</div>
+								<div class="col-md-6">
+									<label class="input-label">
+										<input class="form-field input input-name" asp-for="@Model.ContactMessages.Subject" placeholder="Mövzu" required />
+										<span class="text-danger" asp-validation-for="@Model.ContactMessages.Subject"></span>
+									</label>
+								</div>
+								<div class="col-md-6">
+									<label class="input-label">
+										<input class="form-field input input-tel" asp-for="@Model.ContactMessages.Phone"  placeholder="Telefon nömrəsi" required />
+										<span class="text-danger" asp-validation-for="@Model.ContactMessages.Phone"></span>
+									</label>
+								</div>
+
+								<div class="col-md-6">
+									<label class="input-label">
+										<input class="form-field input input-mail" asp-for="@Model.ContactMessages.Email" type="email" placeholder="Email Adress" required />
+										<span class="text-danger" asp-validation-for="@Model.ContactMessages.Email"></span>
+									</label>
+								</div>
+								<div class="col-12">
+									<label class="textarea-label">
+										<textarea class="form-field textarea" asp-for="@Model.ContactMessages.Message"  placeholder="Mesaj" required></textarea>
+										<span class="text-danger" asp-validation-for="@Model.ContactMessages.Message"></span>
+									</label>
+								</div>
+							</div>
+							<div class="button-holder">
+								<button class="button button--transparent" type="submit" data-hover="Göndər"><span>Göndər</span></button>
+							</div>
+						</form>
+						<!-- contact form end-->
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</section>
+	<!-- get in touch end-->
+	<!-- map section start-->
+	<section class="section map-section no-padding-top no-padding-bottom">
+		<!-- contacts-banner start-->
+		<div class="contacts-banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="title-block">
+							<h2 class="title">. <span>Əlaqə</span> Məlumatları</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="address-block inner-block">
+							<p class="address">@Model?.ContactBase.Adress</p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="phones-block inner-block">
+							<p><a href="tel:+994517005010">@Model?.ContactBase.Phone1</a></p>
+							<p><a href="tel:+994517005010">@Model?.ContactBase.Phone2</a></p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="mail-block inner-block">
+							<p><a href="mailto:@Model.ContactBase.Email1">@Model?.ContactBase.Email1</a></p>
+							<p><a href="mailto:@Model.ContactBase.Email2">@Model?.ContactBase.Email2</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="button-holder">
+							<a class="button button--filled" href="#" data-hover="Google xəritələrdə bax"><span>Google xəritələrdə bax</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- contacts-banner end-->
+		<div class="map" id="map" data-api-key="AIzaSyD5ES8GFHrarPhIVpDhFDea6fPtga0Wy4Y" data-longitude="-9.141827" data-latitude="38.737749" data-marker="img/placeholder.png"></div>
+	</section>
+	<!-- map section end-->
+</main>

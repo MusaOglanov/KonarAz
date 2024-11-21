@@ -33,6 +33,8 @@ namespace Konar.az.DAL
 		public DbSet<Employee> Employee { get; set; }
 		public DbSet<Slider> Sliders { get; set; }
 		public DbSet<Bio> Bios { get; set; }
+		public DbSet<ContactMessage> ContactMessages { get; set; }
+		public DbSet<Contact> Contacts { get; set; }
 	}
 
 }
