@@ -1,0 +1,22 @@
+﻿@model List<Product>
+
+<div class="product-list">
+    @foreach (var product in Model)
+    {
+        <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
+            <!-- Product Item Start -->
+            <figure class="product-item product-item--primary">
+                <a class="img-holder" asp-action="Detail" asp-route-id="@product.Id">
+                    <img src="~/img/@product.ProductImages.FirstOrDefault().Image" alt="product" />
+                </a>
+                <figcaption>
+                    <span class="price">$ @product.Price</span>
+                    <h4 class="title">
+                        <a asp-action="Detail" asp-route-id="@product.Id">@product.Name</a>
+                    </h4>
+                </figcaption>
+            </figure>
+            <!-- Product Item End -->
+        </div>
+    }
+</div>

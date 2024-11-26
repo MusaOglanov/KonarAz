@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Konar.az.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Konar.az.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Konar.az.x0qtab0uo8.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\admin\\css\\maps\\vertical-layout-light\\style.css.map",
@@ -6705,6 +6705,10 @@
       "PackagePath": "staticwebassets\\img\\de56c056-ac89-4522-808c-5984d7721369batteryy.jpg"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\dea96e3a-3c32-4681-94bf-27a36c235d57menzere.jpg",
+      "PackagePath": "staticwebassets\\img\\dea96e3a-3c32-4681-94bf-27a36c235d57menzere.jpg"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\details-1.jpg",
       "PackagePath": "staticwebassets\\img\\details-1.jpg"
     },
@@ -8119,6 +8123,10 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Konar.az.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Konar.az.Microsoft.AspNetCore.StaticWebAssets.props",

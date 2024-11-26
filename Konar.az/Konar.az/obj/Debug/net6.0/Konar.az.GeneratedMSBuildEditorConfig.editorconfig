@@ -17,6 +17,8 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
 
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/About/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWJvdXRcQ3JlYXRlLmNzaHRtbA==
@@ -196,6 +198,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Views/Products/_ProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcX1Byb2R1Y3RMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Views/Shared/Components/Footer/Default.cshtml]

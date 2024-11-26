@@ -1,185 +1,264 @@
 ﻿@model List<Product>
+<style>
+    .tabs-header a {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+    }
+
+        .tabs-header a:hover {
+            text-decoration: underline;
+        }
+
+    .tabs-header__title .count {
+        margin-left: 10px; /* Kateqoriya adı ilə rəqəm arasında 10px boşluq yaradır */
+    }
+</style>
 
 <main class="main">
-	<section class="promo-primary promo-primary--shop">
-		<div class="overlay"></div>
-		<picture>
-			<source srcset="~/img/catalog-bg.jpg" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/catalog-bg.jpg" alt="img" />
-		</picture>
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="align-container">
-						<div class="align-item">
-							<h1 class="title">Məhsullar</h1>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- catalog start-->
-	<section class="section catalog no-padding-bottom">
-		<div class="tabs-holder catalog-tabs">
-			<div class="container">
-				@foreach (Product item in Model)
-				{
-				<div class="row">
-					<div class="col-xl-3 col-lg-4">
-						<!-- catalog aside start-->
-						<div class="aside-holder">
-							<span class="close-aside d-lg-none">
-								<svg class="icon">
-									<use xlink:href="#close"></use>
-								</svg>
-							</span>
-							<aside class="catalog-aside">
-								<div class="catalog-aside__inner">
-									<h4 class="title toggler">Kataloq</h4>
-									<!-- tabs header start-->
-									@foreach (ProductCategory prodCat in item.ProductCategories)
-										{
-											<div class="tabs-header toggle-item">
-												<span >
-													<span class="item">@prodCat.Category.Name</span>
-												</span>
-											</div>
-										}
-								
-									<!-- tabs header end-->
-								</div>
-								<form class="form form--primary form--catalog" action="javascript:void(0);">
-									
-									<fieldset class="brands">
-										<h4 class="title toggler">Brendlər</h4>
-										<div class="brands-block toggle-item">
-											<!-- item start-->
-											
-												<div class="tabs-header ">
-													<span >
-														<span class="item">@item.Brand.Name</span>
-													</span>
-												</div> 
-									
-											 <div class="brand-item">
-												<label>
-													<input class="checkbox checkbox--rounded" type="checkbox" name="brand" value="Solarius" /><span class="checkbox--rounded-mask"></span><span class="name">Solarius</span>
-												</label><span class="count">25</span>
-											</div> 
-											<!-- item end-->
-										 </div>
-									</fieldset>
-									<!-- brands end-->
+    <section class="promo-primary promo-primary--shop">
+        <div class="overlay"></div>
+        <picture>
+            <source srcset="~/img/catalog-bg.jpg" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/catalog-bg.jpg" alt="img" />
+        </picture>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="align-container">
+                        <div class="align-item">
+                            <h1 class="title">Məhsullar</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- catalog start-->
+    <section class="section catalog no-padding-bottom">
+        <div class="tabs-holder catalog-tabs">
+            <div class="container">
 
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4">
+                        <!-- catalog aside start-->
+                        <div class="aside-holder">
+                            <span class="close-aside d-lg-none">
+                                <svg class="icon">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </span>
+                            <aside class="catalog-aside">
+                                <div class="catalog-aside__inner">
+                                    <h4 class="title toggler">Kataloq</h4>
+                                    <!-- tabs header start-->
+                                    <div>
+                                        <div class="catalog-aside__inner">
+                                            <h4 class="title toggler">Kategorilər</h4>
+                                            <div class="tabs-header toggle-item">
+                                                @if (ViewBag.Categories != null)
+                                                {
+                                                    @foreach (var category in ViewBag.Categories as List<Category>)
+                                                    {
+                                                        int productCount = 0;
+                                                        if (ViewBag.Products != null)
+                                                        {
+                                                            productCount = ((List<Product>)ViewBag.Products)
+                                                            .Count(p => p.ProductCategories.Any(pc => pc.CategoryId == category.Id));
+                                                        }
 
-									<div class="tags">
-										<h4 class="title toggler">Taqlar</h4>
-										<div class="tags-block toggle-item">
-											@foreach (ProductTag prodTag in item.ProductTags)
-												{
-													<span class="tag">
-														@prodTag.Tag.Name
-														<span class="close">
-															<svg class="icon">
-																<use xlink:href="#close"></use>
-															</svg>
-														</span>
-													</span>
-												}
-											
-										</div>
-									</div>
-									<!-- button block start-->
-									<!-- <fieldset class="button-block">
-										<button class="button button--transparent" type="submit" data-hover="Filteri tətbiq et"><span>Filteri tətbiq et</span></button>
-									</fieldset> -->
-									<!-- button block end-->
-								</form>
-							</aside>
-						</div>
-					</div>
-					<div class="col-xl-9 col-lg-8">
-						<div class="row d-lg-none">
-							<div class="col-12">
-								<div class="filter-trigger">
-									<svg class="icon">
-										<use xlink:href="#controls"></use>
-									</svg><span class="title">Filters</span>
-								</div>
-							</div>
-						</div>
-						<!-- tabs content start-->
-						<div class="tabs-content">
-							<!-- tabs content item start-->
-							<div class="tabs-content__item"> 
-								
-								 <div class="row">
-									<div class="col-12">
-										<div class="pagination-holder">
-											<!-- pagination start-->
-											<ul class="pagination pagination--primary">
-												<li class="back"><a href="#">Əvvələ</a></li>
-												<li class="number current"><a href="#">1</a></li>
-												<li class="number"><a href="#">2</a></li>
-												<li class="number"><a href="#">3</a></li>
-												<li class="number"><a href="#">4</a></li>
-												<li class="number"><a href="#">5</a></li>
-												<li class="next"><a href="#">İrəli</a></li>
-											</ul>
-											<!-- pagination end-->
-										</div>
-									</div>
-								</div> 
-						 	</div>
-							<!-- tabs content item end-->
-							<!-- tabs content item start-->
-							<div class="tabs-content__item">
-								<div class="row offset-margin">
+                                                        <div>
+                                                            <label>
+                                                                <input type="checkbox" name="categoryIds" value="@category.Id"
+                                                                @(Context.Request.Query["categoryIds"].ToString().Contains(category.Id.ToString()) ? "checked" : "")>
+                                                                @category.Name (<span>@productCount</span>)
+                                                            </label>
+                                                        </div>
 
-									<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-										<!-- item start-->
-										<figure class="product-item product-item--primary">
-												<a class="img-holder" asp-action="Detail" asp-route-id="@item.Id">
-												<img src="~/img/@item.ProductImages.FirstOrDefault().Image" alt="product" /></a>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <p>No categories available.</p>
+                                                }
 
-											<figcaption>
-												<span class="price">$ @item.Price</span>
-													<h4 class="title"><a asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h4>
-											</figcaption>
-										</figure>
-										<!-- item end-->
-									</div>
-								</div>
-							
-							</div>
-							<!-- tabs content item end-->
-							<!-- tabs content end-->
-						</div>
-					</div>
-					<!-- catalog aside end-->
-				</div>
-				}
-				<div class="row">
-					<div class="col-12">
-						<div class="pagination-holder">
-							<!-- pagination start-->
-							<ul class="pagination pagination--primary">
-								<li class="back"><a href="#">Əvvələ</a></li>
-								<li class="number current"><a href="#">1</a></li>
-								<li class="number"><a href="#">2</a></li>
-								<li class="number"><a href="#">3</a></li>
-								<li class="number"><a href="#">4</a></li>
-								<li class="number"><a href="#">5</a></li>
-								<li class="next"><a href="#">İrəli</a></li>
-							</ul>
-							<!-- pagination end-->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- catalog end-->
-	<!-- relevant start-->
-	<br>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- tabs header end-->
+                                </div>
+                                <form class="form form--primary form--catalog" action="javascript:void(0);">
+                                    <fieldset class="brands">
+                                        <h4 class="title toggler">Brendlər</h4>
+                                        <div class="brands-block toggle-item">
+                                            <!-- item start-->
+                                            @if (ViewBag.Brands != null)
+                                            {
+                                                @foreach (var brand in ViewBag.Brands as List<Brand>)
+                                                {
+                                                    int productCount = 0;
+                                                    if (ViewBag.Products != null)
+                                                    {
+                                                        productCount = ((List<Product>)ViewBag.Products)
+                                                        .Count(p => p.BrandId == brand.Id);
+                                                    }
+
+                                                    <div>
+                                                        <label>
+                                                            <input type="checkbox" name="brandIds" value="@brand.Id"
+                                                            @(Context.Request.Query["brandIds"].ToString().Contains(brand.Id.ToString()) ? "checked" : "")>
+                                                            @brand.Name (<span>@productCount</span>)
+                                                        </label>
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <p>No brands available.</p>
+                                            }
+
+                                            <!-- item end-->
+                                        </div>
+                                    </fieldset>
+                                    <!-- brands end-->
+
+                                    <div class="tags">
+                                        <h4 class="title toggler">Taqlar</h4>
+                                        <div class="tags-block toggle-item">
+                                            @if (ViewBag.Tags != null && ((List<Tag>)ViewBag.Tags).Any())
+                                            {
+                                                foreach (var tag in (List<Tag>)ViewBag.Tags)
+                                                {
+
+                                                    <div class="tags-block toggle-item">
+                                                        <span class="tag">
+                                                            @tag.Name<span class="close">
+                                                                <svg class="icon">
+                                                                    <use xlink:href="#close"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <p>Heç bir tag yoxdur</p>
+                                            }
+                                        </div>
+
+                                    </div>
+                                    <!-- button block start-->
+                                    <fieldset class="button-block">
+                                        <button class="button button--transparent" id="applyFilter" type="button" data-hover="Filteri tətbiq et">
+                                            <span>Filteri tətbiq et</span>
+                                        </button>
+                                    </fieldset>
+                                    <!-- button block end-->
+                                </form>
+                            </aside>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-8">
+                        <div class="row d-lg-none">
+                            <div class="col-12">
+                                <div class="filter-trigger">
+                                    <svg class="icon">
+                                        <use xlink:href="#controls"></use>
+                                    </svg><span class="title">Filters</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- tabs content start-->
+                        <div class="tabs-content">
+                            <!-- tabs content item start-->
+                            <div class="tabs-content__item">
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="pagination-holder">
+                                            <!-- pagination start-->
+                                            <ul class="pagination pagination--primary">
+                                                <li class="back"><a href="#">Əvvələ</a></li>
+                                                <li class="number current"><a href="#">1</a></li>
+                                                <li class="number"><a href="#">2</a></li>
+                                                <li class="number"><a href="#">3</a></li>
+                                                <li class="number"><a href="#">4</a></li>
+                                                <li class="number"><a href="#">5</a></li>
+                                                <li class="next"><a href="#">İrəli</a></li>
+                                            </ul>
+                                            <!-- pagination end-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- tabs content item end-->
+                            <!-- tabs content item start-->
+                            <div class="tabs-content__item">
+                                <div class="row offset-margin">
+                                    @foreach (var product in Model)
+                                    {
+                                        <div class="col-md-4">
+                                            <figure class="product-item">
+                                                <a class="img-holder" asp-action="Detail" asp-route-id="@product.Id">
+                                                    <img src="~/img/@product.ProductImages.FirstOrDefault()?.Image" alt="@product.Name" />
+                                                </a>
+                                                <figcaption>
+                                                    <span class="price">$@product.Price</span>
+                                                    <h4>@product.Name</h4>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    }
+                                </div>
+
+                            </div>
+                            <!-- tabs content item end-->
+                            <!-- tabs content end-->
+                        </div>
+                    </div>
+                    <!-- catalog aside end-->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pagination-holder">
+                            <!-- pagination start-->
+                            <ul class="pagination pagination--primary">
+                                <li class="back"><a href="#">Əvvələ</a></li>
+                                <li class="number current"><a href="#">1</a></li>
+                                <li class="number"><a href="#">2</a></li>
+                                <li class="number"><a href="#">3</a></li>
+                                <li class="number"><a href="#">4</a></li>
+                                <li class="number"><a href="#">5</a></li>
+                                <li class="next"><a href="#">İrəli</a></li>
+                            </ul>
+                            <!-- pagination end-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- catalog end-->
+    <!-- relevant start-->
+    <br>
 </main>
+@section Scripts {
+    <script>
+        document.getElementById("applyFilter").addEventListener("click", function () {
+            const categoryIds = Array.from(document.querySelectorAll('input[name="categoryIds"]:checked'))
+                .map(checkbox => checkbox.value);
+            const brandIds = Array.from(document.querySelectorAll('input[name="brandIds"]:checked'))
+                .map(checkbox => checkbox.value);
+
+            let query = [];
+            if (categoryIds.length) query.push(`categoryIds=${categoryIds.join(",")}`);
+            if (brandIds.length) query.push(`brandIds=${brandIds.join(",")}`);
+
+            // Yeni URL qurun və səhifəni göndərin
+            const newUrl = `/Products/Index?${query.join("&")}`;
+            window.location.href = newUrl;
+        });
+
+    </script>
+}

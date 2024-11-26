@@ -264,3 +264,7 @@ C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az\bin\Debug\net6.0\Micro
 C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az\obj\Debug\net6.0\Konar.az.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az\bin\Debug\net6.0\Konar.az.staticwebassets.endpoints.json
+C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az\obj\Debug\net6.0\staticwebassets\msbuild.Konar.az.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\musac\OneDrive\Desktop\KonarAz\Konar.az\Konar.az\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
