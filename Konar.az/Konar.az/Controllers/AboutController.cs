@@ -22,7 +22,8 @@ namespace Konar.az.Controllers
 			{
 				Abouts = await _db.Abouts.FirstOrDefaultAsync(),
 				Statistics = await _db.Statistics.FirstOrDefaultAsync(),
-				Employee = await _db.Employee.Include(x => x.Position).ToListAsync()
+				Employee = await _db.Employee.Include(x => x.Position).ToListAsync(),
+				Brands = await _db.Brands.ToListAsync()
 
 			};
 			return View(aboutVM);

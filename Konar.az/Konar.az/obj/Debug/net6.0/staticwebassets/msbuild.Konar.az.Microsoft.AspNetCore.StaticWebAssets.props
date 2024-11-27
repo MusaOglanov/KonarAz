@@ -28242,6 +28242,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\4a395dbe-c5b3-47e1-9d8e-b7a9821be68datombomb.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\4b0dce3b-c523-4247-a499-64cbba8201efPaltaryuyan.jfif'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Konar.az</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Konar.az</BasePath>
+      <RelativePath>img/4b0dce3b-c523-4247-a499-64cbba8201efPaltaryuyan.jfif</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>sgfrbjumv6</Fingerprint>
+      <Integrity>DP4LJeIc/O4sXkKNXKkpIbweBnLx+2Wuez0Dp5q2nzw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\4b0dce3b-c523-4247-a499-64cbba8201efPaltaryuyan.jfif'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\4c17db42-ff2c-4d94-ad7d-5fb8653faaf7Test.mp4'))">
       <SourceType>Package</SourceType>
       <SourceId>Konar.az</SourceId>
@@ -28854,6 +28872,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\a79fb5d5-02d7-4489-9dfc-bee7416d9f89mandoo.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\a9d448b1-1447-4384-bc07-32e0d4bedbafFlorist.jpg.jfif'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Konar.az</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Konar.az</BasePath>
+      <RelativePath>img/a9d448b1-1447-4384-bc07-32e0d4bedbafFlorist.jpg.jfif</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>644agwfa1u</Fingerprint>
+      <Integrity>VjMPBRqYiddXZKU3u0wrwqY+CVllPn24D7eooYyBHoU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\a9d448b1-1447-4384-bc07-32e0d4bedbafFlorist.jpg.jfif'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\aad46928-1f7f-4f6c-a832-980383741577ak-47-guns.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Konar.az</SourceId>
@@ -28979,6 +29015,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\accidient3.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\ad2c34e0-4ee6-4948-916e-3d6cfe961fe0Florist.jpg.jfif'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Konar.az</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Konar.az</BasePath>
+      <RelativePath>img/ad2c34e0-4ee6-4948-916e-3d6cfe961fe0Florist.jpg.jfif</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>644agwfa1u</Fingerprint>
+      <Integrity>VjMPBRqYiddXZKU3u0wrwqY+CVllPn24D7eooYyBHoU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\ad2c34e0-4ee6-4948-916e-3d6cfe961fe0Florist.jpg.jfif'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\add-img-1.png'))">
       <SourceType>Package</SourceType>
@@ -29196,6 +29250,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\author-img.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\b24f2f5d-aa56-49c8-a8cb-41e53671d7a1samuray.png.avif'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Konar.az</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Konar.az</BasePath>
+      <RelativePath>img/b24f2f5d-aa56-49c8-a8cb-41e53671d7a1samuray.png.avif</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>qazqqo9kxf</Fingerprint>
+      <Integrity>zoAxr3tZJMT4Iu5YMfvgFiQHlnk6OFH3hh4dY0csbnM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\b24f2f5d-aa56-49c8-a8cb-41e53671d7a1samuray.png.avif'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\b372649b-51c9-47ce-8982-44d44556538aproduct-15.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Konar.az</SourceId>
@@ -29249,6 +29321,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\b77d8f91-09b5-482f-a080-afe1f5b1cf18product-11.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\b7cec2f4-0c33-45d5-a01e-b67d6959a0f4mandoo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Konar.az</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Konar.az</BasePath>
+      <RelativePath>img/b7cec2f4-0c33-45d5-a01e-b67d6959a0f4mandoo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4qsrfkkzp6</Fingerprint>
+      <Integrity>LAmKQq2CiV0w6p4xqa3/ci9rcMB+MyYmwq6TzqELMjU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\b7cec2f4-0c33-45d5-a01e-b67d6959a0f4mandoo.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\banner-bg.jpg'))">
       <SourceType>Package</SourceType>
@@ -29357,6 +29447,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\bdf7d14b-9e8e-44ca-88c8-231c8c0668ddAirlineTicket.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\bf43178d-a5df-4142-8fb5-358ba89fcd47Florist.jpg.jfif'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Konar.az</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Konar.az</BasePath>
+      <RelativePath>img/bf43178d-a5df-4142-8fb5-358ba89fcd47Florist.jpg.jfif</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>644agwfa1u</Fingerprint>
+      <Integrity>VjMPBRqYiddXZKU3u0wrwqY+CVllPn24D7eooYyBHoU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\bf43178d-a5df-4142-8fb5-358ba89fcd47Florist.jpg.jfif'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\blog-1.jpg'))">
       <SourceType>Package</SourceType>

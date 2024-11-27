@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|c:\\users\\musac\\onedrive\\desktop\\konaraz\\konar.az\\konar.az\\viewmodels\\aboutvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DFE27-2920-4632-B012-5866F05109C4}|Konar.az\\Konar.az.csproj|solutionrelative:konar.az\\viewmodels\\aboutvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,27 +28,39 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Views\\Products\\Index.cshtml",
-              "RelativeDocumentMoniker": "Konar.az\\Views\\Products\\Index.cshtml",
-              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Views\\Products\\Index.cshtml*",
-              "RelativeToolTip": "Konar.az\\Views\\Products\\Index.cshtml*",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Views\\About\\Index.cshtml",
+              "RelativeDocumentMoniker": "Konar.az\\Views\\About\\Index.cshtml",
+              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Views\\About\\Index.cshtml*",
+              "RelativeToolTip": "Konar.az\\Views\\About\\Index.cshtml*",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T11:49:33.501Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-11-27T15:06:02.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Konar.az\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Konar.az\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAwDwAAAAgAAAAAAAAAA==",
+              "Title": "AboutController.cs",
+              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Controllers\\AboutController.cs",
+              "RelativeDocumentMoniker": "Konar.az\\Controllers\\AboutController.cs",
+              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\Controllers\\AboutController.cs*",
+              "RelativeToolTip": "Konar.az\\Controllers\\AboutController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T08:58:40.38Z",
+              "WhenOpened": "2024-11-27T15:05:42.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AboutVM.cs",
+              "DocumentMoniker": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\ViewModels\\AboutVM.cs",
+              "RelativeDocumentMoniker": "Konar.az\\ViewModels\\AboutVM.cs",
+              "ToolTip": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\ViewModels\\AboutVM.cs*",
+              "RelativeToolTip": "Konar.az\\ViewModels\\AboutVM.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:05:25.499Z",
               "EditorCaption": ""
             }
           ]

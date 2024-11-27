@@ -50,21 +50,13 @@
 					<!-- brands slider start-->
 					<div class="brands-holder">
 						<div class="brands-slider">
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-1.png" alt="brand" /></div>
-							<!-- item end-->
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-2.png" alt="brand" /></div>
-							<!-- item end-->
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-3.png" alt="brand" /></div>
-							<!-- item end-->
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-4.png" alt="brand" /></div>
-							<!-- item end-->
-							<!-- item start-->
-							<div class="slider-item"><img src="~/img/brand-5.png" alt="brand" /></div>
-							<!-- item end-->
+							@foreach (Brand item in Model.Brands)
+							{
+								<!-- item start-->
+								<div class="slider-item"><img src="~/img/@item.Image" alt="brand" /></div>
+								<!-- item end-->
+							}
+							
 						</div>
 						<div class="brands-dots"></div>
 					</div>
