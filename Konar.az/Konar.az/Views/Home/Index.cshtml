@@ -11,7 +11,7 @@
         <!-- promo-style-3-slider start-->
         <div class="promo-slider promo--style-3-slider">
             <!-- item start-->
-           @*  <div class="slider-item item--style-3">
+            @*  <div class="slider-item item--style-3">
                 <div class="overlay"></div>
                 <div class="bg-holder jarallax">
                     <picture>
@@ -34,7 +34,7 @@
             </div> *@
             <!-- item end-->
             <!-- item start-->
-           @*  @foreach (Slider slider in Model.Sliders)
+            @*  @foreach (Slider slider in Model.Sliders)
             {
                 <div class="slider-item item--style-2">
                     <div class="overlay"></div>
@@ -188,62 +188,26 @@
         <!-- cases slider start-->
         <div class="cases-slider-holder">
             <div class="cases-slider">
-                <!-- item start-->
-                <div class="slider-item">
-                    <figure>
-                        <a class="img-holder" href="#">
-                            <div class="overlay"></div><img class="img-bg" src="~/img/accidient1.webp" alt="img" />
-                        </a>
-                        <figcaption>
-                            <h5 class="title"> <a href="#">Renewable Energy Station</a></h5>
-                            <p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- item end-->
-                <!-- item start-->
-                <div class="slider-item">
-                    <figure>
-                        <a class="img-holder" href="#">
-                            <div class="overlay"></div><img class="img-bg" src="~/img/falling.webp" alt="img" />
-                        </a>
-                        <figcaption>
-                            <h5 class="title"><a href="#">Renewable Energy Station</a></h5>
-                            <p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- item end-->
-                <!-- item start-->
-                <div class="slider-item">
-                    <figure>
-                        <a class="img-holder" href="#">
-                            <div class="overlay"></div><img class="img-bg" src="~/img/accidient2.webp" alt="img" />
-                        </a>
-                        <figcaption>
-                            <h5 class="title"><a href="#">Renewable Energy Station</a></h5>
-                            <p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- item end-->
-                <!-- item start-->
-                <div class="slider-item">
-                    <figure>
-                        <a class="img-holder" href="#">
-                            <div class="overlay"></div><img class="img-bg" src="~/img/accidient3.webp" alt="img" />
-                        </a>
-                        <figcaption>
-                            <h5 class="title"> <a href="#">Renewable Energy Station</a></h5>
-                            <p>Streamer fish California halibut Pacific saury. Slickhead grunion lake trout. Canthigaster rostrata spikefish brown trout loach summer flounder European.</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- item end-->
+                @foreach (CaseStudy caseStudy in Model.CaseStudies)
+                {
+                    <!-- item start-->
+                    <div class="slider-item">
+                        <figure>
+                            <a class="img-holder" href="#">
+                                <div class="overlay"></div><img class="img-bg" src="~/img/@caseStudy.Image" alt="img" />
+                            </a>
+                            <figcaption>
+                                <h5 class="title"> <a href="#">@caseStudy.Title</a></h5>
+                                <p>@caseStudy.SubTitle</p><a class="button button--transparent" href="#" data-hover="Daha ətraflı"><span>Daha ətraflı</span></a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                }
             </div>
+            <!-- item end-->
             <div class="cases-dots"></div>
-            <!-- cases slider end-->
         </div>
+
     </section>
     <!-- cases-style-2 end-->
     <!-- brands start-->
@@ -254,21 +218,13 @@
                     <!-- brands slider start-->
                     <div class="brands-holder">
                         <div class="brands-slider">
-                            <!-- item start-->
-                            <div class="slider-item"><img src="~/img/brand-1.png" alt="brand" /></div>
-                            <!-- item end-->
-                            <!-- item start-->
-                            <div class="slider-item"><img src="~/img/brand-2.png" alt="brand" /></div>
-                            <!-- item end-->
-                            <!-- item start-->
-                            <div class="slider-item"><img src="~/img/brand-3.png" alt="brand" /></div>
-                            <!-- item end-->
-                            <!-- item start-->
-                            <div class="slider-item"><img src="~/img/brand-4.png" alt="brand" /></div>
-                            <!-- item end-->
-                            <!-- item start-->
-                            <div class="slider-item"><img src="~/img/brand-5.png" alt="brand" /></div>
-                            <!-- item end-->
+                            @foreach (Brand brand in Model.Brands)
+                            {
+                                <!-- item start-->
+                                <div class="slider-item"><img src="~/img/@brand.Image" alt="brand" /></div>
+                                <!-- item end-->
+                            }
+                           
                         </div>
                         <div class="brands-dots"></div>
                     </div>

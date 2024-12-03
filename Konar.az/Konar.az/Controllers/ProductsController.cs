@@ -58,6 +58,7 @@ namespace Konar.az.Controllers
 			var products = await productsQuery.ToListAsync();
 
 			// Set ViewBag for filters
+			ViewBag.BackPhoto=await _db.BackPhotos.FirstOrDefaultAsync();
 			ViewBag.Tags = await _db.Tags.ToListAsync();
 			ViewBag.Categories = await _db.Categories.ToListAsync();
 			ViewBag.Brands = await _db.Brands.ToListAsync();

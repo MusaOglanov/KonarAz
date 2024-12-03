@@ -29,7 +29,7 @@ namespace Konar.az.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Bio dbBio =await _db.Bios.FirstOrDefaultAsync();
+            Bio dbBio =await _db.Bios.FirstOrDefaultAsync(x => x.Id == id);
             if (dbBio == null)
             {
                 return BadRequest();

@@ -1,0 +1,32 @@
+﻿@model BackPhoto
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Məhsul Yarat</h4>
+        <p class="card-description">
+            Basic form elements
+        </p>
+
+
+        <form method="post" class="forms-sample" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="form-label" asp-for="ProductPhoto">Mağaza Fon Şəkli</label>
+                <input accept="image/*" asp-for="ProductPhoto" class="form-control" />
+                <span class="text-danger" asp-validation-for="ProductPhoto"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="BlogPhoto">Bloq Fon Şəkli</label>
+                <input accept="image/*" asp-for="BlogPhoto" class="form-control" />
+                <span class="text-danger" asp-validation-for="BlogPhoto"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="FaqPhoto">Faq Fon Şəkli</label>
+                <input accept="image/*" asp-for="FaqPhoto" class="form-control" />
+                <span class="text-danger" asp-validation-for="FaqPhoto"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+        </form>
+    </div>
+</div>

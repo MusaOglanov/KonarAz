@@ -1,10 +1,25 @@
 ﻿@model List<Faq>
+@{
+	var backPhoto = ViewBag.BackPhoto as BackPhoto;
+}
 <main class="main">
 	<!-- promo primary start-->
 	<section class="promo-primary">
 		<div class="overlay"></div>
 		<picture>
-			<source srcset="~/img/contacts.jpg" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/contacts.jpg" alt="img" />
+			<picture>
+				@if (backPhoto != null)
+				{
+					<source srcset="~/img/@backPhoto.FaqImage" media="(min-width: 992px)" />
+
+					<img class="jarallax-img img-bg" src="~/img/@backPhoto.FaqImage alt="img" />
+
+				}
+				else
+				{
+					<p>Şəkil Mövcud Deyil</p>
+				}
+			</picture>
 		</picture>
 		<div class="container">
 			<div class="row">

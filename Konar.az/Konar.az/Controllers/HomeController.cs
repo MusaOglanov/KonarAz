@@ -20,6 +20,8 @@ namespace Konar.az.Controllers
 			HomeVM homeVM = new HomeVM
 			{
 				Sliders = await _db.Sliders.ToListAsync(),
+				CaseStudies = await _db.CaseStudies.ToListAsync(),
+				Brands = await _db.Brands.ToListAsync(),
 				Blogs = await _db.Blogs.Include(x => x.BlogCategory).ToListAsync(),
 				Products = await _db.Products.Include(x=>x.ProductImages).ToListAsync(),
 			};

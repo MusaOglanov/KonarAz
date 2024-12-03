@@ -20,6 +20,7 @@ namespace Konar.az.Controllers
                 Blogs = await _db.Blogs.Include(x => x.BlogCategory).ToListAsync(),
                 BlogCategories = await _db.BlogCategories.ToListAsync(),
                 Tags = await _db.Tags.ToListAsync(),
+                BackPhoto = await _db.BackPhotos.FirstOrDefaultAsync(),
             };
 
 

@@ -1,0 +1,28 @@
+﻿@model CaseStudy
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">İş qəzaları</h4>
+        <form method="post" class="forms-sample" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="form-label" asp-for="Photo">Şəkil</label>
+                <input accept="image/*" asp-for="Photo" class="form-control" />
+                <span class="text-danger" asp-validation-for="Photo"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Title">Başlıq</label>
+                <input asp-for="Title" type="text" class="form-control" />
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubTitle">Mətn</label>
+                <textarea asp-for="SubTitle" class="form-control"></textarea>
+                <span class="text-danger" asp-validation-for="SubTitle"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+        </form>
+    </div>
+</div>

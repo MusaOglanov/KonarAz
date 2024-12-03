@@ -15,8 +15,6 @@
                                 <th>Adres</th>
                                 <th>Telefon</th>
                                 <th>Email</th>
-                                <th>Status</th>
-                                <th style="text-align:right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,8 +37,7 @@
 
                                     <div class="d-flex justify-content-end">
 
-                                        <a asp-action="Detail" asp-route-id="@Model?.Id" class="btn rounded-pill btn-warning text-white" style="margin-right:5px">Ətraflı</a>
-                                        <a asp-action="Update" asp-route-id="@Model.Id" class="btn rounded-pill  btn-info text-white" style="margin-right:5px">Edit</a>
+                                        <a asp-action="Update" asp-route-id="@Model?.Id" class="btn rounded-pill  btn-info text-white" style="margin-right:5px">Edit</a>
 
                                     </div>
                                 </td>

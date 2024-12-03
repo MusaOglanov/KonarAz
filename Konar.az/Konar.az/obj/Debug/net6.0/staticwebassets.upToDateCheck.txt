@@ -1550,6 +1550,7 @@ wwwroot\img\268f161f-995b-44ec-b4df-48fd0feaacc8alien - Copy.jpg
 wwwroot\img\276e78af-0471-4bd3-8181-4b0978939db5Zurafe.png
 wwwroot\img\277a4397-d447-4511-94d7-6e8efd42bc94product-16.jpg
 wwwroot\img\27c500f4-4d6e-4604-970e-7769398899cemenzere.jpg
+wwwroot\img\2857cea3-c8b7-4350-88bc-f7837386c450dark.jfif
 wwwroot\img\2944d41e-26fa-42f6-ac50-663d004415e5ak-47-guns.jpg
 wwwroot\img\2a40dac6-b864-480e-b4b4-aaa1b08eb679promo-3.jpg
 wwwroot\img\2c66e0fb-494f-4bbb-b6dc-6ac347c37b10AirlineTicket.jpg
@@ -1560,8 +1561,10 @@ wwwroot\img\37bb1a50-e7f2-48bc-a9a0-2345f467bfacZurafe.png
 wwwroot\img\3a64fbbb-2a70-4025-a2b4-91b0f61df71dalien - Copy.jpg
 wwwroot\img\3c9da6b2-639f-4a37-be6b-5c513486721dproduct-11.jpg
 wwwroot\img\3dfe6b61-1ef5-446e-839c-662c6299f081AirlineTicket.jpg
+wwwroot\img\40155b41-e44d-45d5-bb71-5057fe5484c1dark.jfif
 wwwroot\img\404-bg.jpg
 wwwroot\img\4094b529-7c85-4c5b-aafd-efed40922446Paltaryuyan.jfif
+wwwroot\img\434903f1-7c5a-481e-a876-08f8d7b0ab3fmenzere.jpg
 wwwroot\img\442610cc-c13a-40d8-9c9c-72be6c513cd5mandoo.jpg
 wwwroot\img\45a07c98-9841-472f-91d0-6f73c55fd0b4blacklava.jpg
 wwwroot\img\49756b9f-ead9-49db-82ed-7fb0f25d927bZurafe.png
@@ -1570,6 +1573,7 @@ wwwroot\img\4a395dbe-c5b3-47e1-9d8e-b7a9821be68datombomb.png
 wwwroot\img\4b0dce3b-c523-4247-a499-64cbba8201efPaltaryuyan.jfif
 wwwroot\img\4c17db42-ff2c-4d94-ad7d-5fb8653faaf7Test.mp4
 wwwroot\img\4c6dcfc8-0719-4094-9716-981c5c3b6c4cproduct-17.jpg
+wwwroot\img\4cd7eb45-1e9e-4a08-9e6f-08d45bd900a2Florist.jpg.jfif
 wwwroot\img\501dec40-52ca-4adb-8e18-328ab13c8643Paltaryuyan.jfif
 wwwroot\img\56ec2b42-a75a-4e82-9c76-cd67e4f875feTest.mp4
 wwwroot\img\57abb25e-6d07-4466-83c1-ffae7150fa38banner-9.jpg
@@ -1578,6 +1582,7 @@ wwwroot\img\5f9b8d49-b38c-48a6-865e-1c47b3ffeeb6product-17.jpg
 wwwroot\img\61c94422-ca2d-4432-81ab-9a1061b5b7dbmandoo.jpg
 wwwroot\img\6a01b3f7-60f2-4a88-8f20-7391439b791eproduct-11.jpg
 wwwroot\img\6c9fe144-7d16-4467-b348-d08195beec65aa.jpg
+wwwroot\img\6ce3b762-f7cd-4abc-806c-3dc61e8c26a3Paltaryuyan.jfif
 wwwroot\img\75f404f1-751e-4e18-9d6f-aa33b193b926alien - Copy.jpg
 wwwroot\img\76bac767-9bff-4ee1-95d5-f1da33aa60a7Test.mp4
 wwwroot\img\7703cef0-ca67-4034-ac6e-22c9400d1ff3banner-4.jpg
@@ -1598,10 +1603,12 @@ wwwroot\img\9563a7ac-0430-4f36-ac46-6ce6f355f494banner-10.jpg
 wwwroot\img\996de9d7-efb5-46a6-9002-5a2079c7f303AirlineTicket.jpg
 wwwroot\img\9b0caae9-80f0-465b-879e-82010895d71dalien - Copy.jpg
 wwwroot\img\9b745d1e-b298-436f-b2e6-d805d75c4139product-17.jpg
+wwwroot\img\9c824545-37f8-456c-9955-363f540c0809dark.jfif
 wwwroot\img\9d00b971-8d38-48bd-9683-8b56f2ff089dalien - Copy.jpg
 wwwroot\img\a070f4aa-8f73-4689-9961-1939abc491e1Paltaryuyan.jfif
 wwwroot\img\a5c2cadf-8051-4d4a-b230-7f709489de38banner-10.jpg
 wwwroot\img\a79fb5d5-02d7-4489-9dfc-bee7416d9f89mandoo.jpg
+wwwroot\img\a8378606-441f-432e-8e70-e42886bb3c85dark.jfif
 wwwroot\img\a9d448b1-1447-4384-bc07-32e0d4bedbafFlorist.jpg.jfif
 wwwroot\img\aad46928-1f7f-4f6c-a832-980383741577ak-47-guns.jpg
 wwwroot\img\about.jpg
@@ -1683,11 +1690,12 @@ wwwroot\img\details-1.jpg
 wwwroot\img\details-2.jpg
 wwwroot\img\details-img.jpg
 wwwroot\img\device-bg.png
+wwwroot\img\e656d903-7ab3-45ac-a12f-05a8e5fde9c0Florist.jpg.jfif
+wwwroot\img\e7051b7a-59a7-4815-b0fe-9f52d63c3ae6menzere.jpg
+wwwroot\img\eba072b3-b15b-4147-bb2b-8d9e8d9140d9mandoo.jpg
 wwwroot\img\ed691cdb-d6d1-4ded-82f0-73c9fcd96a54AirlineTicket.jpg
-wwwroot\img\ee1c65b9-75e1-4dbe-a3ee-fba445baa901dark.jfif
 wwwroot\img\ee72532a-ec4a-42cb-910a-9ee3f39aa703alien.jpg
 wwwroot\img\eeb888d6-1493-4fc3-a77d-d1b0dcd1eacdproduct-17.jpg
-wwwroot\img\elements.jpg
 wwwroot\img\emektehlukesizliyi.webp
 wwwroot\img\f6e24382-b55d-4e28-920c-c1dccce81c0eak-47-guns.jpg
 wwwroot\img\falling.webp

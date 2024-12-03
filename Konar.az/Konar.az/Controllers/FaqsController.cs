@@ -14,6 +14,8 @@ namespace Konar.az.Controllers
         }
         public async Task<IActionResult> Index()
 		{
+			ViewBag.BackPhoto = await _db.BackPhotos.FirstOrDefaultAsync();
+
 			List<Faq> faqs = await _db.Faqs.ToListAsync();
 			return View(faqs);
 		}

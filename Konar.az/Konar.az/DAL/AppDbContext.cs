@@ -17,7 +17,6 @@ namespace Konar.az.DAL
 		public DbSet<Blog> Blogs { get; set; }
 		public DbSet<BlogCategory> BlogCategories { get; set; }
 		public DbSet<BlogTag> BlogTags { get; set; }
-
 		public DbSet<Tag> Tags { get; set; }
 		public DbSet<About> Abouts { get; set; }
 		public DbSet<Statistics> Statistics { get; set; }
@@ -35,6 +34,8 @@ namespace Konar.az.DAL
 		public DbSet<Bio> Bios { get; set; }
 		public DbSet<ContactMessage> ContactMessages { get; set; }
 		public DbSet<Contact> Contacts { get; set; }
+		public DbSet<CaseStudy> CaseStudies { get; set; }
+		public DbSet<BackPhoto> BackPhotos { get; set; }
 	}
 
 }

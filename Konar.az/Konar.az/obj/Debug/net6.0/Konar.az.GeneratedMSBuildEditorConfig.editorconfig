@@ -32,6 +32,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWJvdXRcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/BackPhotos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmFja1Bob3Rvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/BackPhotos/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmFja1Bob3Rvc1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Bio/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmlvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +66,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Brands/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/CaseStudies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FzZVN0dWRpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/CaseStudies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FzZVN0dWRpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/CaseStudies/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FzZVN0dWRpZXNcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/musac/OneDrive/Desktop/KonarAz/Konar.az/Konar.az/Areas/Admin/Views/Categories/Create.cshtml]

@@ -14,12 +14,23 @@
         margin-left: 10px; /* Kateqoriya adı ilə rəqəm arasında 10px boşluq yaradır */
     }
 </style>
-
+@{
+    var backPhoto = ViewBag.BackPhoto as BackPhoto;
+}
 <main class="main">
     <section class="promo-primary promo-primary--shop">
         <div class="overlay"></div>
         <picture>
-            <source srcset="~/img/catalog-bg.jpg" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/catalog-bg.jpg" alt="img" />
+            @if (backPhoto != null)
+            {
+                <source srcset="~/img/@backPhoto.ProductImage" media="(min-width: 992px)" />
+
+                <img class="jarallax-img img-bg" src="~/img/@backPhoto.ProductImage alt="img" />
+
+            }
+            else{
+                <p>Şəkil Mövcud Deyil</p>
+            }
         </picture>
         <div class="container">
             <div class="row">
