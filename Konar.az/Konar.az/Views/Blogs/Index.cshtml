@@ -1,10 +1,14 @@
-﻿@model BlogVM
+﻿@model List<Blog>
+
+@{
+    var backPhoto = ViewBag.BackPhoto as BackPhoto;
+}
 <main class="main">
     <!-- promo primary start-->
     <section class="promo-primary">
         <div class="overlay"></div>
         <picture>
-            <source srcset="~/img/@Model.BackPhoto.BlogImage" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/@Model.BackPhoto.BlogImage" alt="img" />
+            <source srcset="~/img/@backPhoto.BlogImage" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/@backPhoto.BlogImage" alt="img" />
         </picture>
         <div class="container">
             <div class="row">
@@ -25,7 +29,7 @@
             <div class="row">
                 <div class="col-md-7 col-lg-8 col-xl-8">
                     <div class="row">
-                        @foreach (Blog blog in Model.Blogs)
+                        @foreach (var blog in Model)
                         {
 
                             <div class="col-12">
@@ -47,13 +51,39 @@
                         <div class="col-12 text-center">
                             <!-- pagination start-->
                             <ul class="pagination pagination--primary">
-                                <li class="back"><a href="#">Əvvələ</a></li>
-                                <li class="number current"><a href="#">1</a></li>
-                                <li class="number"><a href="#">2</a></li>
-                                <li class="number"><a href="#">3</a></li>
-                                <li class="number"><a href="#">4</a></li>
-                                <li class="number"><a href="#">5</a></li>
-                                <li class="next"><a href="#">İrəli</a></li>
+                                @if (ViewBag.CurrentPage > 1)
+                                {
+                                    <li class="back">
+                                        <a asp-action="Index" asp-route-page="@(ViewBag.CurrentPage - 1)">Geri</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="back disabled"><span>Geri</span></li>
+                                }
+                                @for (int i = 1; i <= ViewBag.PageCount; i++)
+                                {
+                                    if (ViewBag.CurrentPage == i)
+                                    {
+                                        <li class="number current"><a href="#">@i</a></li>
+
+                                    }
+                                    else
+                                    {
+                                        <li class="number "><a asp-action="Index" asp-route-page="@i">@i</a></li>
+
+                                    }
+                                }
+                                @if (ViewBag.CurrentPage < (int)ViewBag.PageCount)
+                                {
+                                    <li class="next">
+                                        <a asp-action="Index" asp-route-page="@(ViewBag.CurrentPage + 1)">İrəli</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="next disabled"><span>İrəli</span></li>
+                                }
                             </ul>
                             <!-- pagination end-->
                         </div>
@@ -73,11 +103,32 @@
                     <div class="articles__inner">
                         <h4 class="articles__title">Kateqoriyalar</h4>
                         <ul class="category-list">
-                            @foreach (BlogCategory blogCat in Model.BlogCategories)
+                            @if (ViewBag.BlogCategories != null)
                             {
-                                <li class="category-list__item"><span>@blogCat.Name</span></li>
 
+                                @foreach (var blog in ViewBag.BlogCategories as List<BlogCategory>)
+                                {
+                                    int blogCount = 0;
+                                    if (ViewBag.Blogs != null)
+                                    {
+                                        blogCount = ((List<Blog>)ViewBag.Blogs)
+                                        .Count(b => b.BlogCategoryId == blog.Id);
+                                    }
+
+                                    <div>
+                                        <label>
+                                            <input type="checkbox" name="categoryIds" value="@blog.Id"
+                                            @(Context.Request.Query["brandIds"].ToString().Contains(blog.Id.ToString()) ? "checked" : "")>
+                                            @blog.Name (<span>@blogCount</span>)
+                                        </label>
+                                    </div>
+                                }
                             }
+                            else
+                            {
+                                <p>Heç bir Kategoriya yoxdur</p>
+                            }
+
                         </ul>
                     </div>
                     <!-- <div class="articles__inner">
@@ -134,19 +185,37 @@
                     <div class="articles__inner">
                         <h4 class="articles__title">Taqlar</h4>
                         <div class="tags-block">
-                            @foreach (Tag tag in Model.Tags)
+                            @if (ViewBag.Tags != null && ((List<Tag>)ViewBag.Tags).Any())
                             {
-                                <span class="tag">
-                                    @tag.Name<span class="close">
-                                        <svg class="icon">
-                                            <use xlink:href="#close"></use>
-                                        </svg>
-                                    </span>
-                                </span>
+                                @foreach (Tag tag in ((List<Tag>)ViewBag.Tags))
+                                {
+                                    <div class="tags-block toggle-item">
+                                        <span class="tag">
+                                            @tag.Name<span class="close">
+                                                <svg class="icon">
+                                                    <use xlink:href="#close"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </div>
+                                }
                             }
                            
+
+                            else
+                            {
+                            <p>Heç bir tag yoxdur</p>
+                            }
+
                         </div>
                     </div>
+                    <!-- button block start-->
+                    <fieldset class="button-block">
+                        <button class="button button--transparent" id="applyFilter" type="button" data-hover="Filteri tətbiq et">
+                            <span>Filteri tətbiq et</span>
+                        </button>
+                    </fieldset>
+                    <!-- button block end-->
                     <!-- <div class="articles__inner">
                         <h4 class="articles__title">Ən son proyekt</h4>
                         <div class="cases-item"><a class="img-holder" href="cases-details.html">
@@ -161,3 +230,19 @@
         </div>
     </section>
 </main>
+@section Scripts {
+    <script>
+        document.getElementById("applyFilter").addEventListener("click", function () {
+            const categoryIds = Array.from(document.querySelectorAll('input[name="categoryIds"]:checked'))
+                .map(checkbox => checkbox.value);
+
+            let query = [];
+            if (categoryIds.length) query.push(`categoryIds=${categoryIds.join(",")}`);
+
+            // Yeni URL qurun və səhifəni göndərin
+            const newUrl = `/Blogs/Index?${query.join("&")}`;
+            window.location.href = newUrl;
+        });
+
+    </script>
+}

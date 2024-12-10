@@ -14,7 +14,7 @@ namespace Konar.az.Controllers
 		}
 
 
-		public async Task<IActionResult> Index(string categoryIds, string brandIds,string tagId)
+		public async Task<IActionResult> Index(string categoryIds, string brandIds,string tagId,int page=1)
 		{
 			// Parse categoryIds and brandIds into arrays
 			var categoryIdList = !string.IsNullOrEmpty(categoryIds)
@@ -53,9 +53,12 @@ namespace Konar.az.Controllers
 				productsQuery = productsQuery.Where(p => p.ProductTags.Any(t => t.Id == tagIdParsed));
 			}
 
+			int showCount = 2;
 
+			ViewBag.PageCount = Math.Ceiling((decimal)await _db.Products.CountAsync() / showCount);
+			ViewBag.CurrentPage = page;
 			// Execute the query
-			var products = await productsQuery.ToListAsync();
+			var products = await productsQuery.OrderByDescending(x=>x.Id).Skip((page - 1 )*showCount).Take(showCount).ToListAsync();
 
 			// Set ViewBag for filters
 			ViewBag.BackPhoto=await _db.BackPhotos.FirstOrDefaultAsync();
@@ -76,47 +79,7 @@ namespace Konar.az.Controllers
 
 
 
-		//IQueryable<Product> products = _db.Products
-		//	.Include(x => x.ProductDetail)
-		//	.Include(x => x.ProductImages)
-		//	.Include(x => x.Brand)
-		//	.Include(x => x.ProductCategories)
-		//	.ThenInclude(x => x.Category)
-		//	.Include(x => x.ProductTags)
-		//	.ThenInclude(x => x.Tag)
-		//	.Include(x => x.ProductDetail);
-
-		//// Eğer categoryId var ise, sadece o kategoriya ait olanları alırıq
-		//if (categoryId.HasValue)
-		//{
-		//	products = products.Where(p => p.ProductCategories.Any(pc => pc.CategoryId == categoryId));
-		//}
-
-		//// Eğer brandId var ise, sadece o brand-a ait olanları alırıq
-		//if (brandId.HasValue)
-		//{
-		//	products = products.Where(p => p.BrandId == brandId);
-		//}
-
-		//// Eğer tagId var ise, sadece o tag-a aid olanları alırıq
-		//if (tagId.HasValue)
-		//{
-		//	products = products.Where(p => p.ProductTags.Any(pt => pt.TagId == tagId));
-		//}
-
-		//List<Product> productList = await products.ToListAsync();
-
-		//List<Tag> tags = await _db.Tags.ToListAsync();
-		//List<Brand> brands = await _db.Brands.ToListAsync();
-		//List<Category> categories = await _db.Categories.ToListAsync();
-
-		//ViewBag.Tags = tags;
-		//ViewBag.Brands = brands;
-		//ViewBag.Categories = categories;
-
-		//return View(productList);
-
-
+		
 		public async Task<IActionResult> Detail(int? id)
 		{
 			if (id == null)

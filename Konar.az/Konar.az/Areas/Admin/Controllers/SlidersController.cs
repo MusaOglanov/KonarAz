@@ -3,6 +3,7 @@ using Konar.az.Helpers;
 using Konar.az.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata;
 
@@ -21,9 +22,13 @@ namespace Konar.az.Areas.Admin.Controllers
             _env = env;
 
         }
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int page = 1)
         {
-            List<Slider> sliders = await _db.Sliders.ToListAsync();
+			int showCount = 3;
+
+			ViewBag.PageCount = Math.Ceiling((decimal)await _db.Sliders.CountAsync() / showCount);
+			ViewBag.CurrentPage = page;
+			List<Slider> sliders = await _db.Sliders.OrderByDescending(x => x.Id).Skip((page - 1) * showCount).Take(showCount).ToListAsync();
             return View(sliders);
         }
 

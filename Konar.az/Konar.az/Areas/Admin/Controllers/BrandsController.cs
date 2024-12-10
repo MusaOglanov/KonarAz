@@ -4,6 +4,7 @@ using Konar.az.Models;
 using Konar.az.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace Konar.az.Areas.Admin.Controllers
@@ -19,9 +20,13 @@ namespace Konar.az.Areas.Admin.Controllers
 			_db = db;
 			_env = env;
 		}
-		public async Task<IActionResult> Index()
+		public async Task<IActionResult> Index(int page = 1)
 		{
-			List<Brand> brands =await _db.Brands.ToListAsync();
+			int showCount = 8;
+
+			ViewBag.PageCount = Math.Ceiling((decimal)await _db.Brands.CountAsync() / showCount);
+			ViewBag.CurrentPage = page;
+			List<Brand> brands =await _db.Brands.OrderByDescending(x => x.Id).Skip((page - 1) * showCount).Take(showCount).ToListAsync();
 			return View(brands);
 		}
 

@@ -23,9 +23,13 @@ namespace Konar.az.Areas.Admin.Controllers
 
         }
         #region Index
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-            List<Product> product = await _db.Products
+			int showCount = 8;
+
+			ViewBag.PageCount = Math.Ceiling((decimal)await _db.Products.CountAsync() / showCount);
+			ViewBag.CurrentPage = page;
+			List<Product> product = await _db.Products
                  .Include(x => x.ProductDetail)
                  .Include(x => x.ProductFeatures)
                  .Include(x => x.ProductImages)
@@ -33,8 +37,8 @@ namespace Konar.az.Areas.Admin.Controllers
                  .Include(x => x.ProductCategories)
                  .ThenInclude(x => x.Category)
                  .Include(x => x.ProductTags)
-                 .ThenInclude(x => x.Tag)
-                 .ToListAsync();
+                 .ThenInclude(x => x.Tag).OrderByDescending(x => x.Id).Skip((page - 1) * showCount).Take(showCount)
+				 .ToListAsync();
             return View(product);
         }
         #endregion

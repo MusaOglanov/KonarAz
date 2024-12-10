@@ -28,7 +28,8 @@
                 <img class="jarallax-img img-bg" src="~/img/@backPhoto.ProductImage alt="img" />
 
             }
-            else{
+            else
+            {
                 <p>Şəkil Mövcud Deyil</p>
             }
         </picture>
@@ -235,13 +236,39 @@
                         <div class="pagination-holder">
                             <!-- pagination start-->
                             <ul class="pagination pagination--primary">
-                                <li class="back"><a href="#">Əvvələ</a></li>
-                                <li class="number current"><a href="#">1</a></li>
-                                <li class="number"><a href="#">2</a></li>
-                                <li class="number"><a href="#">3</a></li>
-                                <li class="number"><a href="#">4</a></li>
-                                <li class="number"><a href="#">5</a></li>
-                                <li class="next"><a href="#">İrəli</a></li>
+                                @if (ViewBag.CurrentPage > 1)
+                                {
+                                    <li class="back">
+                                        <a asp-action="Index" asp-route-page="@(ViewBag.CurrentPage - 1)">Geri</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="back disabled"><span>Geri</span></li>
+                                }      
+                                @for (int i = 1; i <= ViewBag.PageCount; i++)
+                                {
+                                    if (ViewBag.CurrentPage==i)
+                                    {
+                                        <li class="number current"><a href="#">@i</a></li>
+
+                                    }
+                                    else
+                                    {
+                                        <li class="number "><a asp-action="Index" asp-route-page="@i">@i</a></li>
+
+                                    }
+                                }
+                                @if (ViewBag.CurrentPage < (int)ViewBag.PageCount)
+                                {
+                                    <li class="next">
+                                        <a asp-action="Index" asp-route-page="@(ViewBag.CurrentPage + 1)">İrəli</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="next disabled"><span>İrəli</span></li>
+                                }
                             </ul>
                             <!-- pagination end-->
                         </div>
