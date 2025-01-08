@@ -4,6 +4,7 @@ using Konar.az.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata;
 
 namespace Konar.az.Areas.Admin.Controllers
 {
@@ -29,61 +30,130 @@ namespace Konar.az.Areas.Admin.Controllers
 
 		public async  Task<IActionResult>Update(int? id)
 		{
-			//if (id == null)
+			if (id == null)
 
-			//{
-			//	return NotFound();
-			//}
+			{
+				return NotFound();
+			}
 			BackPhoto dbBackPhoto = await _db.BackPhotos.FirstOrDefaultAsync(x => x.Id == id);
-			//if (dbBackPhoto == null)
-			//{
-			//	return BadRequest();
-			//}
+			if (dbBackPhoto == null)
+			{
+				return BadRequest();
+			}
 
 			return View(dbBackPhoto);
 		}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(BackPhoto backPhoto, int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Update(BackPhoto backPhoto, int? id)
-		{
-			//if (id == null)
+            BackPhoto dbBackPhoto = await _db.BackPhotos.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbBackPhoto == null)
+            {
+                return BadRequest();
+            }
 
-			//{
-			//	return NotFound();
-			//}
-			BackPhoto dbBackPhoto = await _db.BackPhotos.FirstOrDefaultAsync(x => x.Id == id);
-			//if (dbBackPhoto == null)
-			//{
-			//	return BadRequest();
-			//}
-			if (backPhoto.ProductPhoto != null && backPhoto.FaqPhoto != null && backPhoto.BlogPhoto != null  )
-			{
-				if (!backPhoto.ProductPhoto.IsImage() && backPhoto.FaqPhoto.IsImage() && backPhoto.BlogPhoto.IsImage())
-				{
-					ModelState.AddModelError("Photo", "Zəhmət olmasa 'image' faylı seçin");
+            // Şəkil yükləmək üçün kök qovluq
+            string folder = Path.Combine(_env.WebRootPath, "img");
 
-					return View();
-				}
-				if (!backPhoto.ProductPhoto.IsOlder2MB() && backPhoto.FaqPhoto.IsOlder2MB() && backPhoto.BlogPhoto.IsOlder2MB())
-				{
-					ModelState.AddModelError("Photo", "Maksimum 2MB ölçüsündə fayl seçin");
+            // Əgər `ProductPhoto` yüklənibsə, onu yenilə
+            if (backPhoto.ProductPhoto != null)
+            {
+                if (!backPhoto.ProductPhoto.IsImage())
+                {
+                    ModelState.AddModelError("ProductPhoto", "Zəhmət olmasa 'image' faylı seçin.");
+                    return View(dbBackPhoto);
+                }
 
-					return View();
-				}
-				string folder = Path.Combine(_env.WebRootPath, "img");
-				Extensions.DeleteFile(folder, dbBackPhoto.ProductImage);
-				dbBackPhoto.ProductImage = await backPhoto.ProductPhoto.SaveImageAsync(folder);
+                if (backPhoto.ProductPhoto.IsOlder2MB())
+                {
+                    ModelState.AddModelError("ProductPhoto", "Maksimum 2MB ölçüsündə fayl seçin.");
+                    return View(dbBackPhoto);
+                }
 
-				Extensions.DeleteFile(folder, dbBackPhoto.BlogImage);
-				dbBackPhoto.BlogImage = await backPhoto.BlogPhoto.SaveImageAsync(folder);
+                // Əvvəlki şəkli sil
+                Extensions.DeleteFile(folder, dbBackPhoto.ProductImage);
 
-				Extensions.DeleteFile(folder, dbBackPhoto.FaqImage);
-				dbBackPhoto.FaqImage = await backPhoto.FaqPhoto.SaveImageAsync(folder);
-			}
+                // Yeni şəkli yadda saxla
+                dbBackPhoto.ProductImage = await backPhoto.ProductPhoto.SaveImageAsync(folder);
+            }
 
-			await _db.SaveChangesAsync();
-			return RedirectToAction("Index");
-		}
-	}
+            // Əgər `BlogPhoto` yüklənibsə, onu yenilə
+            if (backPhoto.BlogPhoto != null)
+            {
+                if (!backPhoto.BlogPhoto.IsImage())
+                {
+                    ModelState.AddModelError("BlogPhoto", "Zəhmət olmasa 'image' faylı seçin.");
+                    return View(dbBackPhoto);
+                }
+
+                if (backPhoto.BlogPhoto.IsOlder2MB())
+                {
+                    ModelState.AddModelError("BlogPhoto", "Maksimum 2MB ölçüsündə fayl seçin.");
+                    return View(dbBackPhoto);
+                }
+
+                // Əvvəlki şəkli sil
+                Extensions.DeleteFile(folder, dbBackPhoto.BlogImage);
+
+                // Yeni şəkli yadda saxla
+                dbBackPhoto.BlogImage = await backPhoto.BlogPhoto.SaveImageAsync(folder);
+            }
+
+            // Əgər `FaqPhoto` yüklənibsə, onu yenilə
+            if (backPhoto.FaqPhoto != null)
+            {
+                if (!backPhoto.FaqPhoto.IsImage())
+                {
+                    ModelState.AddModelError("FaqPhoto", "Zəhmət olmasa 'image' faylı seçin.");
+                    return View(dbBackPhoto);
+                }
+
+                if (backPhoto.FaqPhoto.IsOlder2MB())
+                {
+                    ModelState.AddModelError("FaqPhoto", "Maksimum 2MB ölçüsündə fayl seçin.");
+                    return View(dbBackPhoto);
+                }
+
+                // Əvvəlki şəkli sil
+                Extensions.DeleteFile(folder, dbBackPhoto.FaqImage);
+
+                // Yeni şəkli yadda saxla
+                dbBackPhoto.FaqImage = await backPhoto.FaqPhoto.SaveImageAsync(folder);
+            }
+
+            // Əgər `AccountPhoto` yüklənibsə, onu yenilə
+            if (backPhoto.AccountPhoto != null)
+            {
+                if (!backPhoto.AccountPhoto.IsImage())
+                {
+                    ModelState.AddModelError("AccountPhoto", "Zəhmət olmasa 'image' faylı seçin.");
+                    return View(dbBackPhoto);
+                }
+
+                if (backPhoto.AccountPhoto.IsOlder2MB())
+                {
+                    ModelState.AddModelError("AccountPhoto", "Maksimum 2MB ölçüsündə fayl seçin.");
+                    return View(dbBackPhoto);
+                }
+
+                // Əvvəlki şəkli sil
+                Extensions.DeleteFile(folder, dbBackPhoto.AccountImage);
+
+                // Yeni şəkli yadda saxla
+                dbBackPhoto.AccountImage = await backPhoto.AccountPhoto.SaveImageAsync(folder);
+            }
+
+            // Dəyişiklikləri yadda saxla
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+    }
 }

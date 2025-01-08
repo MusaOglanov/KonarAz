@@ -1583,6 +1583,7 @@ wwwroot\img\61c94422-ca2d-4432-81ab-9a1061b5b7dbmandoo.jpg
 wwwroot\img\6a01b3f7-60f2-4a88-8f20-7391439b791eproduct-11.jpg
 wwwroot\img\6c9fe144-7d16-4467-b348-d08195beec65aa.jpg
 wwwroot\img\6ce3b762-f7cd-4abc-806c-3dc61e8c26a3Paltaryuyan.jfif
+wwwroot\img\6ecadf1a-b05e-45dd-a4b7-dedba2aa0a27Florist.jpg.jfif
 wwwroot\img\75f404f1-751e-4e18-9d6f-aa33b193b926alien - Copy.jpg
 wwwroot\img\76bac767-9bff-4ee1-95d5-f1da33aa60a7Test.mp4
 wwwroot\img\7703cef0-ca67-4034-ac6e-22c9400d1ff3banner-4.jpg
@@ -1591,6 +1592,7 @@ wwwroot\img\79286201-dd49-483e-869f-64038515a636Florist.jpg.jfif
 wwwroot\img\792e0d99-9450-438d-95b6-e13d38a42b30dark.jfif
 wwwroot\img\795e95a9-387c-4ff9-a35d-0f658e7dd221product-3.jpg
 wwwroot\img\79c711f1-4a96-4e92-93b2-e68454eae821alien.jpg
+wwwroot\img\80a3e8c9-8d2c-4729-bd01-ef638af1c5b0menzere.jpg
 wwwroot\img\8109ea98-acd1-4c72-abac-5a91f72d075aTest.mp4
 wwwroot\img\8696814d-13fb-4ca5-87b4-da02837ebf56attom bombb.jpg
 wwwroot\img\88a393aa-4249-44b3-a7c1-8bec4394c20ePaltaryuyan.jfif
@@ -1669,6 +1671,7 @@ wwwroot\img\brand-4.png
 wwwroot\img\brand-5.png
 wwwroot\img\c3a6bf9b-5b78-447f-ad5f-529dc9ee9106Paltaryuyan.jfif
 wwwroot\img\c3e96b8b-924a-4cdf-a183-f5c240c09d6cak-47-guns.jpg
+wwwroot\img\c49c1b7b-a9eb-4975-8e7b-69d3042c676dmenzere.jpg
 wwwroot\img\c5853646-05f3-4f12-95fb-ee619b98e69eproduct-12.jpg
 wwwroot\img\cases.jpg
 wwwroot\img\cases-details.jpg
@@ -1707,6 +1710,7 @@ wwwroot\img\features_2.png
 wwwroot\img\features_3.png
 wwwroot\img\features-1.jpg
 wwwroot\img\features-2.jpg
+wwwroot\img\ffe1a67a-d709-4ff2-9a77-f7d12fc6ee74Zurafe.png
 wwwroot\img\footer--style-3-bg.png
 wwwroot\img\franklinquote.webp
 wwwroot\img\gal-img-5.jpg

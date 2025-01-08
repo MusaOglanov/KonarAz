@@ -2,12 +2,7 @@
 
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Məhsul Yarat</h4>
-        <p class="card-description">
-            Basic form elements
-        </p>
-
-
+        <h4 class="card-title">Şəkilləri Yenilə</h4>
         <form method="post" class="forms-sample" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="form-label" asp-for="ProductPhoto">Mağaza Fon Şəkli</label>
@@ -24,9 +19,14 @@
                 <input accept="image/*" asp-for="FaqPhoto" class="form-control" />
                 <span class="text-danger" asp-validation-for="FaqPhoto"></span>
             </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="AccountPhoto">Akkount Fon Şəkli</label>
+                <input accept="image/*" asp-for="AccountPhoto" class="form-control" />
+                <span class="text-danger" asp-validation-for="AccountPhoto"></span>
+            </div>
 
-            <button type="submit" class="btn btn-primary me-2">Send</button>
-            <a asp-action="Index" class="btn btn-secondary text-white">Go Back</a>
+            <button type="submit" class="btn btn-primary me-2">Yenilə</button>
+            <a asp-action="Index" class="btn btn-secondary text-white">Geri Qayıt</a>
         </form>
     </div>
 </div>

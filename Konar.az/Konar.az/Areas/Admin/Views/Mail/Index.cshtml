@@ -3,34 +3,32 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Mail göndərmə səhifəsi</h1>
-<form  method="post">
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Mail göndərmə səhifəsi</h4>
+        <form method="post" class="forms-sample" enctype="multipart/form-data">
+  
 
-	<div class="row">
-		
-		<div class="col-12">
-			<label class="input-label">
-				<input class="form-field input input-name" asp-for="ReceiverMail" /><span>Alıcı Mail Adresi</span>
-			</label>
-			<span style="margin-bottom:10px" asp-validation-for="ReceiverMail"></span>
-		</div>
-		<div class="col-12">
-			<label class="input-label">
-				<input class="form-field input input-name" asp-for="Subject" /><span>Mövzu başlığı</span>
-			</label>
-			<span style="margin-bottom:10px" asp-validation-for="Subject"></span>
-		</div>
-		<div class="col-12">
-			<label class="input-label">
-				<textarea class="form-field input input-name" asp-for="Body" ><span>Mövzu mətni</span></textarea>
-			</label>
-		</div>
-		
-		
-		<div class="col-12">
-			<div class="button-holder">
-				<button class="button button--transparent" type="submit"><span>Mail göndər</span></button>
-			</div>
-		</div>
-	</div>
-</form>
+            <div class="form-group">
+				<label asp-for="ReceiverMail">Alıcı Mail Adresi</label>
+				<input asp-for="ReceiverMail" type="text" class="form-control" />
+				<span class="text-danger" asp-validation-for="ReceiverMail"></span>
+            </div>
+            <div class="form-group">
+				<label asp-for="Subject">Mövzu başlığı</label>
+				<input asp-for="Subject" type="text" class="form-control" />
+				<span class="text-danger" asp-validation-for="Subject"></span>
+            </div>
+             <div class="form-group">
+				<label asp-for="Body">Mövzu mətni</label>
+				<textarea asp-for="Body" type="text" class="form-control" ></textarea>
+				<span class="text-danger" asp-validation-for="Body"></span>
+            </div>
+           
+            <button type="submit" class="btn btn-primary me-2">Send</button>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

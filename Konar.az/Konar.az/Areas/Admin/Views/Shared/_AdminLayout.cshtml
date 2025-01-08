@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject IHttpContextAccessor HttpContextAccessor
+
+@if (!HttpContextAccessor.HttpContext.User.IsInRole("Admin"))
+{
+    <script>
+        window.location.href = '/Home'; // Yönləndiriləcək URL
+    </script>
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

@@ -1,32 +1,40 @@
-﻿using Konar.az.Helpers;
+﻿using Konar.az.DAL;
+using Konar.az.Helpers;
 using Konar.az.Models;
 using Konar.az.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 
 namespace Konar.az.Controllers
 {
+	
     public class AccountController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly AppDbContext _db;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<AppUser> _signManager;
         public AccountController(UserManager<AppUser> userManager
             ,RoleManager<IdentityRole> roleManager
-            , SignInManager<AppUser> signManager)
+            , SignInManager<AppUser> signManager,
+            AppDbContext db)
         {
 			_userManager=userManager;
 			_roleManager = roleManager;
 			_signManager = signManager;
+			_db = db;
 
 		}
 		#region Login
 
 		#region get
-		public IActionResult Login()
+		public async Task<IActionResult> Login()
 		{
-			return View();
+            ViewBag.BackPhoto = await _db.BackPhotos.FirstOrDefaultAsync();
+
+            return View();
 		}
 
 		#endregion
@@ -37,6 +45,7 @@ namespace Konar.az.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Login(LoginVM loginVM)
 		{
+
 			AppUser appUser = await _userManager.FindByNameAsync(loginVM.Username);
 			if (appUser == null)
 			{
@@ -63,22 +72,23 @@ namespace Konar.az.Controllers
 			}
 			return RedirectToAction("Index", "Home");
 		}
-		#endregion
+        #endregion
 
-		#endregion
+        #endregion
 
-		#region Register
+        #region Register
 
-		#region get
-		public IActionResult Register()
-		{
-			return View();
-		}
+        #region get
+        public async Task<IActionResult> Register()
+        {
+            ViewBag.BackPhoto = await _db.BackPhotos.FirstOrDefaultAsync();
 
-		#endregion
+            return View();
+        }
+        #endregion
 
-		#region post
-		[HttpPost]
+        #region post
+        [HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Register(RegisterVM registerVM)
 		{

@@ -1,9 +1,12 @@
 ﻿@model RegisterVM
+@{
+	var backPhoto = ViewBag.BackPhoto as BackPhoto;
+}
 <main class="main">
 	<section class="promo-primary promo-primary--shop">
 		<div class="overlay"></div>
 		<picture>
-			<source srcset="img/catalog-bg.jpg" media="(min-width: 992px)" /><img class="img-bg" src="img/catalog-bg.jpg" alt="img" />
+			<source srcset="~/img/@backPhoto.BlogImage" media="(min-width: 992px)" /><img class="img-bg" src="~/img/@backPhoto.BlogImage" alt="img" />
 		</picture>
 		<div class="container">
 			<div class="row">
@@ -21,7 +24,7 @@
 		<div class="container">
 			<div class="row offset-margin">
 				
-				<div class="col-xl-4 col-lg-6 col-md-8 offset-md-2 offset-lg-0">
+				<div class="col-xl-8 col-lg-6 col-md-8 offset-md-2 " >
 					<!-- sign-in start-->
 					<form class="form--primary account--form" method="post">
 						<div class="row">
@@ -56,28 +59,37 @@
 							</div>
 							<div class="col-12">
 								<label class="input-label">
-									<input class="form-field input input-password" asp-for="Password" /><span>Şifrə</span>
-									<div class="password-trigger" toggle="#password-field_2">
+									<!-- Şifrə Giriş Alanı -->
+									<input class="form-field input input-password" asp-for="Password" id="password-field" type="password" />
+									<span>Şifrə</span>
+
+									<!-- Göz İşarəsi -->
+									<div class="password-trigger" onclick="togglePasswordVisibility('password-field')">
 										<svg class="icon">
 											<use xlink:href="#eye"></use>
 										</svg>
 									</div>
 								</label>
 								<span asp-validation-for="Password"></span>
-
 							</div>
+
 							<div class="col-12">
 								<label class="input-label">
-									<input class="form-field input input-password" asp-for="CheckPassword" /><span>Şifrəni təstiqlə</span>
-									<div class="password-trigger" toggle="#password-field_3">
+									<!-- Şifrəni Təstiqlə Giriş Alanı -->
+									<input class="form-field input input-password" asp-for="CheckPassword" id="check-password-field" type="password" />
+									<span>Şifrəni təstiqlə</span>
+
+									<!-- Göz İşarəsi -->
+									<div class="password-trigger" onclick="togglePasswordVisibility('check-password-field')">
 										<svg class="icon">
 											<use xlink:href="#eye"></use>
 										</svg>
 									</div>
 								</label>
 								<span asp-validation-for="CheckPassword"></span>
-
 							</div>
+
+
 							<div class="col-12 d-flex justify-content-between">
 								<label>
 									<input asp-for="IsRemember" />
@@ -110,4 +122,12 @@
 
 @section Scripts{
 	<partial name="_ValidationScriptsPartial" />
+
+	<script>
+		// Şifrə görünüşünü dəyişmək üçün funksiya
+		function togglePasswordVisibility(fieldId) {
+			const field = document.getElementById(fieldId);
+			field.type = field.type === 'password' ? 'text' : 'password';
+		}
+	</script>
 }

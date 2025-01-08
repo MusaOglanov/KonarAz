@@ -137,6 +137,10 @@ namespace Konar.az.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("AccountImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("BlogImage")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

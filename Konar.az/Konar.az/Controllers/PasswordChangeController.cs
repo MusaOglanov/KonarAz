@@ -8,7 +8,7 @@ using MimeKit;
 
 namespace Konar.az.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class PasswordChangeController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
