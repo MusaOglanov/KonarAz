@@ -9,6 +9,7 @@ namespace Konar.az.Models
 		public string FaqImage { get; set; }
 		public string ProductImage { get; set; }
 		public string AccountImage { get; set; }
+		public string ContactImage { get; set; }
 
 		[NotMapped]
 		public IFormFile BlogPhoto { get; set; }
@@ -18,6 +19,8 @@ namespace Konar.az.Models
 		public IFormFile ProductPhoto { get; set; }
 		[NotMapped]
 		public IFormFile AccountPhoto { get; set; }
+		[NotMapped]
+		public IFormFile ContactPhoto { get; set; }
 
 
 	}

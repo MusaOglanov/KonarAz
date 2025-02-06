@@ -148,6 +148,27 @@ namespace Konar.az.Areas.Admin.Controllers
                 // Yeni şəkli yadda saxla
                 dbBackPhoto.AccountImage = await backPhoto.AccountPhoto.SaveImageAsync(folder);
             }
+              // Əgər `ContactPhoto` yüklənibsə, onu yenilə
+            if (backPhoto.ContactPhoto != null)
+            {
+                if (!backPhoto.ContactPhoto.IsImage())
+                {
+                    ModelState.AddModelError("ContactPhoto", "Zəhmət olmasa 'image' faylı seçin.");
+                    return View(dbBackPhoto);
+                }
+
+                if (backPhoto.ContactPhoto.IsOlder2MB())
+                {
+                    ModelState.AddModelError("ContactPhoto", "Maksimum 2MB ölçüsündə fayl seçin.");
+                    return View(dbBackPhoto);
+                }
+
+                // Əvvəlki şəkli sil
+                Extensions.DeleteFile(folder, dbBackPhoto.ContactImage);
+
+                // Yeni şəkli yadda saxla
+                dbBackPhoto.ContactImage = await backPhoto.ContactPhoto.SaveImageAsync(folder);
+            }
 
             // Dəyişiklikləri yadda saxla
             await _db.SaveChangesAsync();

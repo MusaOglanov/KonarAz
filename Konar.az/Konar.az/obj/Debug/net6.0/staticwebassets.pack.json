@@ -6181,12 +6181,24 @@
       "PackagePath": "staticwebassets\\img\\14d060c7-b27f-4be3-94e6-7dc70c78b8e7atombomb.png"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\158ff7c2-4227-47e1-ab50-ff1301cafb11Florist.jpg.jfif",
+      "PackagePath": "staticwebassets\\img\\158ff7c2-4227-47e1-ab50-ff1301cafb11Florist.jpg.jfif"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\19b3368f-abcb-4937-864d-c2710ebbc230Zurafe.png",
+      "PackagePath": "staticwebassets\\img\\19b3368f-abcb-4937-864d-c2710ebbc230Zurafe.png"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\1b9b8237-0838-42c2-9aec-ce6f0d55bac6mandoo.jpg",
       "PackagePath": "staticwebassets\\img\\1b9b8237-0838-42c2-9aec-ce6f0d55bac6mandoo.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\226d5bf5-da64-4a61-a8b1-2de69901b7ebproduct-4.jpg",
       "PackagePath": "staticwebassets\\img\\226d5bf5-da64-4a61-a8b1-2de69901b7ebproduct-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\22879a70-435a-4c1c-ae48-9fe73750d493mandoo.jpg",
+      "PackagePath": "staticwebassets\\img\\22879a70-435a-4c1c-ae48-9fe73750d493mandoo.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\244d073c-74de-4496-8b2c-efb622cc8bafbmw..jpg",
@@ -6239,6 +6251,14 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\2efa01ab-8528-4110-afa5-904205ef6d6aattom bombb.jpg",
       "PackagePath": "staticwebassets\\img\\2efa01ab-8528-4110-afa5-904205ef6d6aattom bombb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\32916894-df56-4f4f-b14c-7a5a2df3bf03bull.jpg",
+      "PackagePath": "staticwebassets\\img\\32916894-df56-4f4f-b14c-7a5a2df3bf03bull.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\3338a076-ca68-4d5e-822b-ad16e11865e5banner-2.png",
+      "PackagePath": "staticwebassets\\img\\3338a076-ca68-4d5e-822b-ad16e11865e5banner-2.png"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\37bb1a50-e7f2-48bc-a9a0-2345f467bfacZurafe.png",
@@ -6307,6 +6327,10 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\4cd7eb45-1e9e-4a08-9e6f-08d45bd900a2Florist.jpg.jfif",
       "PackagePath": "staticwebassets\\img\\4cd7eb45-1e9e-4a08-9e6f-08d45bd900a2Florist.jpg.jfif"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\4e12bbbf-9977-4c13-8d57-b61a455c1122mandoo.jpg",
+      "PackagePath": "staticwebassets\\img\\4e12bbbf-9977-4c13-8d57-b61a455c1122mandoo.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\501dec40-52ca-4adb-8e18-328ab13c8643Paltaryuyan.jfif",
@@ -6381,8 +6405,16 @@
       "PackagePath": "staticwebassets\\img\\79c711f1-4a96-4e92-93b2-e68454eae821alien.jpg"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\7dda4c77-55a3-4226-a6de-04be60db3d85menzere.jpg",
+      "PackagePath": "staticwebassets\\img\\7dda4c77-55a3-4226-a6de-04be60db3d85menzere.jpg"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\80a3e8c9-8d2c-4729-bd01-ef638af1c5b0menzere.jpg",
       "PackagePath": "staticwebassets\\img\\80a3e8c9-8d2c-4729-bd01-ef638af1c5b0menzere.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\80eb1927-f546-43fd-955f-5d1adca0544cbanner-3.jpg",
+      "PackagePath": "staticwebassets\\img\\80eb1927-f546-43fd-955f-5d1adca0544cbanner-3.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\8109ea98-acd1-4c72-abac-5a91f72d075aTest.mp4",
@@ -6449,6 +6481,10 @@
       "PackagePath": "staticwebassets\\img\\a070f4aa-8f73-4689-9961-1939abc491e1Paltaryuyan.jfif"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\a5b46846-5cb4-4d74-ace7-2364986c885fbanner-1.png",
+      "PackagePath": "staticwebassets\\img\\a5b46846-5cb4-4d74-ace7-2364986c885fbanner-1.png"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\a5c2cadf-8051-4d4a-b230-7f709489de38banner-10.jpg",
       "PackagePath": "staticwebassets\\img\\a5c2cadf-8051-4d4a-b230-7f709489de38banner-10.jpg"
     },
@@ -6467,6 +6503,10 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\aad46928-1f7f-4f6c-a832-980383741577ak-47-guns.jpg",
       "PackagePath": "staticwebassets\\img\\aad46928-1f7f-4f6c-a832-980383741577ak-47-guns.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\abcdb149-9fe3-4031-9e78-90ff687dd7a2test.mp4",
+      "PackagePath": "staticwebassets\\img\\abcdb149-9fe3-4031-9e78-90ff687dd7a2test.mp4"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\about-bg.jpg",
@@ -6693,6 +6733,10 @@
       "PackagePath": "staticwebassets\\img\\brand-5.png"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\c328069a-26aa-41d6-8a95-421782dfdf09Çamur mezarına girdim 10 yıl gençleştim ! Böyle güzel birşey yok ! Abone olmayı unutma (2).mp4",
+      "PackagePath": "staticwebassets\\img\\c328069a-26aa-41d6-8a95-421782dfdf09Çamur mezarına girdim 10 yıl gençleştim ! Böyle güzel birşey yok ! Abone olmayı unutma (2).mp4"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\c3a6bf9b-5b78-447f-ad5f-529dc9ee9106Paltaryuyan.jfif",
       "PackagePath": "staticwebassets\\img\\c3a6bf9b-5b78-447f-ad5f-529dc9ee9106Paltaryuyan.jfif"
     },
@@ -6723,6 +6767,10 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\cbe65129-4e65-4e44-80f3-47a8397c6689mandoo.jpg",
       "PackagePath": "staticwebassets\\img\\cbe65129-4e65-4e44-80f3-47a8397c6689mandoo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\cdd4bcf0-2df2-42b3-aef1-d02039c111dcmandoo.jpg",
+      "PackagePath": "staticwebassets\\img\\cdd4bcf0-2df2-42b3-aef1-d02039c111dcmandoo.jpg"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\contacts.jpg",
@@ -6821,6 +6869,10 @@
       "PackagePath": "staticwebassets\\img\\f6e24382-b55d-4e28-920c-c1dccce81c0eak-47-guns.jpg"
     },
     {
+      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\f8520290-27c1-4940-9591-cb599320b4134K ULtra HD _ SAMSUNG UHD Demo׃ LED TV.mp4",
+      "PackagePath": "staticwebassets\\img\\f8520290-27c1-4940-9591-cb599320b4134K ULtra HD _ SAMSUNG UHD Demo׃ LED TV.mp4"
+    },
+    {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\falling.webp",
       "PackagePath": "staticwebassets\\img\\falling.webp"
     },
@@ -6855,10 +6907,6 @@
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\features_3.png",
       "PackagePath": "staticwebassets\\img\\features_3.png"
-    },
-    {
-      "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\ffe1a67a-d709-4ff2-9a77-f7d12fc6ee74Zurafe.png",
-      "PackagePath": "staticwebassets\\img\\ffe1a67a-d709-4ff2-9a77-f7d12fc6ee74Zurafe.png"
     },
     {
       "Id": "C:\\Users\\musac\\OneDrive\\Desktop\\KonarAz\\Konar.az\\Konar.az\\wwwroot\\img\\footer--style-3-bg.png",

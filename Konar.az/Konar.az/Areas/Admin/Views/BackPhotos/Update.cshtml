@@ -24,6 +24,11 @@
                 <input accept="image/*" asp-for="AccountPhoto" class="form-control" />
                 <span class="text-danger" asp-validation-for="AccountPhoto"></span>
             </div>
+             <div class="form-group">
+                <label class="form-label" asp-for="ContactPhoto">Əlaqə Fon Şəkli</label>
+                <input accept="image/*" asp-for="ContactPhoto" class="form-control" />
+                <span class="text-danger" asp-validation-for="ContactPhoto"></span>
+            </div>
 
             <button type="submit" class="btn btn-primary me-2">Yenilə</button>
             <a asp-action="Index" class="btn btn-secondary text-white">Geri Qayıt</a>

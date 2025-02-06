@@ -82,7 +82,9 @@ namespace Konar.az.Controllers
 		
 		public async Task<IActionResult> Detail(int? id)
 		{
-			if (id == null)
+            ViewBag.BackPhoto = await _db.BackPhotos.FirstOrDefaultAsync();
+
+            if (id == null)
 			{
 				return NotFound();
 			}
@@ -103,24 +105,15 @@ namespace Konar.az.Controllers
 			return View(product);
 		}
 
-	}
+
+        public async Task<IActionResult> ProductSearch(string key)
+        {
+            List<Product> products = await _db.Products.Include(x=>x.ProductImages).Where(x => x.Name.ToLower().Contains(key.ToLower())).ToListAsync();
+
+
+            return PartialView("_ProductSearchPartialView", products);
+
+        }
+
+    }
 }
-//public async Task<List<Product>> GetWhereProduct(StockIndexVM model)
-//{
-//	IQueryable<Product> query = _productReadRepository.GetAll().Include(p => p.Brands)
-
-//															 .Include(p => p.Category)
-//															 .Include(p => p.Color)
-//															 .Include(p => p.Wishlist);
-
-//	if (model.ProductWhereDto != null)
-//	{
-
-//		query = query.Where(pr => (model.ProductWhereDto.CategoryId != null ? pr.CategoryId == Guid.Parse(model.ProductWhereDto.CategoryId) : true));
-//		query = query.Where(pr => (model.ProductWhereDto.minValue != null ? pr.Price >= model.ProductWhereDto.minValue : true) && (model.ProductWhereDto.maxValue != null ? pr.Price <= model.ProductWhereDto.maxValue : true));
-//		query = query.Where(pr => (model.ProductWhereDto.BrandsId != null ? pr.BrandsId == Guid.Parse(model.ProductWhereDto.BrandsId) : true));
-//		query = query.Where(pr => (model.ProductWhereDto.ColorId != null ? pr.ColorId == Guid.Parse(model.ProductWhereDto.ColorId) : true));
-//	}
-
-//	return await query.ToListAsync();
-//}

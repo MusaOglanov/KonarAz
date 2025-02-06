@@ -145,6 +145,10 @@ namespace Konar.az.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ContactImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FaqImage")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -468,6 +472,22 @@ namespace Konar.az.Migrations
                     b.ToTable("Faqs");
                 });
 
+            modelBuilder.Entity("Konar.az.Models.HomeVideo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("SlideVideo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HomeVideos");
+                });
+
             modelBuilder.Entity("Konar.az.Models.Position", b =>
                 {
                     b.Property<int>("Id")
@@ -475,6 +495,9 @@ namespace Konar.az.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsDeactive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

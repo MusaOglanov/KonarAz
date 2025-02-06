@@ -22,19 +22,19 @@
                             {
                                 <tr>
                                     <td>
-                                            @item.Answer
-                                           
+                                        @item.Answer
+
                                     </td>
 
-                                    <td> 
-                                            @if (item.IsDeactive)
-                                    {
-                                    <span class="text-danger">Passiv</span>
-                                    }
-                                    else
-                                    {
-                                    <span class="text-success">Active</span>
-                                    } 
+                                    <td>
+                                        @if (item.IsDeactive)
+                                        {
+                                            <span class="text-danger">Passiv</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-success">Active</span>
+                                        }
                                     </td>
                                     <td>
 
@@ -42,15 +42,15 @@
 
                                             <a asp-action="Update" asp-route-id="@item.Id" class="btn rounded-pill  btn-info text-white" style="margin-right:5px">Edit</a>
 
-                                              @if (item.IsDeactive)
-                                        {
-                                        <a asp-action="Activity" asp-route-id="@item.Id" class="btn rounded-pill  btn-success text-white" style="margin-right:5px;width:120px">Aktiv et</a>
-                                        }
-                                        else
-                                        {
-                                        <a asp-action="Activity" asp-route-id="@item.Id" class="btn rounded-pill  btn-danger text-white" style="margin-right:5px;width:120px">De Aktiv</a>
+                                            @if (item.IsDeactive)
+                                            {
+                                                <a asp-action="Activity" asp-route-id="@item.Id" class="btn rounded-pill  btn-success text-white" style="margin-right:5px;width:120px">Aktiv et</a>
+                                            }
+                                            else
+                                            {
+                                                <a asp-action="Activity" asp-route-id="@item.Id" class="btn rounded-pill  btn-danger text-white" style="margin-right:5px;width:120px">De Aktiv</a>
 
-                                        } 
+                                            }
                                         </div>
                                     </td>
                                 </tr>

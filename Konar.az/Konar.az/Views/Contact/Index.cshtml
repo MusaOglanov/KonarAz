@@ -1,10 +1,13 @@
 ﻿@model Konar.az.ViewModels.ContactVM
+@{
+	var backPhoto = ViewBag.BackPhoto as BackPhoto;
+}
 <main class="main">
 	<!-- promo primary start-->
 	<section class="promo-primary">
 		<div class="overlay"></div>
 		<picture>
-			<source srcset="img/@Model?.ContactBase.Image" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="img/@Model?.ContactBase.Image" alt="img" />
+			<source srcset="~/img/@backPhoto.ContactImage" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/@backPhoto.ContactImage" alt="img" />
 		</picture>
 		<div class="container">
 			<div class="row">

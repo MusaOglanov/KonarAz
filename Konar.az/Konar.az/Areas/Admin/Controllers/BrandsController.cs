@@ -63,5 +63,31 @@ namespace Konar.az.Areas.Admin.Controllers
 			await _db.SaveChangesAsync();
 			return RedirectToAction("Index");
 		}
-	}
+
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Brand dbBrand = await _db.Brands.FirstOrDefaultAsync(t => t.Id == id);
+            if (dbBrand == null)
+            {
+                return BadRequest();
+            }
+
+            if (dbBrand.IsDeactive)
+            {
+                dbBrand.IsDeactive = false;
+            }
+            else
+            {
+                dbBrand.IsDeactive = true;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+
+    }
 }

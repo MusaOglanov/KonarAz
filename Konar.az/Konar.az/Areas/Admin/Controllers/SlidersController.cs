@@ -1,6 +1,7 @@
 ﻿using Konar.az.DAL;
 using Konar.az.Helpers;
 using Konar.az.Models;
+using Konar.az.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -24,11 +25,11 @@ namespace Konar.az.Areas.Admin.Controllers
         }
         public async Task<ActionResult> Index(int page = 1)
         {
-			int showCount = 3;
+            int showCount = 3;
 
-			ViewBag.PageCount = Math.Ceiling((decimal)await _db.Sliders.CountAsync() / showCount);
-			ViewBag.CurrentPage = page;
-			List<Slider> sliders = await _db.Sliders.OrderByDescending(x => x.Id).Skip((page - 1) * showCount).Take(showCount).ToListAsync();
+            ViewBag.PageCount = Math.Ceiling((decimal)await _db.Sliders.CountAsync() / showCount);
+            ViewBag.CurrentPage = page;
+            List<Slider> sliders = await _db.Sliders.OrderByDescending(x => x.Id).Skip((page - 1) * showCount).Take(showCount).ToListAsync();
             return View(sliders);
         }
 
@@ -78,7 +79,6 @@ namespace Konar.az.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
             return View(dbSlider);
         }
 
@@ -121,5 +121,65 @@ namespace Konar.az.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Slider dbSlider = await _db.Sliders.FirstOrDefaultAsync(t => t.Id == id);
+            if (dbSlider == null)
+            {
+                return BadRequest();
+            }
+
+            if (dbSlider.IsDeactive)
+            {
+                dbSlider.IsDeactive = false;
+            }
+            else
+            {
+                dbSlider.IsDeactive = true;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+
+
+        public async Task<IActionResult> CreateVideo(int? id)
+        {
+           
+            HomeVideo? dbHomeVideo = await _db.HomeVideos.FirstOrDefaultAsync();
+           
+            return View(dbHomeVideo);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateVideo(HomeVideo slideVideo)
+        {
+
+            if (slideVideo.Mp4 != null)
+            {
+                HomeVideo? dbHomeVideo = await _db.HomeVideos.FirstOrDefaultAsync();
+                if (!slideVideo.Mp4.IsVideo())
+                {
+                    ModelState.AddModelError("Mp4", "Zəhmət olmasa 'video' faylı seçin");
+                    return View(dbHomeVideo);
+                }
+
+                string folder = Path.Combine(_env.WebRootPath, "img");
+                Extensions.DeleteFile(folder, dbHomeVideo.SlideVideo);
+                dbHomeVideo.SlideVideo = await slideVideo.Mp4.SaveVideoAsync(folder);
+            }
+
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }

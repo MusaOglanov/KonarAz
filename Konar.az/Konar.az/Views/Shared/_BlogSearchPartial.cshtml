@@ -1,0 +1,9 @@
+﻿@model List<Blog>
+@foreach(Blog blog in Model)
+{
+    <li style="display:flex;align-items:center;">
+        <img src="~/img/@blog.Image" style="width:60px;height:60px;object-fit:cover;margin-right:10px;" />
+        <a asp-action="Detail" asp-route-id="@blog.Id" style="color:black; text-decoration:none;">@blog.Title</a>
+
+    </li>
+}

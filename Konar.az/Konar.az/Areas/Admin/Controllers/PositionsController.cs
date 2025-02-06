@@ -25,7 +25,7 @@ namespace Konar.az.Areas.Admin.Controllers
 
 			ViewBag.PageCount = Math.Ceiling((decimal)await _db.Positions.CountAsync() / showCount);
 			ViewBag.CurrentPage = page;
-			List<Position> positions = await _db.Positions.OrderByDescending(x => x.Id).Skip((page - 1) * showCount).Take(showCount)
+			List<Position> positions = await _db.Positions.Where(x=>x.IsDeactive==false).OrderByDescending(x => x.Id).Skip((page - 1) * showCount).Take(showCount)
 				.ToListAsync();
             return View(positions);
         }
@@ -43,7 +43,7 @@ namespace Konar.az.Areas.Admin.Controllers
                 ModelState.AddModelError("Name", "Boş ola bilməz");
                 return View();
             }
-            bool isExist = await _db.Positions.AnyAsync(x => x.Name == position.Name);
+            bool isExist = await _db.Positions.AnyAsync(x => x.Name == position.Name && x.IsDeactive==false);
             if (isExist)
             {
                 ModelState.AddModelError("Name", "Bu adda Vəzifə daha əvvəl istifadə olunub");
@@ -95,5 +95,26 @@ namespace Konar.az.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+
+            if (id == null) 
+            {
+                return NotFound();
+            }
+            Position dbPosition = await _db.Positions.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbPosition == null)
+            {
+                return BadRequest();
+            }
+
+            dbPosition.IsDeactive = true;
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

@@ -5,8 +5,19 @@
         <div class="card">
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="card-header">Slide-lar</h5>
-                <a asp-action="Create" class="btn rounded-pill btn-primary text-white " style="margin-right:20px">Yarat</a>
+                <div class="d-flex gap-2" style="margin-right:20px;">
+                    <a asp-action="CreateVideo" class="btn rounded-pill btn-primary text-white">
+                        Video
+                    </a>
+                    <div style="margin-left:10px;">
+                        <a asp-action="Create" class="btn rounded-pill btn-primary text-white">
+                            Yarat
+                        </a>
+                    </div>
+                   
+                </div>
             </div>
+
             <div class="card-body">
                 <div class="table-responsive text-nowrap">
                     <table id="myTable" class="table table-bordered">

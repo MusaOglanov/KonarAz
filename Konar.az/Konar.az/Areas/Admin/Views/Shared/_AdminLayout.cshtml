@@ -42,18 +42,9 @@
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="icon-menu"></span>
                 </button>
-                <ul class="navbar-nav mr-lg-2">
-                    <li class="nav-item nav-search d-none d-lg-block">
-                        <div class="input-group">
-                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                                <span class="input-group-text" id="search">
-                                    <i class="icon-search"></i>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-                        </div>
-                    </li>
-                </ul>
+
+            
+
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
@@ -315,25 +306,25 @@
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Məhsullar</span>
                         </a>
-                    </li> 
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="About" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Haqqımızda</span>
                         </a>
-                    </li>  
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Blogs" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Bloglar</span>
                         </a>
-                    </li>  
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Employees" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">İşçilər</span>
                         </a>
-                    </li> 
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Positions" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
@@ -341,51 +332,51 @@
                         </a>
                     </li>
 
-                       <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="Faqs" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Faqs</span>
                         </a>
                     </li>
-                    
-                   <li class="nav-item">
+
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="Sliders" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Slide-lar</span>
                         </a>
                     </li>
-                       
-                   <li class="nav-item">
+
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="Bio" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Bio</span>
                         </a>
                     </li>
-                        <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="Categories" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Kategorilər</span>
                         </a>
-                    </li> 
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Mail" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Mail Göndər</span>
                         </a>
                     </li>
-                      <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="Brands" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Brendlər</span>
                         </a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="CaseStudies" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">İş qəzaları</span>
                         </a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="BackPhotos" asp-action="Index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Fon Şəkilləri(Mağaza,Bloq,Faq)</span>
@@ -397,7 +388,7 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-        @RenderBody()
+                    @RenderBody()
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->

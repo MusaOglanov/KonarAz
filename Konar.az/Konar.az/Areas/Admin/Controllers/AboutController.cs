@@ -161,5 +161,29 @@ namespace Konar.az.Areas.Admin.Controllers
         #endregion
 
 
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            About dbAbout = await _db.Abouts.FirstOrDefaultAsync(t => t.Id == id);
+            if (dbAbout == null)
+            {
+                return BadRequest();
+            }
+
+            if (dbAbout.IsDeActive)
+            {
+                dbAbout.IsDeActive = false;
+            }
+            else
+            {
+                dbAbout.IsDeActive = true;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
     }
 }

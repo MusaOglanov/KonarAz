@@ -117,5 +117,29 @@ namespace Konar.az.Areas.Admin.Controllers
 			await _db.SaveChangesAsync();
 			return RedirectToAction("Index");
 		}
-	}
+
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            CaseStudy dbCaseStudies = await _db.CaseStudies.FirstOrDefaultAsync(t => t.Id == id);
+            if (dbCaseStudies == null)
+            {
+                return BadRequest();
+            }
+
+            if (dbCaseStudies.IsDeActive)
+            {
+                dbCaseStudies.IsDeActive = false;
+            }
+            else
+            {
+                dbCaseStudies.IsDeActive = true;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+    }
 }

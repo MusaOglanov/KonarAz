@@ -191,8 +191,33 @@ namespace Konar.az.Areas.Admin.Controllers
 			await _db.SaveChangesAsync();
 			return RedirectToAction("Index");
 		}
-		#endregion
+        #endregion
 
-		#endregion
-	}
+        #endregion
+
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Blog dbBlog = await _db.Blogs.FirstOrDefaultAsync(t => t.Id == id);
+            if (dbBlog == null)
+            {
+                return BadRequest();
+            }
+
+            if (dbBlog.IsDeActive)
+            {
+                dbBlog.IsDeActive = false;
+            }
+            else
+            {
+                dbBlog.IsDeActive = true;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+    }
 }

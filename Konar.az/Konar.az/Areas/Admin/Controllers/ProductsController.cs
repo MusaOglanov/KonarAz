@@ -315,6 +315,30 @@ namespace Konar.az.Areas.Admin.Controllers
 
         #endregion
 
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Product dbProduct = await _db.Products.FirstOrDefaultAsync(t => t.Id == id);
+            if (dbProduct == null)
+            {
+                return BadRequest();
+            }
+
+            if (dbProduct.IsDeActive)
+            {
+                dbProduct.IsDeActive = false;
+            }
+            else
+            {
+                dbProduct.IsDeActive = true;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
         public async Task<IActionResult> DeleteImage(int proImageId)
         {
             ProductImage? productImage = await _db.ProductImages

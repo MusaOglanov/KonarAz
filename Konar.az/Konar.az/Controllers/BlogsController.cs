@@ -13,61 +13,70 @@ namespace Konar.az.Controllers
         {
             _db = db;
         }
-		public async Task<IActionResult> Index(string categoryIds, string tagId,int page=1)
-		{
-			var categoryIdList = !string.IsNullOrEmpty(categoryIds)
-				? categoryIds.Split(',').Select(id => int.Parse(id)).ToArray()
-				: Array.Empty<int>();
+        public async Task<IActionResult> Index(string categoryIds, string tagId, int page = 1)
+        {
+            var categoryIdList = !string.IsNullOrEmpty(categoryIds)
+                ? categoryIds.Split(',').Select(id => int.Parse(id)).ToArray()
+                : Array.Empty<int>();
 
-			var blogsQuery = _db.Blogs
-				.Include(b => b.BlogCategory)
-				.Include(b => b.BlogTags)
-				.ThenInclude(b => b.Tag)
-				.AsQueryable();
+            var blogsQuery = _db.Blogs
+                .Include(b => b.BlogCategory)
+                .Include(b => b.BlogTags)
+                .ThenInclude(b => b.Tag)
+                .AsQueryable();
 
-			if (categoryIdList.Any())
-			{
-				blogsQuery = blogsQuery.Where(p => categoryIdList.Contains(p.BlogCategoryId));
-			}
+            if (categoryIdList.Any())
+            {
+                blogsQuery = blogsQuery.Where(p => categoryIdList.Contains(p.BlogCategoryId));
+            }
 
-			if (!string.IsNullOrEmpty(tagId))
-			{
-				int tagIdParsed = int.Parse(tagId);
-				blogsQuery = blogsQuery.Where(p => p.BlogTags.Any(t => t.Id == tagIdParsed));
-			}
+            if (!string.IsNullOrEmpty(tagId))
+            {
+                int tagIdParsed = int.Parse(tagId);
+                blogsQuery = blogsQuery.Where(p => p.BlogTags.Any(t => t.Id == tagIdParsed));
+            }
 
-			int showCount = 3;
+            int showCount = 3;
 
-			var blogs = await blogsQuery.OrderByDescending(x=>x.Id).Skip((page - 1) * showCount).Take(showCount).ToListAsync();
-			ViewBag.PageCount = Math.Ceiling((decimal)await _db.Blogs.CountAsync() / showCount);
-			ViewBag.CurrentPage = page;
+            var blogs = await blogsQuery.Where(x => x.IsDeActive == false).OrderByDescending(x => x.Id).Skip((page - 1) * showCount).Take(showCount).ToListAsync();
+            ViewBag.PageCount = Math.Ceiling((decimal)await _db.Blogs.CountAsync() / showCount);
+            ViewBag.CurrentPage = page;
 
-			ViewBag.Blogs = await _db.Blogs.Include(x => x.BlogCategory).ToListAsync();
-			ViewBag.BlogCategories = await _db.BlogCategories.ToListAsync();
-			ViewBag.Tags = await _db.Tags.ToListAsync();
-			ViewBag.BackPhoto = await _db.BackPhotos.FirstOrDefaultAsync();
-         
+            ViewBag.Blogs = await _db.Blogs.Include(x => x.BlogCategory).ToListAsync();
+            ViewBag.BlogCategories = await _db.BlogCategories.ToListAsync();
+            ViewBag.Tags = await _db.Tags.ToListAsync();
+            ViewBag.BackPhoto = await _db.BackPhotos.FirstOrDefaultAsync();
+
 
 
             return View(blogs);
         }
-        public async Task<IActionResult> Detail (int? id)
+        public async Task<IActionResult> Detail(int? id)
         {
-            if(id== null)
+            if (id == null)
             {
                 return NotFound();
 
             }
-            Blog? dbBlog=await _db.Blogs
+            Blog? dbBlog = await _db.Blogs
                 .Include(x => x.BlogCategory)
                 .Include(x => x.BlogTags)
+                .ThenInclude(x => x.Tag)
                 .FirstOrDefaultAsync(x => x.Id == id);
-			if (dbBlog == null)
-			{
-				return BadRequest();
+            if (dbBlog == null)
+            {
+                return BadRequest();
 
-			}
-			return View(dbBlog);
+            }
+            return View(dbBlog);
+        }
+        public async Task<IActionResult> GlobalSearch(string key)
+        {
+            List<Blog> blogs=await _db.Blogs.Where(x=>x.Title.ToLower().Contains(key.ToLower())).ToListAsync();
+
+
+            return PartialView("_BlogSearchPartial", blogs);
+
         }
     }
 }

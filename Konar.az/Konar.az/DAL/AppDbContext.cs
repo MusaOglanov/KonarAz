@@ -36,6 +36,7 @@ namespace Konar.az.DAL
 		public DbSet<Contact> Contacts { get; set; }
 		public DbSet<CaseStudy> CaseStudies { get; set; }
 		public DbSet<BackPhoto> BackPhotos { get; set; }
+		public DbSet<HomeVideo> HomeVideos { get; set; }
 	}
 
 }

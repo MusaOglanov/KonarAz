@@ -2,6 +2,9 @@
 @{
     var lastBlog = Model.Blogs.LastOrDefault();
     var lastThreeBlogsExceptLast = Model.Blogs.TakeLast(3).Reverse().Skip(1).ToList();
+   
+    var slideVideo = ViewBag.SlideVideo as HomeVideo;
+
 }
 
 
@@ -113,7 +116,7 @@
         <!-- video block start-->
         <div class="video-block">
             <div class="img-holder">
-                <img class="img-bg" src="~/img/video-bg.jpg" alt="img" />
+                <img class="img-bg" src="~/img/@slideVideo.SlideVideo" alt="mp4" />
                 <div class="overlay"></div><a class="fancy-video" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><i class="fa fa-play" aria-hidden="aria-hidden"></i></a>
             </div>
         </div>
@@ -140,7 +143,7 @@
                         <div class="img-holder"><img src="~/img/uniforms.png" alt="img" /></div>
                         <figcaption>
                             <h4 class="title">Uniformalar</h4>
-                            <p>Keyfiyyətin rahatlıqla birləşdiyi Konar Uniforms ilə peşəkarlığın gücünü ortaya qoyun.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
+                            <p>Keyfiyyətin rahatlıqla birləşdiyi Konar Uniforms ilə peşəkarlığın gücünü ortaya qoyun.</p><a class="button button--black" asp-controller="Products" asp-action="index" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
                         </figcaption>
                     </figure>
                     <!-- icon item end-->
@@ -151,7 +154,7 @@
                         <div class="img-holder"><img src="~/img/selfprotection.png" alt="img" /></div>
                         <figcaption>
                             <h4 class="title">Fərdi Qorunma Vasitələri</h4>
-                            <p>Fosforlu jiletlərdən qoruyucu eynəklərə qədər geniş çeşidli aksesuarlar ilə komandanızın iş yerində güvəndə olmasını təmin edin.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
+                            <p>Fosforlu jiletlərdən qoruyucu eynəklərə qədər geniş çeşidli aksesuarlar ilə komandanızın iş yerində güvəndə olmasını təmin edin.</p><a class="button button--black" asp-controller="Products" asp-action="index" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
                         </figcaption>
                     </figure>
                     <!-- icon item end-->
@@ -162,7 +165,7 @@
                         <div class="img-holder"><img src="~/img/accessories.png" alt="img" /></div>
                         <figcaption>
                             <h4 class="title">Aksesuarlar</h4>
-                            <p>İş mühitində ehtiyacınız olan bütün növ aksesuarlar sizə Konar qədər yaxın.</p><a class="button button--black" href="#" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
+                            <p>İş mühitində ehtiyacınız olan bütün növ aksesuarlar sizə Konar qədər yaxın.</p><a class="button button--black" asp-controller="Products" asp-action="index" data-hover="Məhsullara bax"><span>Məhsullara bax</span></a>
                         </figcaption>
                     </figure>
                     <!-- icon item end-->
@@ -193,7 +196,7 @@
                     <!-- item start-->
                     <div class="slider-item">
                         <figure>
-                            <a class="img-holder" href="#">
+                            <a class="img-holder" asp-controller="CaseStudies" asp-action="Detail" asp-route-id="@caseStudy.Id ">
                                 <div class="overlay"></div><img class="img-bg" src="~/img/@caseStudy.Image" alt="img" />
                             </a>
                             <figcaption>
@@ -248,7 +251,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-5">
                     <div class="button-block">
-                        <div class="products-slider-dots"></div><a class="button button--transparent d-none d-lg-inline-block" href="#" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
+                        <div class="products-slider-dots"></div><a class="button button--transparent d-none d-lg-inline-block" asp-controller="Products" asp-action="index" data-hover="Hamısına bax"><span>Hamısına bax</span></a>
                     </div>
                 </div>
             </div>
@@ -354,7 +357,7 @@
                                     </a>
                                     <div class="content-holder">
                                         <div class="ribbon">
-                                            <p>. <span class="day">25</span>/<span class="month">12</span></p>
+                                            <p>. <span class="day">@lastBlog.CreateTime.ToString("dd")</span>/<span class="month">@lastBlog.CreateTime.ToString("MM")</span></p>
                                         </div><span class="category">@lastBlog.BlogCategory.Name</span>
                                         <h4 class="title"><a asp-controller="Blogs" asp-action="Detail" asp-route-id="@lastBlog.Id">@lastBlog.Title</a></h4>
                                         <div class="text-holder">
@@ -379,7 +382,7 @@
                                     </a>
                                     <div class="content-holder">
                                         <div class="ribbon">
-                                            <p>. <span class="day">25</span>/<span class="month">12</span></p>
+                                            <p>. <span class="day">@blog.CreateTime.ToString("dd")</span>/<span class="month">@blog.CreateTime.ToString("MM")</span></p>
                                         </div><span class="category">@blog.BlogCategory.Name</span>
                                         <h4 class="title"><a asp-controller="Blogs" asp-action="Detail" asp-route-id="@blog.Id">@blog.Title</a></h4>
                                         <div class="text-holder">

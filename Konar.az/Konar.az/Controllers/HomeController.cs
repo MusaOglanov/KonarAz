@@ -22,10 +22,12 @@ namespace Konar.az.Controllers
 				Sliders = await _db.Sliders.ToListAsync(),
 				CaseStudies = await _db.CaseStudies.ToListAsync(),
 				Brands = await _db.Brands.ToListAsync(),
-				Blogs = await _db.Blogs.Include(x => x.BlogCategory).ToListAsync(),
+				Blogs = await _db.Blogs.Where(x => x.IsDeActive == false).Include(x => x.BlogCategory).ToListAsync(),
 				Products = await _db.Products.Include(x=>x.ProductImages).ToListAsync(),
 			};
-			return View(homeVM);
+            ViewBag.SlideVideo = await _db.HomeVideos.FirstOrDefaultAsync();
+
+            return View(homeVM);
 		}
 
 		public IActionResult Privacy()

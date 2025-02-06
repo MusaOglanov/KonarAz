@@ -87,14 +87,13 @@
 					</div>
 					<!-- menu block end-->
 					<div class="block-right">
-						<!-- lang block start-->
 						<div class="lang-block">
 							<ul class="lang-select">
 								<li class="lang-item active">
-									<span>AZ</span>
+									<span id="selected-lang">AZ</span>
 									<ul class="sub-list">
-										<li class="lang-item"><a href="#">English</a></li>
-										<li class="lang-item"><a href="#">Russian</a></li>
+										<li class="lang-item"><a href="#" onclick="changeLanguage('en')">English</a></li>
+										<li class="lang-item"><a href="#" onclick="changeLanguage('ru')">Russian</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -157,3 +156,19 @@
 		</div>
 	</div>
 </header>
+@section Scripts {
+	<script>
+		function changeLanguage(lang) {
+			localStorage.setItem('selectedLanguage', lang);
+			location.reload(); // Səhifəni yenilə ki, yeni dil tətbiq olunsun
+		}
+
+		// Səhifə yüklənəndə yadda saxlanmış dili tətbiq et
+		document.addEventListener("DOMContentLoaded", function () {
+			let savedLang = localStorage.getItem('selectedLanguage') || 'az';
+			document.getElementById('selected-lang').innerText = savedLang.toUpperCase();
+
+			// Burada backend-dən və ya JSON-dan dili dəyişmək üçün kod əlavə edə bilərsiniz
+		});
+	</script>
+}

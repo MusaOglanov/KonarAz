@@ -1542,8 +1542,11 @@ wwwroot\img\128a2d84-9d6d-458e-b108-4b2839fe7b63Florist.jpg.jfif
 wwwroot\img\12c32591-503f-49aa-a207-415904a4a276Florist.jpg.jfif
 wwwroot\img\13a68a13-8389-43b3-a6f3-39931c8380a7ak-47-guns.jpg
 wwwroot\img\14d060c7-b27f-4be3-94e6-7dc70c78b8e7atombomb.png
+wwwroot\img\158ff7c2-4227-47e1-ab50-ff1301cafb11Florist.jpg.jfif
+wwwroot\img\19b3368f-abcb-4937-864d-c2710ebbc230Zurafe.png
 wwwroot\img\1b9b8237-0838-42c2-9aec-ce6f0d55bac6mandoo.jpg
 wwwroot\img\226d5bf5-da64-4a61-a8b1-2de69901b7ebproduct-4.jpg
+wwwroot\img\22879a70-435a-4c1c-ae48-9fe73750d493mandoo.jpg
 wwwroot\img\244d073c-74de-4496-8b2c-efb622cc8bafbmw..jpg
 wwwroot\img\2656a0fb-edb8-4fea-8a8b-2e0d7de0bceeproduct-3.jpg
 wwwroot\img\268f161f-995b-44ec-b4df-48fd0feaacc8alien - Copy.jpg
@@ -1557,6 +1560,8 @@ wwwroot\img\2c66e0fb-494f-4bbb-b6dc-6ac347c37b10AirlineTicket.jpg
 wwwroot\img\2d29547c-1aa2-49d5-9e6e-f9dafb11f5b3atombomb.png
 wwwroot\img\2e744b9c-d8ac-4eda-8369-96655d40bbaeaa.jpg
 wwwroot\img\2efa01ab-8528-4110-afa5-904205ef6d6aattom bombb.jpg
+wwwroot\img\32916894-df56-4f4f-b14c-7a5a2df3bf03bull.jpg
+wwwroot\img\3338a076-ca68-4d5e-822b-ad16e11865e5banner-2.png
 wwwroot\img\37bb1a50-e7f2-48bc-a9a0-2345f467bfacZurafe.png
 wwwroot\img\3a64fbbb-2a70-4025-a2b4-91b0f61df71dalien - Copy.jpg
 wwwroot\img\3c9da6b2-639f-4a37-be6b-5c513486721dproduct-11.jpg
@@ -1574,6 +1579,7 @@ wwwroot\img\4b0dce3b-c523-4247-a499-64cbba8201efPaltaryuyan.jfif
 wwwroot\img\4c17db42-ff2c-4d94-ad7d-5fb8653faaf7Test.mp4
 wwwroot\img\4c6dcfc8-0719-4094-9716-981c5c3b6c4cproduct-17.jpg
 wwwroot\img\4cd7eb45-1e9e-4a08-9e6f-08d45bd900a2Florist.jpg.jfif
+wwwroot\img\4e12bbbf-9977-4c13-8d57-b61a455c1122mandoo.jpg
 wwwroot\img\501dec40-52ca-4adb-8e18-328ab13c8643Paltaryuyan.jfif
 wwwroot\img\56ec2b42-a75a-4e82-9c76-cd67e4f875feTest.mp4
 wwwroot\img\57abb25e-6d07-4466-83c1-ffae7150fa38banner-9.jpg
@@ -1592,7 +1598,9 @@ wwwroot\img\79286201-dd49-483e-869f-64038515a636Florist.jpg.jfif
 wwwroot\img\792e0d99-9450-438d-95b6-e13d38a42b30dark.jfif
 wwwroot\img\795e95a9-387c-4ff9-a35d-0f658e7dd221product-3.jpg
 wwwroot\img\79c711f1-4a96-4e92-93b2-e68454eae821alien.jpg
+wwwroot\img\7dda4c77-55a3-4226-a6de-04be60db3d85menzere.jpg
 wwwroot\img\80a3e8c9-8d2c-4729-bd01-ef638af1c5b0menzere.jpg
+wwwroot\img\80eb1927-f546-43fd-955f-5d1adca0544cbanner-3.jpg
 wwwroot\img\8109ea98-acd1-4c72-abac-5a91f72d075aTest.mp4
 wwwroot\img\8696814d-13fb-4ca5-87b4-da02837ebf56attom bombb.jpg
 wwwroot\img\88a393aa-4249-44b3-a7c1-8bec4394c20ePaltaryuyan.jfif
@@ -1608,11 +1616,13 @@ wwwroot\img\9b745d1e-b298-436f-b2e6-d805d75c4139product-17.jpg
 wwwroot\img\9c824545-37f8-456c-9955-363f540c0809dark.jfif
 wwwroot\img\9d00b971-8d38-48bd-9683-8b56f2ff089dalien - Copy.jpg
 wwwroot\img\a070f4aa-8f73-4689-9961-1939abc491e1Paltaryuyan.jfif
+wwwroot\img\a5b46846-5cb4-4d74-ace7-2364986c885fbanner-1.png
 wwwroot\img\a5c2cadf-8051-4d4a-b230-7f709489de38banner-10.jpg
 wwwroot\img\a79fb5d5-02d7-4489-9dfc-bee7416d9f89mandoo.jpg
 wwwroot\img\a8378606-441f-432e-8e70-e42886bb3c85dark.jfif
 wwwroot\img\a9d448b1-1447-4384-bc07-32e0d4bedbafFlorist.jpg.jfif
 wwwroot\img\aad46928-1f7f-4f6c-a832-980383741577ak-47-guns.jpg
+wwwroot\img\abcdb149-9fe3-4031-9e78-90ff687dd7a2test.mp4
 wwwroot\img\about.jpg
 wwwroot\img\about-bg.jpg
 wwwroot\img\accessories.png
@@ -1669,6 +1679,7 @@ wwwroot\img\brand-2.png
 wwwroot\img\brand-3.png
 wwwroot\img\brand-4.png
 wwwroot\img\brand-5.png
+wwwroot\img\c328069a-26aa-41d6-8a95-421782dfdf09Çamur mezarına girdim 10 yıl gençleştim ! Böyle güzel birşey yok ! Abone olmayı unutma (2).mp4
 wwwroot\img\c3a6bf9b-5b78-447f-ad5f-529dc9ee9106Paltaryuyan.jfif
 wwwroot\img\c3e96b8b-924a-4cdf-a183-f5c240c09d6cak-47-guns.jpg
 wwwroot\img\c49c1b7b-a9eb-4975-8e7b-69d3042c676dmenzere.jpg
@@ -1677,6 +1688,7 @@ wwwroot\img\cases.jpg
 wwwroot\img\cases-details.jpg
 wwwroot\img\catalog-bg.jpg
 wwwroot\img\cbe65129-4e65-4e44-80f3-47a8397c6689mandoo.jpg
+wwwroot\img\cdd4bcf0-2df2-42b3-aef1-d02039c111dcmandoo.jpg
 wwwroot\img\contacts.jpg
 wwwroot\img\d0110d1c-d951-427e-9d1a-e636cbc44142AirlineTicket.jpg
 wwwroot\img\d1c7d7c6-1a0c-4d5b-bc68-6085ea791c7dmandoo.jpg
@@ -1701,6 +1713,7 @@ wwwroot\img\ee72532a-ec4a-42cb-910a-9ee3f39aa703alien.jpg
 wwwroot\img\eeb888d6-1493-4fc3-a77d-d1b0dcd1eacdproduct-17.jpg
 wwwroot\img\emektehlukesizliyi.webp
 wwwroot\img\f6e24382-b55d-4e28-920c-c1dccce81c0eak-47-guns.jpg
+wwwroot\img\f8520290-27c1-4940-9591-cb599320b4134K ULtra HD _ SAMSUNG UHD Demo׃ LED TV.mp4
 wwwroot\img\falling.webp
 wwwroot\img\faq.jpg
 wwwroot\img\favicon.ico
@@ -1710,7 +1723,6 @@ wwwroot\img\features_2.png
 wwwroot\img\features_3.png
 wwwroot\img\features-1.jpg
 wwwroot\img\features-2.jpg
-wwwroot\img\ffe1a67a-d709-4ff2-9a77-f7d12fc6ee74Zurafe.png
 wwwroot\img\footer--style-3-bg.png
 wwwroot\img\franklinquote.webp
 wwwroot\img\gal-img-5.jpg

@@ -19,7 +19,6 @@
 }
 <main class="main">
     <section class="promo-primary promo-primary--shop">
-        <div class="overlay"></div>
         <picture>
             @if (backPhoto != null)
             {
@@ -52,54 +51,64 @@
 
                 <div class="row">
                     <div class="col-xl-3 col-lg-4">
+                        <div class="articles__inner">
+                            <form class="article-search" action="javascript:void(0);">
+                                <input class="article-search__field"
+                                       type="search"
+                                       name="article-search"
+                                       id="mySearchInput"
+                                       placeholder="Axtar" />
+
+                            </form>
+                        </div>
+                        <ul id="mySearchList" style="height: 280px; overflow: auto; background-color: white; color: black;">
+                            <li>Product</li>
+                        </ul>
                         <!-- catalog aside start-->
                         <div class="aside-holder">
-                            <span class="close-aside d-lg-none">
-                                <svg class="icon">
-                                    <use xlink:href="#close"></use>
-                                </svg>
-                            </span>
+
                             <aside class="catalog-aside">
-                                <div class="catalog-aside__inner">
-                                    <h4 class="title toggler">Kataloq</h4>
-                                    <!-- tabs header start-->
-                                    <div>
-                                        <div class="catalog-aside__inner">
-                                            <h4 class="title toggler">Kategorilər</h4>
-                                            <div class="tabs-header toggle-item">
-                                                @if (ViewBag.Categories != null)
-                                                {
-                                                    @foreach (var category in ViewBag.Categories as List<Category>)
-                                                    {
-                                                        int productCount = 0;
-                                                        if (ViewBag.Products != null)
-                                                        {
-                                                            productCount = ((List<Product>)ViewBag.Products)
-                                                            .Count(p => p.ProductCategories.Any(pc => pc.CategoryId == category.Id));
-                                                        }
 
-                                                        <div>
-                                                            <label>
-                                                                <input type="checkbox" name="categoryIds" value="@category.Id"
-                                                                @(Context.Request.Query["categoryIds"].ToString().Contains(category.Id.ToString()) ? "checked" : "")>
-                                                                @category.Name (<span>@productCount</span>)
-                                                            </label>
-                                                        </div>
-
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    <p>No categories available.</p>
-                                                }
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- tabs header end-->
-                                </div>
+                                
                                 <form class="form form--primary form--catalog" action="javascript:void(0);">
+
+
+                                    <fieldset class="brands">
+                                        <h4 class="title toggler">Kategorilər</h4>
+                                        <div class="brands-block toggle-item">
+                                            <!-- item start-->
+                                            @if (ViewBag.Categories != null)
+                                            {
+                                                @foreach (var category in ViewBag.Categories as List<Category>)
+                                                {
+                                                    int productCount = 0;
+                                                    if (ViewBag.Products != null)
+                                                    {
+                                                        productCount = ((List<Product>)ViewBag.Products)
+                                                        .Count(p => p.ProductCategories.Any(pc => pc.CategoryId == category.Id));
+                                                    }
+
+                                                    <div>
+                                                        <label>
+                                                            <input type="checkbox" name="categoryIds" value="@category.Id"
+                                                            @(Context.Request.Query["categoryIds"].ToString().Contains(category.Id.ToString()) ? "checked" : "")>
+                                                            @category.Name (<span>@productCount</span>)
+                                                        </label>
+                                                    </div>
+
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <p>No categories available.</p>
+                                            }
+
+
+                                            <!-- item end-->
+                                        </div>
+                                    </fieldset>
+                                    <!-- categories end-->
+
                                     <fieldset class="brands">
                                         <h4 class="title toggler">Brendlər</h4>
                                         <div class="brands-block toggle-item">
@@ -245,10 +254,10 @@
                                 else
                                 {
                                     <li class="back disabled"><span>Geri</span></li>
-                                }      
+                                }
                                 @for (int i = 1; i <= ViewBag.PageCount; i++)
                                 {
-                                    if (ViewBag.CurrentPage==i)
+                                    if (ViewBag.CurrentPage == i)
                                     {
                                         <li class="number current"><a href="#">@i</a></li>
 
@@ -298,5 +307,48 @@
             window.location.href = newUrl;
         });
 
+    </script>
+    <script>
+        function showResults(query) {
+            const resultsDiv = document.getElementById("mySearchInput");
+
+            if (query.trim() === "") {
+                resultsDiv.style.display = "none";
+                resultsDiv.innerHTML = "";
+            } else {
+                resultsDiv.style.display = "block";
+                resultsDiv.innerHTML = filteredData.length
+                    ? filteredData.map(item => `<li>${item}</li>`).join("")
+                    : "<li>No results found</li>";
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#mySearchList").hide(); // Səhifə açılan kimi gizlədirik
+        });
+
+        $(document).on("keyup", "#mySearchInput", function () {
+            let query = $(this).val().trim();
+
+            if (query === "") {
+                $("#mySearchList").html("").hide(); // Boşdursa gizlət
+                return;
+            }
+
+            console.log("Axtarış sorğusu göndərilir:", query);
+
+            $.ajax({
+                url: "/Products/ProductSearch",
+                type: "GET",
+                data: { "key": query },
+                success: function (response) {
+                    $("#mySearchList").html(response).show(); // Nəticə varsa göstər
+                },
+                error: function () {
+                    console.error("AJAX sorğusu zamanı xəta baş verdi.");
+                }
+            });
+        });
     </script>
 }

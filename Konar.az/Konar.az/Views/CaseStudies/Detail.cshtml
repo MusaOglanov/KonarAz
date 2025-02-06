@@ -1,0 +1,169 @@
+﻿@model CaseStudy
+<main class="main">
+	<!-- promo primary start-->
+	<section class="promo-primary">
+		<div class="overlay"></div>
+		<picture>
+			<source srcset="~/img/@Model.Image" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="~/img/@Model.Image" alt="img" />
+		</picture>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="align-container">
+						<div class="align-item">
+							<span>R-energy</span>
+							<h1 class="title">@Model.Title</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- promo primary end-->
+	<!-- blog detail start-->
+	<section class="section blog-detail">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+					<!-- promo holder start-->
+					<div class="promo-holder"><img src="~/img/@Model.Image" alt="img" /></div>
+					<!-- promo holder end-->
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+					<!-- content block start-->
+					<br />
+					<div class="comment-heading">
+						<div class="wrapper"><span >@Model.Title</span></div>
+					</div>
+					<br />
+
+					<div class="content-block">
+						<p>@Model.SubTitle</p>
+						<!-- tags block start-->
+					@* 	<div class="tags-block">
+
+							<span class="name">Tags:</span>
+							@foreach (BlogTag tag in Model.BlogTags)
+							{
+								<span class="tag">
+									@tag.Tag.Name
+									<span class="close">
+										<svg class="icon">
+											<use xlink:href="#close"></use>
+										</svg>
+									</span>
+								</span>
+							}
+
+						</div> *@
+						<!-- tags block end-->
+					</div>
+					<!-- content block end-->
+				</div>
+			</div>
+		</div>
+		@* 		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+					<!-- comments block start-->
+					<div class="comments-block">
+						<!-- heading start-->
+						<div class="heading">
+							<div class="author">
+								<div class="author-block">
+									<div class="img-holder"><img class="img-bg" src="~/img/author-img.jpg" alt="img" /></div><span class="name">Katty Greybrown</span>
+								</div>
+							</div>
+							<div class="comment-detail">
+								<div class="likes-count">
+									<svg class="icon">
+										<use xlink:href="#heart"></use>
+									</svg><span class="count">2546</span>
+								</div>
+								<div class="comments-count">
+									<svg class="icon">
+										<use xlink:href="#comment"></use>
+									</svg><span class="count">593</span>
+								</div>
+							</div>
+							<!-- socials start-->
+							<nav class="socials-holder">
+								<ul class="socials-primary">
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								</ul>
+							</nav>
+							<!-- socials end -->
+						</div>
+						<!-- heading end-->
+						<!-- content start-->
+						<div class="content">
+							<p class="comments-total">32 comments <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+							<!-- item start-->
+							<div class="comment-item">
+								<div class="img-holder"><img class="img-bg" src="~/img/author-2.jpg" alt="author" /></div>
+								<div class="text-holder">
+									<div class="comment-heading">
+										<div class="wrapper"><span class="name">Kristina Landie</span><span class="date">12.04.2018</span></div><span class="action">
+											<svg class="icon">
+												<use xlink:href="#previous"></use>
+											</svg>
+										</span>
+									</div>
+									<div class="comment-content">
+										<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine.</p>
+									</div>
+								</div>
+							</div>
+							<!-- item end-->
+							<!-- item start-->
+							<div class="comment-item">
+								<div class="img-holder"><img class="img-bg" src="~/img/author-3.jpg" alt="author" /></div>
+								<div class="text-holder">
+									<div class="comment-heading">
+										<div class="wrapper"><span class="name">Mike Lambert</span><span class="date">12.04.2018</span></div><span class="action">
+											<svg class="icon">
+												<use xlink:href="#previous"></use>
+											</svg>
+										</span>
+									</div>
+									<div class="comment-content">
+										<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine.</p>
+									</div>
+								</div>
+								<div class="comment-item sub-comment">
+									<div class="img-holder"><img class="img-bg" src="~/img/author-4.jpg" alt="author" /></div>
+									<div class="text-holder">
+										<div class="comment-heading">
+											<div class="wrapper"><span class="name">Taylor Vien</span><span class="date">12.04.2018</span></div><span class="action">
+												<svg class="icon">
+													<use xlink:href="#previous"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="comment-content">
+											<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- item end-->
+						</div>
+						<!-- content end-->
+					</div>
+					<!-- comments block end-->
+				</div>
+			</div>
+		</div> *@
+	</section>
+	<!-- blog detail end-->
+	<!-- live comment start-->
+	<!-- live comment end-->
+</main>

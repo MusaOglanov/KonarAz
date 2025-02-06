@@ -21,7 +21,9 @@ namespace Konar.az.Controllers
 
 		public async Task<IActionResult> Index()
 		{
-			ContactVM contactVM = new ContactVM
+            ViewBag.BackPhoto = await _db.BackPhotos.FirstOrDefaultAsync();
+
+            ContactVM contactVM = new ContactVM
 			{
 				ContactBase = await _db.Contacts.FirstOrDefaultAsync(),
 				ContactMessages = new ContactMessage()

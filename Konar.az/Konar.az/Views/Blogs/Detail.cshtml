@@ -12,7 +12,7 @@
 					<div class="align-container">
 						<div class="align-item">
 							<span>R-energy</span>
-							<h1 class="title">Our Blog</h1>
+							<h1 class="title">@Model.Title</h1>
 						</div>
 					</div>
 				</div>
@@ -52,14 +52,18 @@
 				<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
 					<!-- content block start-->
 					<div class="content-block">
+						<h4 class="name">@Model.Title</h4>
+						<br />
 						<p>@Model.SubTitle</p>
 						<!-- tags block start-->
 						<div class="tags-block">
+
+							<span class="name">Tags:</span>
 							@foreach (BlogTag tag in Model.BlogTags)
 							{
-								<span class="name">Tags:</span>
 								<span class="tag">
-									@tag.Tag.Name<span class="close">
+									@tag.Tag.Name
+									<span class="close">
 										<svg class="icon">
 											<use xlink:href="#close"></use>
 										</svg>
@@ -74,7 +78,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">
+@* 		<div class="container">
 			<div class="row">
 				<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
 					<!-- comments block start-->
@@ -168,7 +172,7 @@
 					<!-- comments block end-->
 				</div>
 			</div>
-		</div>
+		</div> *@
 	</section>
 	<!-- blog detail end-->
 	<!-- live comment start-->
